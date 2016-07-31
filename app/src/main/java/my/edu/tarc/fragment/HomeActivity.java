@@ -13,7 +13,7 @@ public class HomeActivity extends AppCompatActivity {
     Context context;
 
     ArrayList prgmName;
-    public static int [] prgmImages={R.drawable.haha,R.drawable.emergency,R.drawable.emergency,R.drawable.emergency};
+    public static int [] prgmImages={R.drawable.haha,R.drawable.haha,R.drawable.emergency,R.drawable.emergency};
     public static String [] prgmNameList={"阿斯顿","c++","JAVA","Jsp"};
     public static String [] subList={"cdasdasdasdasdasd","c++","JAVA","Jsp"};
 

@@ -13,9 +13,9 @@ public class HomeActivity extends AppCompatActivity {
     Context context;
 
     ArrayList prgmName;
-    public static int [] prgmImages={R.drawable.haha,R.drawable.survival,R.drawable.learning,R.drawable.test};
-    public static String [] prgmNameList={"阿斯顿","Survival Chinese","Learning","Test"};
-    public static String [] subList={"cdasdasdasdasdasd","Survival Chinese","Learning","Test"};
+    public static int [] prgmImages={R.drawable.learning,R.drawable.survival,R.drawable.test,R.drawable.about};
+    public static String [] prgmNameList={"LEARNING","SURVIVAL CHINESE","MOCK TEST","ABOUT APP"};
+    public static String [] subList={"Learn chinese material","All in hand","Test your skill","App developer information"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -65,7 +65,9 @@ public class LearningActivity extends AppCompatActivity {
                 "Jsp",
                 "Jsp",
                 "Jsp",
-                "Jsp"};
+                "Jsp",
+                "Jsp",
+        };
 
         private LayoutInflater inflater=null;
 

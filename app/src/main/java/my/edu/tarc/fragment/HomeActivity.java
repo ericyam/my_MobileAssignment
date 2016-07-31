@@ -40,6 +40,7 @@ public class HomeActivity extends AppCompatActivity {
                     intent = new Intent(HomeActivity.this, LearningActivity.class);
                     startActivity(intent);
                 }
+
             }
         });
     }

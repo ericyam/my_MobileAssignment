@@ -3,6 +3,77 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/imageView2"
+        android:src="@drawable/nan"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/textView7"
+        android:layout_alignStart="@+id/textView7"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="15dp" />
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:orientation="horizontal"
+        android:layout_marginTop="45dp"
+        android:layout_marginRight="40dp"
+        android:id="@+id/tableLayout">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" >
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageButton"
+                android:layout_marginTop="-5dp"
+                android:src="@android:drawable/ic_btn_speak_now" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="拼音 :  Nán\n笔画 :  共七画"
+                />
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:layout_marginLeft="56dp"
+                android:text="组词 : "/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="男孩\n男人"
+                android:layout_marginLeft="4dp"
+                android:id="@+id/textView6" />
+            </LinearLayout>
+
+        </TableRow>
+
+    </TableLayout>
+
     <TextView
         android:layout_width="330dp"
         android:layout_height="wrap_content"
@@ -10,82 +81,27 @@
         android:lineSpacingMultiplier="1.2"
 
         android:id="@+id/textView7"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="68dp" />
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/imageView2"
+        android:layout_centerHorizontal="true" />
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1/20"
+        android:id="@+id/textView3"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:orientation="horizontal">
+        android:layout_marginTop="7dp"
+        />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:id="@+id/imageView2"
-                android:src="@drawable/nan" />
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageButton"
-                android:src="@android:drawable/ic_btn_speak_now"
-                android:layout_toLeftOf="@+id/textView3"
-                android:layout_toStartOf="@+id/textView3" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="拼音 :  Nán"
-                    android:id="@+id/textView3"
-                    android:layout_alignRight="@+id/textView4"
-                    android:layout_alignEnd="@+id/textView4"
-                    android:layout_marginTop="32dp" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="笔画 :  共七画"
-                    android:id="@+id/textView4"
-                    android:layout_marginRight="58dp"
-                    android:layout_alignRight="@+id/textView7"
-                    android:layout_alignEnd="@+id/textView7"
-                    android:layout_marginEnd="58dp" />
-            </LinearLayout>
-
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="组词 :"
-                android:id="@+id/textView5"
-                android:layout_alignBaseline="@+id/textView6"
-                android:layout_alignBottom="@+id/textView6" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="男孩\n男人"
-                android:id="@+id/textView6"
-                android:layout_alignBaseline="@+id/textView7"
-                android:layout_alignBottom="@+id/textView7" />
-        </TableRow>
-    </TableLayout>
-
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play"
+        android:id="@+id/btnplay"
+        android:layout_marginBottom="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

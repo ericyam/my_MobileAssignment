@@ -70,7 +70,7 @@ public class CustomAdapter extends BaseAdapter{
                 // TODO Auto-generated method stub
                 intent = new Intent(context, LearningActivity.class);
                 context.startActivity(intent);
-                ((Activity)context).overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+                //((Activity)context).overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
 
             }
 

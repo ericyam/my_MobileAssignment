@@ -8,7 +8,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class HomeActivity extends Activity {
+public class HomeActivity extends AppCompatActivity {
     ListView lv;
     Context context;
 
@@ -21,6 +21,7 @@ public class HomeActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        getSupportActionBar().hide();
 
         context=this;
 

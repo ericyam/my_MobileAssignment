@@ -2,8 +2,11 @@ package my.edu.tarc.fragment;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -11,6 +14,7 @@ import java.util.ArrayList;
 public class HomeActivity extends AppCompatActivity {
     ListView lv;
     Context context;
+    Intent intent;
 
     ArrayList prgmName;
     public static int [] prgmImages={R.drawable.learning,R.drawable.survival,R.drawable.test,R.drawable.about};
@@ -27,5 +31,16 @@ public class HomeActivity extends AppCompatActivity {
 
         lv=(ListView) findViewById(R.id.listView);
         lv.setAdapter(new CustomAdapter(this, prgmNameList,prgmImages,subList));
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                if(position == 0){
+                    intent = new Intent(HomeActivity.this, LearningActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
     }
 }

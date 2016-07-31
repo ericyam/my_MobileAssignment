@@ -17,10 +17,11 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class LearningActivity extends AppCompatActivity {
 
-    Button button;
+    Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +32,16 @@ public class LearningActivity extends AppCompatActivity {
 
         GridView gridView = (GridView) findViewById(R.id.gridView);
         gridView.setAdapter(new ImageAdapter(this));
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                if(position == 0){
+                    intent = new Intent(LearningActivity.this, MainActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
 
     }
 
@@ -113,7 +123,7 @@ public class LearningActivity extends AppCompatActivity {
             View rowView;
 
             rowView = inflater.inflate(R.layout.learningfunction, null);
-            rowView.setLayoutParams(new GridView.LayoutParams(300,350));
+            rowView.setLayoutParams(new GridView.LayoutParams(300,375));
 
             //set Text and Listener is here <---------------------
             holder.tv=(TextView) rowView.findViewById(R.id.item_text);

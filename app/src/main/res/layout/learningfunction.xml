@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/item_image"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
         android:src="@drawable/bihua"
         android:layout_gravity="center_horizontal">
     </ImageView>

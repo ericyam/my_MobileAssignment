@@ -56,7 +56,6 @@ public class CustomAdapter extends BaseAdapter{
         Holder holder=new Holder();
         View rowView;
         rowView = inflater.inflate(R.layout.navigation, null);
-
         //set Text and Listener is here <---------------------
         holder.tv=(TextView) rowView.findViewById(R.id.textView1);
         holder.img=(ImageView) rowView.findViewById(R.id.imageView1);
@@ -64,18 +63,8 @@ public class CustomAdapter extends BaseAdapter{
         holder.tv.setText(result[position]);
         holder.img.setImageResource(imageId[position]);
         holder.tv2.setText(result2[position]);
-        rowView.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                intent = new Intent(context, LearningActivity.class);
-                context.startActivity(intent);
-                //((Activity)context).overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
-
-            }
 
 
-        });
         return rowView;
     }
 

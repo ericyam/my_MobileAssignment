@@ -1,6 +1,8 @@
 package my.edu.tarc.fragment;
 
+        import android.app.Activity;
         import android.content.Context;
+        import android.content.Intent;
         import android.view.LayoutInflater;
         import android.view.View;
         import android.view.View.OnClickListener;
@@ -13,6 +15,8 @@ public class CustomAdapter extends BaseAdapter{
     String [] result, result2;
     Context context;
     int [] imageId;
+    Intent intent;
+
     private static LayoutInflater inflater=null;
     public CustomAdapter(HomeActivity homeActivity, String[] prgmNameList, int[] prgmImages, String[] subList) {
         // TODO Auto-generated constructor stub
@@ -60,14 +64,20 @@ public class CustomAdapter extends BaseAdapter{
         holder.tv.setText(result[position]);
         holder.img.setImageResource(imageId[position]);
         holder.tv2.setText(result2[position]);
-        /*rowView.setOnClickListener(new OnClickListener() {
+        rowView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
+                intent = new Intent(context, LearningActivity.class);
+                context.startActivity(intent);
+                ((Activity)context).overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+
             }
-        });*/
+
+
+        });
         return rowView;
     }
+
 
 }

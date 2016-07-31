@@ -50,12 +50,13 @@ public class LearningActivity extends AppCompatActivity {
         private Context mContext;
         private Integer[] images = {
                 R.drawable.bihua,
-                R.drawable.bihua,
-                R.drawable.bihua,
-                R.drawable.bihua,
-                R.drawable.bihua,
-                R.drawable.bihua,
-                R.drawable.bihua
+                R.drawable.chengyu,
+                R.drawable.bible,
+                R.drawable.meiriyiju,
+                R.drawable.shizi,
+                R.drawable.sing,
+                R.drawable.dizhigui,
+                R.drawable.hanyu,
         };
         private String [] title={
                 "阿斯顿",

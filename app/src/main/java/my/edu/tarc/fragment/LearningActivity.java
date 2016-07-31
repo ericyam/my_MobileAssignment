@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.support.annotation.ColorRes;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,11 +14,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class LearningActivity extends AppCompatActivity {
 
@@ -28,7 +27,7 @@ public class LearningActivity extends AppCompatActivity {
         setContentView(R.layout.activity_learning);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#333333")));
 
         GridView gridView = (GridView) findViewById(R.id.gridView);
         gridView.setAdapter(new ImageAdapter(this));
@@ -37,7 +36,7 @@ public class LearningActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 if(position == 0){
-                    intent = new Intent(LearningActivity.this, MainActivity.class);
+                    intent = new Intent(LearningActivity.this, BiHuaActivity.class);
                     startActivity(intent);
                 }
             }

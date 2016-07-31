@@ -16,14 +16,6 @@ public class Tab1 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View rootView = inflater.inflate(R.layout.tab_1, container, false);
-        button = (Button) rootView.findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getActivity(), HomeActivity.class));
-            }
-        });
         return rootView;
     }
 }

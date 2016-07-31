@@ -2,19 +2,91 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageButton"
+                android:src="@android:drawable/ic_btn_speak_now"
+                android:layout_below="@+id/relativeLayout"
+                android:layout_toLeftOf="@+id/textView3"
+                android:layout_toStartOf="@+id/textView3" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="拼音 :  Nán"
+                android:id="@+id/textView3"
+                android:layout_below="@+id/imageButton"
+                android:layout_alignRight="@+id/textView4"
+                android:layout_alignEnd="@+id/textView4"
+                android:layout_marginTop="32dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="笔画 :  共七画"
+                android:id="@+id/textView4"
+                android:layout_below="@+id/textView3"
+                android:layout_alignRight="@+id/textView7"
+                android:layout_marginRight="74dp" />
+
+
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tab 1 says Hello!"
-        android:id="@+id/textView"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
+        android:text="组词 :"
+        android:id="@+id/textView5"
+        android:layout_alignBaseline="@+id/textView6"
+        android:layout_alignBottom="@+id/textView6"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4" />
 
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button"
-        android:layout_above="@+id/textView"
-        android:layout_centerHorizontal="true" />
+        android:text="男孩\n男人"
+        android:id="@+id/textView6"
+        android:layout_alignBaseline="@+id/textView7"
+        android:layout_alignBottom="@+id/textView7"
+        android:layout_alignRight="@+id/textView4"
+        android:layout_alignEnd="@+id/textView4" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeLayout">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+</LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:text="男 (he; male; son )\n〈名〉\n(1) (会意。从田,从力。表示用力(一说指耒)在田间耕作。本义:男人,与“女”相对)\n\n(2) 同本义 [man]\n\n(3) 又如:男事(古指成年男子应尽的职责);男夫(成年男子);男圻(犹男服);男教(对男子的教化);男德(有德行的男子);男权(男子在家庭、社会中的支配性特权)\n\n(4) 引申为儿子 [boy;son]"
+        android:lineSpacingMultiplier="1.2"
+
+        android:id="@+id/textView7"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="68dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView2"
+        android:src="@drawable/nan"
+        android:layout_below="@+id/imageButton"
+        android:layout_toStartOf="@+id/textView3"
+        android:layout_above="@+id/textView5"
+        android:layout_toLeftOf="@+id/textView3" />
+
+
 </RelativeLayout>

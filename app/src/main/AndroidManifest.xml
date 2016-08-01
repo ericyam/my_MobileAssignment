@@ -11,19 +11,28 @@
         <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BiHuaActivity"
-                   android:label="笔画教学"/>
+        <activity
+            android:name=".BiHuaActivity"
+            android:label="笔画教学" />
+        <activity
+            android:name=".LearningActivity"
+            android:label="Learning Materials" />
+        <activity
+            android:name=".AboutActivity"
+            android:label="About Us" />
+        <activity
+            android:name=".ChengYuActivity"
+            android:label="成语" />
+        <activity
+            android:name=".Pop"
+            android:theme="@style/AppTheme.CustomTheme" />
 
-        <activity android:name=".LearningActivity"
-                   android:label="Learning Materials"
-            ></activity>
-        <activity android:name=".AboutActivity"
-            android:label="About Us"
-            ></activity>
-
+        <activity android:name=".SurvChineseActivity"
+            android:label="Survival Chinese"/>
 
     </application>
 

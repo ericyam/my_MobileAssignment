@@ -32,8 +32,6 @@ public class BiHuaActivity extends AppCompatActivity {
         tabs = (SlidingTabLayout)findViewById(R.id.tabs);
         tabs.setDistributeEvenly(true);
 
-
-
         tabs.setViewPager(pager);
     }
 

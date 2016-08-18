@@ -13,9 +13,13 @@ import android.widget.Button;
  */
 public class Tab1 extends Fragment {
     Button button;
+    GifView gifView;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View rootView = inflater.inflate(R.layout.tab_1, container, false);
+
+        gifView = (GifView) rootView.findViewById(R.id.gifview);
+
         button = (Button) rootView.findViewById(R.id.btnplay);
         button.setOnClickListener(new View.OnClickListener(){
 

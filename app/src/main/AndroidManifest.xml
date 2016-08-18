@@ -17,15 +17,23 @@
         </activity>
         <activity
             android:name=".BiHuaActivity"
-            android:label="笔画教学"
-            android:hardwareAccelerated="false"/>
+            android:label="笔画教学" />
         <activity
             android:name=".LearningActivity"
             android:label="Learning Materials" />
         <activity
             android:name=".AboutActivity"
             android:label="About Us" />
-        <activity android:name=".test" android:hardwareAccelerated="false"></activity>
+        <activity
+            android:name=".ChengYuActivity"
+            android:label="成语" />
+        <activity
+            android:name=".Pop"
+            android:theme="@style/AppTheme.CustomTheme" />
+
+        <activity android:name=".SurvChineseActivity"
+            android:label="Survival Chinese"/>
+
     </application>
 
 </manifest>

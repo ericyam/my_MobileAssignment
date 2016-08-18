@@ -40,6 +40,10 @@ public class HomeActivity extends AppCompatActivity {
                     intent = new Intent(HomeActivity.this, LearningActivity.class);
                     startActivity(intent);
                 }
+                if(position == 1){
+                    intent = new Intent(HomeActivity.this, SurvChineseActivity.class);
+                    startActivity(intent);
+                }
                 if(position == 3){
                     intent = new Intent(HomeActivity.this, AboutActivity.class);
                     startActivity(intent);

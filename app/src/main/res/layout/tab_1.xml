@@ -122,7 +122,7 @@
             android:layout_height="match_parent"
             android:clickable="true"
             android:scaleType="fitXY"
-            android:src="@drawable/next"
+            android:src="@drawable/nan"
             android:layout_alignParentLeft="true"
             android:background="@null"
             />
@@ -133,7 +133,7 @@
             android:layout_height="match_parent"
             android:clickable="true"
             android:scaleType="fitXY"
-            android:src="@drawable/next"
+            android:src="@drawable/nan"
             android:layout_centerInParent="true"
             android:background="@null"
             />
@@ -144,7 +144,7 @@
             android:layout_height="match_parent"
             android:clickable="true"
             android:scaleType="fitXY"
-            android:src="@drawable/next"
+            android:src="@drawable/nan"
             android:layout_alignParentRight="true"
             android:background="@null"
             />

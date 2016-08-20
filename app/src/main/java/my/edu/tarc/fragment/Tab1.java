@@ -26,6 +26,7 @@ public class Tab1 extends Fragment {
     TextView textviewzhuci;
     TextView textviewdetail;
     TextView textviewpaging;
+    TextView textviewpinbi;
     UserDataSource userDataSource;
 
     int position=0;
@@ -40,6 +41,7 @@ public class Tab1 extends Fragment {
         textviewzhuci = (TextView)rootView.findViewById(R.id.textViewZhuCi);
         textviewdetail = (TextView)rootView.findViewById(R.id.textViewDetail);
         textviewpaging = (TextView)rootView.findViewById(R.id.textViewPaging);
+        textviewpinbi = (TextView)rootView.findViewById(R.id.textViewPinBi);
 
         userDataSource = new UserDataSource(getContext());
         userDataSource.open();
@@ -65,6 +67,7 @@ public class Tab1 extends Fragment {
             public void onClick(View view) {
                 if(position > 0)
                     position--;
+                textviewpaging.setText( (position+1) +  "/20");
                 textviewzhuci.setText(values.get(position).getZhuci());
                 textviewdetail.setText(values.get(position).getDetail());
             }

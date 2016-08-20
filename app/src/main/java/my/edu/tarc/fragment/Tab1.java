@@ -54,7 +54,7 @@ public class Tab1 extends Fragment {
             public void onClick(View view) {
                 if(position < values.size() - 1)
                     position++;
-                textviewpaging.setText( (position) +  "/20");
+                textviewpaging.setText( (position+1) +  "/20");
                 textviewzhuci.setText(values.get(position).getZhuci());
                 textviewdetail.setText(values.get(position).getDetail());
             }
@@ -65,7 +65,6 @@ public class Tab1 extends Fragment {
             public void onClick(View view) {
                 if(position > 0)
                     position--;
-                textviewpaging.setText( (position) +  "/20");
                 textviewzhuci.setText(values.get(position).getZhuci());
                 textviewdetail.setText(values.get(position).getDetail());
             }

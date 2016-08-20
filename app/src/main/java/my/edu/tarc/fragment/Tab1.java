@@ -25,6 +25,7 @@ public class Tab1 extends Fragment {
     GifView gifView;
     TextView textviewzhuci;
     TextView textviewdetail;
+    TextView textviewpaging;
     UserDataSource userDataSource;
 
     int position=0;
@@ -38,6 +39,7 @@ public class Tab1 extends Fragment {
         previous = (ImageButton)rootView.findViewById(R.id.previous);
         textviewzhuci = (TextView)rootView.findViewById(R.id.textViewZhuCi);
         textviewdetail = (TextView)rootView.findViewById(R.id.textViewDetail);
+        textviewpaging = (TextView)rootView.findViewById(R.id.textViewPaging);
 
         userDataSource = new UserDataSource(getContext());
         userDataSource.open();
@@ -45,11 +47,14 @@ public class Tab1 extends Fragment {
         final List<BihuaData> values = userDataSource.getAllUsers();
         textviewzhuci.setText(values.get(position).getZhuci());
         textviewdetail.setText(values.get(position).getDetail());
+        textviewpaging.setText( (position+1) +  "/20");
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                position++;
+                if(position < values.size() - 1)
+                    position++;
+                textviewpaging.setText( (position) +  "/20");
                 textviewzhuci.setText(values.get(position).getZhuci());
                 textviewdetail.setText(values.get(position).getDetail());
             }
@@ -58,7 +63,9 @@ public class Tab1 extends Fragment {
         previous.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                position--;
+                if(position > 0)
+                    position--;
+                textviewpaging.setText( (position) +  "/20");
                 textviewzhuci.setText(values.get(position).getZhuci());
                 textviewdetail.setText(values.get(position).getDetail());
             }

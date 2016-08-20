@@ -11,6 +11,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import my.edu.tarc.fragment.Database.BihuaData;
+import my.edu.tarc.fragment.Database.UserDataSource;
+
 public class BiHuaActivity extends AppCompatActivity {
 
     ViewPager pager;
@@ -23,6 +26,7 @@ public class BiHuaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bihua);
+
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#333333")));
@@ -38,6 +42,8 @@ public class BiHuaActivity extends AppCompatActivity {
         tabs.setViewPager(pager);
     }
 
+
+    /*
     private void initToolbars() {
         Toolbar toolbarBottom = (Toolbar) findViewById(R.id.toolbar_bottom);
         toolbarBottom.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
@@ -53,7 +59,7 @@ public class BiHuaActivity extends AppCompatActivity {
         });
         // Inflate a menu to be displayed in the toolbar
         toolbarBottom.inflateMenu(R.menu.menu_main);
-    }
+    }*/
 
 
 

@@ -12,7 +12,7 @@ import android.widget.Button;
  * Created by Eric Yam on 7/31/2016.
  */
 public class Tab1 extends Fragment {
-    Button button;
+
     GifView gifView;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
@@ -20,14 +20,6 @@ public class Tab1 extends Fragment {
 
         gifView = (GifView) rootView.findViewById(R.id.gifview);
 
-        button = (Button) rootView.findViewById(R.id.btnplay);
-        button.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
         return rootView;
     }
 }

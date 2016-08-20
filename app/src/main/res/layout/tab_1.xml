@@ -96,25 +96,56 @@
         android:layout_marginTop="7dp"
         />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Play"
-        android:id="@+id/btnplay"
-        android:layout_marginBottom="25dp"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_bottom"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:background="@color/colorBlack"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:minHeight="?attr/actionBarSize"
+        >
 
-    <my.edu.tarc.fragment.GifView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/view2"
-        android:layout_alignTop="@+id/imageView2"
-        android:layout_alignLeft="@+id/imageView2"
-        android:layout_alignStart="@+id/imageView2"
-        android:layout_above="@+id/textView7"
-        android:layout_toLeftOf="@+id/textView3"
-        android:layout_toStartOf="@+id/textView3"
-        />
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/toolbarMenuLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_alignTop="@+id/toolbar_bottom"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <ImageButton
+            android:layout_width="230px"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/next"
+            android:layout_alignParentLeft="true"
+            android:background="@null"
+            />
+
+        <ImageButton
+            android:layout_width="230px"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/next"
+            android:layout_centerInParent="true"
+            android:background="@null"
+            />
+
+        <ImageButton
+            android:layout_width="230px"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/next"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            />
+
+    </RelativeLayout>
 
 </RelativeLayout>

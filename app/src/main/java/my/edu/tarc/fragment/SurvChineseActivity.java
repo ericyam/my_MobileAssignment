@@ -70,7 +70,7 @@ public class SurvChineseActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
                 if(position == 6){
-                    intent = new Intent(SurvChineseActivity.this, SurvChineseEntertainmentActivity.class);
+                    intent = new Intent(SurvChineseActivity.this, SurvChineseEmergencyActivity.class);
                     startActivity(intent);
                 }
                 if(position == 7){

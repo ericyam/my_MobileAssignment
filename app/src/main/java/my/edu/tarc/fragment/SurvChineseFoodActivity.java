@@ -22,49 +22,50 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
 
-public class SurvChineseFlirtActivity extends AppCompatActivity implements TextToSpeech.OnInitListener {
+public class SurvChineseFoodActivity extends AppCompatActivity implements TextToSpeech.OnInitListener {
     private ArrayList<Person> mPersonList;
     private RecyclerView mRecyclerView;
     private CustomAdapterRcyc mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private  String [] English={
-            "You're beautiful.",
-            "You're charming.",
-            "You're handsome.",
-            "Can I buy you a drink?",
-            "No, thank you.",
-            "Can I sit here?",
-            "Yes, please.",
-            "I love you.",
-            "I miss you.",
-            "Boyfriend.",
-            "Girlfriend."};
+"May I have a glass of water ?",
+"Enjoy your meal!",
+"May I have some napkins?",
+"It that spicy?",
+"I'm hungry.",
+"I'm thirsty.",
+"Yummy!",
+"Please give me a fork.",
+"Please give me a spoon.",
+"Please give me chopsticks.",
+"May I ask how much is this?"
+    };
 
     private  String [] Chinese={
-            "你真美。",
-            "你真迷人。",
-            "你真帅。",
-            "我能请你喝点东西吗？",
-            "不，谢谢！",
-            "我能坐这儿吗？",
-            "可以，请坐吧。",
-            "我爱你。",
-            "我不能没有你。",
-            "男朋友。",
-            "女朋友。"};
+            "我想要一杯水。",
+            "祝您用餐愉快!",
+            "请给我一些餐巾纸好吗？",
+            "那个辣吗？",
+            "我饿了。",
+            "我渴了。",
+            "好吃！",
+            "请给我叉子。",
+            "请给我勺子。",
+            "请给我筷子。",
+            "请问这个多少钱？"};
+
     private  String [] Pinyin={
-            "Nǐ zhēnměi.",
-            "Nǐ zhēn mírén.",
-            "Nǐ zhēn shuài.",
-            "Wǒ néng qǐng nǐ hē diǎn dōngxī ma?",
-            "Bù, xièxiè!",
-            "Wǒ néng zuò zhè'er ma?",
-            "Kěyǐ, qǐng zuò ba.",
-            "Wǒ ài nǐ.",
-            "Wǒ bùnéng méiyǒu nǐ.",
-            "Nán péngyǒu.",
-            "Nǚ péngyǒu."
-    };
+            "Wǒ xiǎng yào yībēi shuǐ.",
+            "Zhù nín yòngcān yúkuài!",
+            "Qǐng gěi wǒ yīxiē cānjīnzhǐ hǎo ma?",
+            "Nàgè là ma?",
+            "Wǒ èle.",
+            "Wǒ kěle.",
+            "Hào chī!",
+            "Qǐng gěi wǒ chāzi.",
+            "Qǐng gěi wǒ sháozi.",
+            "Qǐng gěi wǒ kuàizi.",
+            "Qǐngwèn zhège duōshǎo qián?"};
 
     TextView textViewPinyin,textViewCn;
     ImageView imageMic;

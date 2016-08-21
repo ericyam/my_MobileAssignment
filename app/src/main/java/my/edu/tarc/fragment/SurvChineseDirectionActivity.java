@@ -22,49 +22,48 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
 
-public class SurvChineseFlirtActivity extends AppCompatActivity implements TextToSpeech.OnInitListener {
+public class SurvChineseDirectionActivity extends AppCompatActivity implements TextToSpeech.OnInitListener {
     private ArrayList<Person> mPersonList;
     private RecyclerView mRecyclerView;
     private CustomAdapterRcyc mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    private  String [] English={
-            "You're beautiful.",
-            "You're charming.",
-            "You're handsome.",
-            "Can I buy you a drink?",
-            "No, thank you.",
-            "Can I sit here?",
-            "Yes, please.",
-            "I love you.",
-            "I miss you.",
-            "Boyfriend.",
-            "Girlfriend."};
+    private  String [] English={"How do I get there?",
+            "I'm lost.",
+            "Straight",
+            "Turn left",
+            "Turn right",
+            "The front 800m turn to the right.",
+            "GAS station",
+            "Slow",
+            "What time do we return?",
+            "Please take me to this place.",
+            "Can I use my phone now?"};
 
     private  String [] Chinese={
-            "你真美。",
-            "你真迷人。",
-            "你真帅。",
-            "我能请你喝点东西吗？",
-            "不，谢谢！",
-            "我能坐这儿吗？",
-            "可以，请坐吧。",
-            "我爱你。",
-            "我不能没有你。",
-            "男朋友。",
-            "女朋友。"};
+            "我怎么到那儿？",
+            "我迷路了。",
+            "直走",
+            "左转",
+            "右转",
+            "前方八百米向右拐。",
+            "加油站",
+            "慢行",
+            "我们什么时候回？",
+            "请带我到这个地方。",
+            "现在可以使用手机了吗？"};
+
     private  String [] Pinyin={
-            "Nǐ zhēnměi.",
-            "Nǐ zhēn mírén.",
-            "Nǐ zhēn shuài.",
-            "Wǒ néng qǐng nǐ hē diǎn dōngxī ma?",
-            "Bù, xièxiè!",
-            "Wǒ néng zuò zhè'er ma?",
-            "Kěyǐ, qǐng zuò ba.",
-            "Wǒ ài nǐ.",
-            "Wǒ bùnéng méiyǒu nǐ.",
-            "Nán péngyǒu.",
-            "Nǚ péngyǒu."
-    };
+            "Wǒ zěnme dào nà'er?",
+            "Wǒ mí lù le.",
+            "Zhí zǒu",
+            "zuǒ zhuǎn",
+            "yòu zhuǎn",
+            "qiánfāng bābǎi mǐ xiàng yòu guǎi.",
+            "Jiāyóu zhàn",
+            "màn xíng",
+            "wǒmen shénme shíhòu huí?",
+            "Qǐng dài wǒ dào zhège dìfāng.",
+            "Xiànzài kěyǐ shǐyòng shǒujīle ma?"};
 
     TextView textViewPinyin,textViewCn;
     ImageView imageMic;

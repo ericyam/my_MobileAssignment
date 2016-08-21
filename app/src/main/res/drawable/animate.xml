@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="true"><!-- Only play for one time -->
+    <item android:drawable="@drawable/mc1" android:duration="200" />
+    <item android:drawable="@drawable/mc2" android:duration="200" />
+    <item android:drawable="@drawable/mc3" android:duration="200" />
+    <item android:drawable="@drawable/mc4" android:duration="200" />
+    <item android:drawable="@drawable/mc5" android:duration="200" />
+
+</animation-list>

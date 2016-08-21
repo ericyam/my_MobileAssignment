@@ -22,49 +22,51 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
 
-public class SurvChineseFlirtActivity extends AppCompatActivity implements TextToSpeech.OnInitListener {
+public class SurvChineseShoppingActivity extends AppCompatActivity implements TextToSpeech.OnInitListener {
     private ArrayList<Person> mPersonList;
     private RecyclerView mRecyclerView;
     private CustomAdapterRcyc mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private  String [] English={
-            "You're beautiful.",
-            "You're charming.",
-            "You're handsome.",
-            "Can I buy you a drink?",
-            "No, thank you.",
-            "Can I sit here?",
-            "Yes, please.",
-            "I love you.",
-            "I miss you.",
-            "Boyfriend.",
-            "Girlfriend."};
+            "I would like to buy toys.",
+            "Can I look at it?",
+            "What kind of colors do you have?",
+            "May I try it on?",
+            "It fits well.",
+            "It doesn't fit.",
+            "My size is ...",
+            "I want to buy this.",
+            "how much is it?",
+            "Do you have others?",
+            "Can I have a bag please?"
+    };
 
     private  String [] Chinese={
-            "你真美。",
-            "你真迷人。",
-            "你真帅。",
-            "我能请你喝点东西吗？",
-            "不，谢谢！",
-            "我能坐这儿吗？",
-            "可以，请坐吧。",
-            "我爱你。",
-            "我不能没有你。",
-            "男朋友。",
-            "女朋友。"};
-    private  String [] Pinyin={
-            "Nǐ zhēnměi.",
-            "Nǐ zhēn mírén.",
-            "Nǐ zhēn shuài.",
-            "Wǒ néng qǐng nǐ hē diǎn dōngxī ma?",
-            "Bù, xièxiè!",
-            "Wǒ néng zuò zhè'er ma?",
-            "Kěyǐ, qǐng zuò ba.",
-            "Wǒ ài nǐ.",
-            "Wǒ bùnéng méiyǒu nǐ.",
-            "Nán péngyǒu.",
-            "Nǚ péngyǒu."
+            "我想要买玩具。",
+            "我能看看吗？",
+            "你有什么颜色？",
+            "我能试试吗？",
+            "这个适合我。",
+            "这个不适合我。",
+            "我的尺码是...",
+            "我想要买这个。",
+            "这个多少钱？",
+            "你还有其他的吗？",
+            "我能一个袋子吗？"
     };
+
+    private  String [] Pinyin={
+            "Wǒ xiǎng yāomǎi wánjù.",
+            "Wǒ néng kàn kàn ma?",
+            "Nǐ yǒu shé me yánsè?",
+            "Wǒ néng shì shì ma?",
+            "Zhège shìhé wǒ.",
+            "Zhège bù shìhé wǒ.",
+            "Wǒ de chǐmǎ shì...",
+            "Wǒ xiǎng yāomǎi zhège.",
+            "Zhège duōshǎo qián?",
+            "Nǐ hái yǒu qítā de ma?",
+            "Wǒ néng yīgè dàizi ma?"};
 
     TextView textViewPinyin,textViewCn;
     ImageView imageMic;

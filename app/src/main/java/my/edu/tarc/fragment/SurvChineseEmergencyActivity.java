@@ -22,49 +22,52 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
 
-public class SurvChineseFlirtActivity extends AppCompatActivity implements TextToSpeech.OnInitListener {
+public class SurvChineseEmergencyActivity extends AppCompatActivity implements TextToSpeech.OnInitListener {
     private ArrayList<Person> mPersonList;
     private RecyclerView mRecyclerView;
     private CustomAdapterRcyc mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private  String [] English={
-            "You're beautiful.",
-            "You're charming.",
-            "You're handsome.",
-            "Can I buy you a drink?",
-            "No, thank you.",
-            "Can I sit here?",
-            "Yes, please.",
-            "I love you.",
-            "I miss you.",
-            "Boyfriend.",
-            "Girlfriend."};
+            "Help!",
+            "Fire!",
+            "Thief!",
+            "Be careful!",
+            "Call an ambulance!",
+            "Call a doctor!",
+            "call police!",
+            "Could you help me, please?",
+            "I'm staying at the...",
+            "It's an emergency.",
+            "My money was stolen."
+
+    };
 
     private  String [] Chinese={
-            "你真美。",
-            "你真迷人。",
-            "你真帅。",
-            "我能请你喝点东西吗？",
-            "不，谢谢！",
-            "我能坐这儿吗？",
-            "可以，请坐吧。",
-            "我爱你。",
-            "我不能没有你。",
-            "男朋友。",
-            "女朋友。"};
-    private  String [] Pinyin={
-            "Nǐ zhēnměi.",
-            "Nǐ zhēn mírén.",
-            "Nǐ zhēn shuài.",
-            "Wǒ néng qǐng nǐ hē diǎn dōngxī ma?",
-            "Bù, xièxiè!",
-            "Wǒ néng zuò zhè'er ma?",
-            "Kěyǐ, qǐng zuò ba.",
-            "Wǒ ài nǐ.",
-            "Wǒ bùnéng méiyǒu nǐ.",
-            "Nán péngyǒu.",
-            "Nǚ péngyǒu."
+            "救命！",
+            "着火了！",
+            "小偷！",
+            "小心！",
+            "叫救护车！",
+            "叫医生！",
+            "叫警察！",
+            "你能帮我吗？",
+            "我住在...",
+            "有紧急情况。",
+            "我的钱被偷了。"
     };
+
+    private  String [] Pinyin={
+            "Jiù mìng!",
+            "Zháohuǒ le!",
+            "Xiǎotōu!",
+            "Xiǎoxīn!",
+            "Jiào jiùhù chē!",
+            "Jiào yīshēng!",
+            "Jiào jǐngchá!",
+            "Nǐ néng bāng wǒ ma?",
+            "Wǒ zhù zài...",
+            "Yǒu jǐnjí qíngkuàng.",
+            "Wǒ de qián bèi tōule."};
 
     TextView textViewPinyin,textViewCn;
     ImageView imageMic;

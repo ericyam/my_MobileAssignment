@@ -22,50 +22,21 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
 
-public class SurvChineseFlirtActivity extends AppCompatActivity implements TextToSpeech.OnInitListener {
+public class SurvChineseBasicActivity extends AppCompatActivity implements TextToSpeech.OnInitListener {
     private ArrayList<Person> mPersonList;
     private RecyclerView mRecyclerView;
     private CustomAdapterRcyc mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    private  String [] English={
-            "You're beautiful.",
-            "You're charming.",
-            "You're handsome.",
-            "Can I buy you a drink?",
-            "No, thank you.",
-            "Can I sit here?",
-            "Yes, please.",
-            "I love you.",
-            "I miss you.",
-            "Boyfriend.",
-            "Girlfriend."};
-
+    private  String [] English={"Hello!","You are welcome!","Good morning!","Good night!","Good afternoon!","Good evening!",
+            "Sorry(apology)","What's your name?","My name is...","See you."};
     private  String [] Chinese={
-            "你真美。",
-            "你真迷人。",
-            "你真帅。",
-            "我能请你喝点东西吗？",
-            "不，谢谢！",
-            "我能坐这儿吗？",
-            "可以，请坐吧。",
-            "我爱你。",
-            "我不能没有你。",
-            "男朋友。",
-            "女朋友。"};
-    private  String [] Pinyin={
-            "Nǐ zhēnměi.",
-            "Nǐ zhēn mírén.",
-            "Nǐ zhēn shuài.",
-            "Wǒ néng qǐng nǐ hē diǎn dōngxī ma?",
-            "Bù, xièxiè!",
-            "Wǒ néng zuò zhè'er ma?",
-            "Kěyǐ, qǐng zuò ba.",
-            "Wǒ ài nǐ.",
-            "Wǒ bùnéng méiyǒu nǐ.",
-            "Nán péngyǒu.",
-            "Nǚ péngyǒu."
+            "你好！","不客气！","早上好！","晚安！","下午好！","晚上好！",
+            "对不起！","你叫什么名字？","我的名字是...","下次见"
     };
-
+    private  String [] Pinyin={
+            "Nǐ hǎo!","Bù kèqì!","Zǎoshang hǎo!","Wǎn'ān!","Xiàwǔ hǎo!","Wǎnshàng hǎo!",
+            "Duìbùqǐ!","Nǐ jiào shénme míngzì?","Wǒ de míngzì shì...","Xià cì jiàn"
+    };
     TextView textViewPinyin,textViewCn;
     ImageView imageMic;
     AnimationDrawable animatetionPc;
@@ -85,9 +56,11 @@ public class SurvChineseFlirtActivity extends AppCompatActivity implements TextT
         textViewPinyin = (TextView)findViewById(R.id.textViewPinyin);
         textViewCn = (TextView)findViewById(R.id.textViewCn);
 
+
+
         imageMic = (ImageView)findViewById(R.id.imageMic);
         imageMic.setBackgroundResource(R.drawable.animate);
-        //  imageMic.setOnClickListener(this);
+      //  imageMic.setOnClickListener(this);
         animatetionPc = (AnimationDrawable) imageMic.getBackground();
 
         // use this setting to improve performance if you know that changes
@@ -107,20 +80,20 @@ public class SurvChineseFlirtActivity extends AppCompatActivity implements TextT
                             textViewCn.setText(Chinese[position]);
                             textViewPinyin.setText(Pinyin[position]);
 
-                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                                //  tts.setPitch(1.1f); // saw from internet
-                                tts.setSpeechRate(0.5f); // f denotes float, it actually type casts 0.5 to float
-                                tts.speak(Chinese[position], TextToSpeech.QUEUE_FLUSH, null, null);
-                                animatetionPc.run();
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        //  tts.setPitch(1.1f); // saw from internet
+        tts.setSpeechRate(0.5f); // f denotes float, it actually type casts 0.5 to float
+        tts.speak(Chinese[position], TextToSpeech.QUEUE_FLUSH, null, null);
+        animatetionPc.run();
 
-                            } else {
-                                HashMap<String, String> hash = new HashMap<String, String>();
-                                hash.put(TextToSpeech.Engine.KEY_PARAM_STREAM, String.valueOf(AudioManager.STREAM_NOTIFICATION));
-                                //  tts.setPitch(1.1f); // saw from internet
-                                tts.setSpeechRate(0.5f); // f denotes float, it actually type casts 0.5 to float
-                                tts.speak(Chinese[position], TextToSpeech.QUEUE_FLUSH, hash);
+    } else {
+        HashMap<String, String> hash = new HashMap<String, String>();
+        hash.put(TextToSpeech.Engine.KEY_PARAM_STREAM, String.valueOf(AudioManager.STREAM_NOTIFICATION));
+        //  tts.setPitch(1.1f); // saw from internet
+        tts.setSpeechRate(0.5f); // f denotes float, it actually type casts 0.5 to float
+        tts.speak(Chinese[position], TextToSpeech.QUEUE_FLUSH, hash);
 
-                            }
+    }
 
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -151,7 +124,7 @@ public class SurvChineseFlirtActivity extends AppCompatActivity implements TextT
         mPersonList = new ArrayList<Person>();
         mPersonList.clear();
 
-        for (int i = 0; i < 11; i++) {
+        for (int i = 0; i < 10; i++) {
             Person person = new Person(" " + English[i], Chinese[i]);
             mPersonList.add(person);
         }

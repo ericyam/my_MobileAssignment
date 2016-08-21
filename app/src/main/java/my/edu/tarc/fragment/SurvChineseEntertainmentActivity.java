@@ -22,49 +22,51 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
 
-public class SurvChineseFlirtActivity extends AppCompatActivity implements TextToSpeech.OnInitListener {
+public class SurvChineseEntertainmentActivity extends AppCompatActivity implements TextToSpeech.OnInitListener {
     private ArrayList<Person> mPersonList;
     private RecyclerView mRecyclerView;
     private CustomAdapterRcyc mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private  String [] English={
-            "You're beautiful.",
-            "You're charming.",
-            "You're handsome.",
-            "Can I buy you a drink?",
-            "No, thank you.",
-            "Can I sit here?",
-            "Yes, please.",
-            "I love you.",
-            "I miss you.",
-            "Boyfriend.",
-            "Girlfriend."};
+            "what are your hobbies?",
+            "Which sports do you like best?",
+            "Do you like dancing?",
+            "I like reading.",
+            "I don't like to sing.",
+            "I like fishing.",
+            "I like swimming.",
+            "I like playing basketball.",
+            "I like listening to music.",
+            "I'm looking for the toilet.",
+            "Where is the nearest bus station?"
+    };
 
     private  String [] Chinese={
-            "你真美。",
-            "你真迷人。",
-            "你真帅。",
-            "我能请你喝点东西吗？",
-            "不，谢谢！",
-            "我能坐这儿吗？",
-            "可以，请坐吧。",
-            "我爱你。",
-            "我不能没有你。",
-            "男朋友。",
-            "女朋友。"};
-    private  String [] Pinyin={
-            "Nǐ zhēnměi.",
-            "Nǐ zhēn mírén.",
-            "Nǐ zhēn shuài.",
-            "Wǒ néng qǐng nǐ hē diǎn dōngxī ma?",
-            "Bù, xièxiè!",
-            "Wǒ néng zuò zhè'er ma?",
-            "Kěyǐ, qǐng zuò ba.",
-            "Wǒ ài nǐ.",
-            "Wǒ bùnéng méiyǒu nǐ.",
-            "Nán péngyǒu.",
-            "Nǚ péngyǒu."
+            "你的爱好是什么？",
+            "你最喜欢什么运动？",
+            "你喜欢跳舞吗？",
+            "我喜欢读书。",
+            "我不喜欢唱歌。",
+            "我喜欢钓鱼。",
+            "我喜欢游泳。",
+            "我喜欢打篮球。",
+            "我喜欢听音乐。",
+            "我在找厕所。",
+            "最近的巴士站在哪里？"
     };
+
+    private  String [] Pinyin={
+            "Nǐ de àihào shì shénme?",
+            "Nǐ zuì xǐhuān shénme yùndòng?",
+            "Nǐ xǐhuān tiàowǔ ma?",
+            "Wǒ xǐhuān dúshū.",
+            "Wǒ bù xǐhuān chànggē.",
+            "Wǒ xǐhuān diàoyú.",
+            "Wǒ xǐhuān yóuyǒng.",
+            "Wǒ xǐhuān dǎ lánqiú.",
+            "Wǒ xǐhuān tīng yīnyuè.",
+            "Wǒ zài zhǎo cèsuǒ.",
+            "Zuìjìn de bāshì zhàn zài nǎlǐ?"};
 
     TextView textViewPinyin,textViewCn;
     ImageView imageMic;
@@ -87,8 +89,8 @@ public class SurvChineseFlirtActivity extends AppCompatActivity implements TextT
 
         imageMic = (ImageView)findViewById(R.id.imageMic);
         imageMic.setBackgroundResource(R.drawable.animate);
+
         //  imageMic.setOnClickListener(this);
-        animatetionPc = (AnimationDrawable) imageMic.getBackground();
 
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView

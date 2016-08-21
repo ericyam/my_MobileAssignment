@@ -27,7 +27,7 @@ public class AboutActivity extends AppCompatActivity {
         setContentView(R.layout.activity_about);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#333333")));
 
         context=this;
 

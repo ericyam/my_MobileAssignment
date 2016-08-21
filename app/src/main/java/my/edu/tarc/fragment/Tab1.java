@@ -35,7 +35,6 @@ public class Tab1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View rootView = inflater.inflate(R.layout.tab_1, container, false);
 
-        gifView = (GifView) rootView.findViewById(R.id.gifview);
         next = (ImageButton)rootView.findViewById(R.id.next);
         previous = (ImageButton)rootView.findViewById(R.id.previous);
         textviewzhuci = (TextView)rootView.findViewById(R.id.textViewZhuCi);

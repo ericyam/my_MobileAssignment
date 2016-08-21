@@ -21,7 +21,7 @@ public class SurvChineseActivity extends AppCompatActivity {
 
     ArrayList prgmName;
     public static int [] prgmImages2={R.drawable.pushpin,R.drawable.love,R.drawable.meet,R.drawable.food,R.drawable.health,R.drawable.shopping,R.drawable.emergency,R.drawable.fun};
-    public static String [] prgmNameList2={"Basic","Flirting","Meeting and Greeting","Food","Health","Shopping","Emergency","Entertainment"};
+    public static String [] prgmNameList2={"Basic","Flirting","Direction","Food","Health","Shopping","Emergency","Entertainment"};
     public static String [] subList2={"","","","","","","",""};
 
     @Override
@@ -31,7 +31,7 @@ public class SurvChineseActivity extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#333333")));
 
         context=this;
 
@@ -42,36 +42,39 @@ public class SurvChineseActivity extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+
                 if(position == 0){
-                    intent = new Intent(SurvChineseActivity.this, AboutActivity.class);
+                  //  lv.setBackgroundColor(Color.parseColor("#d5d5d5"));
+                    intent = new Intent(SurvChineseActivity.this, SurvChineseBasicActivity.class);
                     startActivity(intent);
                 }
                 if(position == 1){
-                    intent = new Intent(SurvChineseActivity.this, AboutActivity.class);
+
+                    intent = new Intent(SurvChineseActivity.this, SurvChineseFlirtActivity.class);
                     startActivity(intent);
                 }
                 if(position == 2){
-                    intent = new Intent(SurvChineseActivity.this, AboutActivity.class);
+                    intent = new Intent(SurvChineseActivity.this, SurvChineseDirectionActivity.class);
                     startActivity(intent);
                 }
                 if(position == 3){
-                    intent = new Intent(SurvChineseActivity.this, AboutActivity.class);
+                    intent = new Intent(SurvChineseActivity.this, SurvChineseFoodActivity.class);
                     startActivity(intent);
                 }
                 if(position == 4){
-                    intent = new Intent(SurvChineseActivity.this, AboutActivity.class);
+                    intent = new Intent(SurvChineseActivity.this, SurvChineseHealthActivity.class);
                     startActivity(intent);
                 }
                 if(position == 5){
-                    intent = new Intent(SurvChineseActivity.this, AboutActivity.class);
+                    intent = new Intent(SurvChineseActivity.this, SurvChineseShoppingActivity.class);
                     startActivity(intent);
                 }
                 if(position == 6){
-                    intent = new Intent(SurvChineseActivity.this, AboutActivity.class);
+                    intent = new Intent(SurvChineseActivity.this, SurvChineseEntertainmentActivity.class);
                     startActivity(intent);
                 }
                 if(position == 7){
-                    intent = new Intent(SurvChineseActivity.this, AboutActivity.class);
+                    intent = new Intent(SurvChineseActivity.this, SurvChineseEntertainmentActivity.class);
                     startActivity(intent);
                 }
 

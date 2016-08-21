@@ -17,9 +17,7 @@
         </activity>
         <activity
             android:name=".BiHuaActivity"
-            android:label="笔画教学"
-            />
-
+            android:label="笔画教学" />
         <activity
             android:name=".LearningActivity"
             android:label="Learning Materials" />
@@ -32,9 +30,35 @@
         <activity
             android:name=".Pop"
             android:theme="@style/AppTheme.CustomTheme" />
+        <activity
+            android:name=".SurvChineseActivity"
+            android:label="Survival Chinese" />
+        <activity
+            android:name=".SurvChineseBasicActivity"
+            android:label="Basic " />
 
-        <activity android:name=".SurvChineseActivity"
-            android:label="Survival Chinese"/>
+        <activity android:name=".SurvChineseFlirtActivity"
+            android:label="Flirting " />
+
+        <activity android:name=".SurvChineseDirectionActivity"
+            android:label="Direction " />
+        <activity android:name=".SurvChineseFoodActivity"
+            android:label="Food " />
+        <activity android:name=".SurvChineseHealthActivity"
+            android:label="Health " />
+        <activity android:name=".SurvChineseEntertainmentActivity"
+            android:label="Entertainment " />
+        <activity android:name=".SurvChineseEmergencyActivity"
+            android:label="Emergency " />
+        <activity android:name=".SurvChineseShoppingActivity"
+            android:label="Shopping " />
+
+
+
+
+
+
+
 
     </application>
 

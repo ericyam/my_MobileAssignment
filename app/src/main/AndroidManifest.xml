@@ -4,16 +4,20 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/appimg"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".HomeActivity">
+        </activity>
+
+        <activity android:name=".SplashRunViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".BiHuaActivity"
@@ -36,30 +40,27 @@
         <activity
             android:name=".SurvChineseBasicActivity"
             android:label="Basic " />
-
-        <activity android:name=".SurvChineseFlirtActivity"
+        <activity
+            android:name=".SurvChineseFlirtActivity"
             android:label="Flirting " />
-
-        <activity android:name=".SurvChineseDirectionActivity"
+        <activity
+            android:name=".SurvChineseDirectionActivity"
             android:label="Direction " />
-        <activity android:name=".SurvChineseFoodActivity"
+        <activity
+            android:name=".SurvChineseFoodActivity"
             android:label="Food " />
-        <activity android:name=".SurvChineseHealthActivity"
+        <activity
+            android:name=".SurvChineseHealthActivity"
             android:label="Health " />
-        <activity android:name=".SurvChineseEntertainmentActivity"
+        <activity
+            android:name=".SurvChineseEntertainmentActivity"
             android:label="Entertainment " />
-        <activity android:name=".SurvChineseEmergencyActivity"
+        <activity
+            android:name=".SurvChineseEmergencyActivity"
             android:label="Emergency " />
-        <activity android:name=".SurvChineseShoppingActivity"
+        <activity
+            android:name=".SurvChineseShoppingActivity"
             android:label="Shopping " />
-
-
-
-
-
-
-
-
     </application>
 
 </manifest>

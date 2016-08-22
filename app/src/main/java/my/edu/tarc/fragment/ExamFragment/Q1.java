@@ -30,21 +30,31 @@ public class Q1  extends Fragment implements View.OnClickListener{
         View rooteView = inflater.inflate(R.layout.examq1, container, false);
         imgresult = (ImageView)rooteView.findViewById(R.id.imageView2);
         imgbtn = (ImageView)rooteView.findViewById(R.id.imageButton4);  //nv
-        imgbtn1 = (ImageView)rooteView.findViewById(R.id.imageButton5); //mao
+        imgbtn1 = (ImageView)rooteView.findViewById(R.id.imageButton5); //an
         imgbtn2 = (ImageView)rooteView.findViewById(R.id.imageButton3); //tian
         imgbtn3 = (ImageView)rooteView.findViewById(R.id.imageButton);  //nan
-        imgbtn4 = (ImageView)rooteView.findViewById(R.id.imageButton2); //gou
+        imgbtn4 = (ImageView)rooteView.findViewById(R.id.imageButton2); //bai
+        imgbtn5 = (ImageView)rooteView.findViewById(R.id.imageButton1); //cao
 
         if(result[0] == 1)
             imgresult.setImageResource(R.drawable.nv1);
+        else if(result[1] == 1)
+            imgresult.setImageResource(R.drawable.an);
         else if(result[2] == 1)
             imgresult.setImageResource(R.drawable.tian1);
         else if(result[3] == 1)
             imgresult.setImageResource(R.drawable.boy);
+        else if(result[4] == 1)
+            imgresult.setImageResource(R.drawable.bai);
+        else if(result[5] == 1)
+            imgresult.setImageResource(R.drawable.cao);
 
         imgbtn.setOnClickListener(this);
+        imgbtn1.setOnClickListener(this);
         imgbtn2.setOnClickListener(this);
         imgbtn3.setOnClickListener(this);
+        imgbtn4.setOnClickListener(this);
+        imgbtn5.setOnClickListener(this);
 
         return rooteView;
     }
@@ -61,7 +71,7 @@ public class Q1  extends Fragment implements View.OnClickListener{
                 result[5] = 0;
                 break;
 
-            case R.id.imageButton5 : imgresult.setImageResource(R.drawable.nv1);correctanswer = false;
+            case R.id.imageButton5 : imgresult.setImageResource(R.drawable.an);correctanswer = false;
                 result[0] = 0;
                 result[1] = 1;
                 result[2] = 0;
@@ -88,13 +98,22 @@ public class Q1  extends Fragment implements View.OnClickListener{
                 result[5] = 0;
                 break;
 
-            case R.id.imageButton2 : imgresult.setImageResource(R.drawable.nv1);correctanswer = false;
+            case R.id.imageButton2 : imgresult.setImageResource(R.drawable.bai);correctanswer = false;
                 result[0] = 0;
                 result[1] = 0;
                 result[2] = 0;
                 result[3] = 0;
                 result[4] = 1;
                 result[5] = 0;
+                break;
+
+            case R.id.imageButton1 : imgresult.setImageResource(R.drawable.cao);correctanswer = false;
+                result[0] = 0;
+                result[1] = 0;
+                result[2] = 0;
+                result[3] = 0;
+                result[4] = 0;
+                result[5] = 1;
                 break;
         }
         answered = 1;
@@ -113,4 +132,14 @@ public class Q1  extends Fragment implements View.OnClickListener{
         }
     }
 
+    public static void clearAnswer(){
+        result[0] = 0;
+        result[1] = 0;
+        result[2] = 0;
+        result[3] = 0;
+        result[4] = 0;
+        result[5] = 0;
+        answered = 0;
+        correctanswer = false;
+    }
 }

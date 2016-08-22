@@ -1,6 +1,7 @@
 package my.edu.tarc.fragment;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -22,6 +24,21 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import my.edu.tarc.fragment.ExamFragment.Q1;
+import my.edu.tarc.fragment.ExamFragment.Q10;
+import my.edu.tarc.fragment.ExamFragment.Q11;
+import my.edu.tarc.fragment.ExamFragment.Q12;
+import my.edu.tarc.fragment.ExamFragment.Q13;
+import my.edu.tarc.fragment.ExamFragment.Q14;
+import my.edu.tarc.fragment.ExamFragment.Q2;
+import my.edu.tarc.fragment.ExamFragment.Q3;
+import my.edu.tarc.fragment.ExamFragment.Q4;
+import my.edu.tarc.fragment.ExamFragment.Q5;
+import my.edu.tarc.fragment.ExamFragment.Q6;
+import my.edu.tarc.fragment.ExamFragment.Q7;
+import my.edu.tarc.fragment.ExamFragment.Q8;
+import my.edu.tarc.fragment.ExamFragment.Q9;
 
 //import com.github.lzyzsd.circleprogress.DonutProgress;
 
@@ -35,6 +52,10 @@ public class ResultActivity extends AppCompatActivity {
     private TextView textviewpercentage;
     private TextView textviewgrade;
     private ListView listviewresult;
+    private TextView textviewgreet;
+    String greet = "";
+    Button buttonclose;
+    Button buttonretake;
 
     private static String [] title={"Time Taken","Performance","Correct Count","History"};
     private static String [] resultexam={"","","",">   "};
@@ -55,15 +76,52 @@ public class ResultActivity extends AppCompatActivity {
         String newtime = String.format("%02dm%02ds   ",m,s);
 
         resultexam[0] = newtime;
-        resultexam[1] = "good";
-        resultexam[2] = String.valueOf(totalcorrect) + "/14";
+        resultexam[2] = String.valueOf(totalcorrect) + "/14   ";
+        percentage = (int)((float)totalcorrect/14 * 100);
 
+        if(percentage < 20){
+            resultexam[1] = "very bad   ";
+        }else if(percentage < 40){
+            resultexam[1] = "bad   ";
+        }else if(percentage < 60) {
+            resultexam[1] = "Normal   ";
+        }else if(percentage < 80) {
+            resultexam[1] = "Good   ";
+        }else{
+            resultexam[1] = "Excellent   ";
+        }
 
         //donutProgress = (DonutProgress) findViewById(R.id.donut_progress);
         progressBar = (ProgressBar) findViewById(R.id.progressBar2);
         textviewpercentage = (TextView)findViewById(R.id.textViewPercentage);
         textviewgrade = (TextView)findViewById(R.id.textViewGrade);
+        textviewgreet = (TextView)findViewById(R.id.textViewGreet);
         listviewresult = (ListView)findViewById(R.id.listViewResult);
+        Button buttonclose = (Button)findViewById(R.id.buttonClose);
+        Button buttonretake = (Button)findViewById(R.id.buttonRetake);
+
+        buttonclose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ExamActivity.mins = 1800000;
+                clearAll();
+                finish();
+                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonretake.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ExamActivity.mins = 1800000;
+                clearAll();
+                finish();
+                Intent intent = new Intent(getApplicationContext(), ExamActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         CustomAdapter2 adapter = new CustomAdapter2(this, title, resultexam);
         listviewresult.setAdapter(adapter);
@@ -74,7 +132,7 @@ public class ResultActivity extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                while(progressStatus < 100){
+                while(progressStatus < percentage){
                     progressStatus += 1;
                     handler.post(new Runnable() {
                         @Override
@@ -82,26 +140,62 @@ public class ResultActivity extends AppCompatActivity {
                             //donutProgress.setProgress(progressStatus);
                             progressBar.setProgress(progressStatus);
                             textviewpercentage.setText(String.valueOf(progressStatus) + "%");
-                            if(progressStatus<0)
+                            if(progressStatus<20) {
                                 textviewgrade.setText("F");
-                            else if(progressStatus<40)
+                                greet = "Study hard. Try next again.";
+                                textviewgreet.setText(greet);
+                            }
+                            else if(progressStatus<40) {
                                 textviewgrade.setText("D");
-                            else if(progressStatus<60)
+                                greet = "You have to make improvement.";
+                                textviewgreet.setText(greet);
+                            }
+                                else if(progressStatus<60) {
                                 textviewgrade.setText("C");
-                            else if(progressStatus<80)
+                                greet = "You are doing good.";
+                                textviewgreet.setText(greet);
+
+                            }
+                            else if(progressStatus<80) {
                                 textviewgrade.setText("B");
-                            else
+                                greet = "Well done. Further improvement.";
+                                textviewgreet.setText(greet);
+                            }
+                                else {
                                 textviewgrade.setText("A");
+                                greet = "Excellent. You did a great job";
+                                textviewgreet.setText(greet);
+                            }
+
                         }
+
                     });
+
                     try{
-                        Thread.sleep(30);
+                        Thread.sleep(50);
                     }catch (InterruptedException e){
                         e.printStackTrace();
                     }
                 }
             }
         }).start();
+    }
+
+    public void clearAll(){
+        Q1.clearAnswer();
+        Q2.clearAnswer();
+        Q3.clearAnswer();
+        Q4.clearAnswer();
+        Q5.clearAnswer();
+        Q6.clearAnswer();
+        Q7.clearAnswer();
+        Q8.clearAnswer();
+        Q9.clearAnswer();
+        Q10.clearAnswer();
+        Q11.clearAnswer();
+        Q12.clearAnswer();
+        Q13.clearAnswer();
+        Q14.clearAnswer();
     }
 
 }

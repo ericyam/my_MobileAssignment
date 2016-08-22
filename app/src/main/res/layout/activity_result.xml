@@ -113,7 +113,7 @@
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="300px"
         android:id="@+id/imageView9"
         android:layout_above="@+id/relativeLayout1"
         android:layout_centerHorizontal="true"

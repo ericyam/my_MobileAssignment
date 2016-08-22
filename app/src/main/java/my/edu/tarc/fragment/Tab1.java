@@ -55,7 +55,7 @@ public class Tab1 extends Fragment implements View.OnClickListener, TextToSpeech
         textviewdetail = (TextView)rootView.findViewById(R.id.textViewDetail);
         textviewpaging = (TextView)rootView.findViewById(R.id.textViewPaging);
         textviewpinbi = (TextView)rootView.findViewById(R.id.textViewPinBi);
-        stroke = (ImageView)rootView.findViewById(R.id.stroke);
+        //stroke = (ImageView)rootView.findViewById(R.id.stroke);
 
         userDataSource = new UserDataSource(getContext());
         userDataSource.open();
@@ -65,7 +65,7 @@ public class Tab1 extends Fragment implements View.OnClickListener, TextToSpeech
         textviewdetail.setText(values.get(position).getDetail());
         textviewpaging.setText( (position+1) +  "/20");
         textviewpinbi.setText(values.get(position).getPinbi());
-        stroke.setImageResource(values.get(position).getImage());
+        //stroke.setImageResource(values.get(position).getImage());
 
         sound.setOnClickListener(this);
 
@@ -75,7 +75,7 @@ public class Tab1 extends Fragment implements View.OnClickListener, TextToSpeech
                 if(position < values.size() - 1)
                     position++;
                 textviewpaging.setText( (position+1) +  "/20");
-                stroke.setImageResource(values.get(position).getImage());
+                //stroke.setImageResource(values.get(position).getImage());
                 textviewzhuci.setText(values.get(position).getZhuci());
                 textviewdetail.setText(values.get(position).getDetail());
                 textviewpinbi.setText(values.get(position).getPinbi());
@@ -88,7 +88,7 @@ public class Tab1 extends Fragment implements View.OnClickListener, TextToSpeech
                 if(position > 0)
                     position--;
                 textviewpaging.setText( (position+1) +  "/20");
-                stroke.setImageResource(values.get(position).getImage());
+                //stroke.setImageResource(values.get(position).getImage());
                 textviewzhuci.setText(values.get(position).getZhuci());
                 textviewdetail.setText(values.get(position).getDetail());
                 textviewpinbi.setText(values.get(position).getPinbi());

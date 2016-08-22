@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.11">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select &apos;Happiness&apos;"
+            android:id="@+id/textViewTest"
+            android:layout_weight="0.12"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rowCount="2"
+        android:columnCount="2"
+        android:layout_gravity="center_horizontal">
+
+        <RelativeLayout
+            android:id="@+id/contain"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorGray"
+            android:layout_marginRight="50px"
+            android:layout_marginTop="30px">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="120dp"
+                android:id="@+id/imageButton7"
+                android:src="@drawable/shappy"
+                android:background="@color/colorWhite"
+                android:layout_marginTop="10px"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kāi xīn\n  开心"
+                android:id="@+id/textView1"
+                android:layout_below="@+id/imageButton7"
+                android:layout_centerHorizontal="true"
+                android:background="@null"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/contain1"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorGray"
+            android:layout_marginTop="30px">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="120dp"
+                android:id="@+id/imageButton8"
+                android:src="@drawable/ssad"
+                android:background="@color/colorWhite"
+                android:layout_marginTop="10px"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shāng xīn\n     伤心"
+                android:id="@+id/textView2"
+                android:layout_below="@+id/imageButton8"
+                android:layout_centerHorizontal="true"
+                android:background="@null"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/contain2"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorGray"
+            android:layout_marginTop="30px">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="120dp"
+                android:id="@+id/imageButton9"
+                android:background="@color/colorWhite"
+                android:layout_marginTop="10px"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/sexcenllent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gǎn dòng\n     感动"
+                android:id="@+id/textView3"
+                android:layout_below="@+id/imageButton9"
+                android:layout_centerHorizontal="true"
+                android:background="@null"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/contain3"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorGray"
+            android:layout_marginTop="30px">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="120dp"
+                android:id="@+id/imageButton10"
+                android:src="@drawable/sangry"
+                android:background="@color/colorWhite"
+                android:layout_marginTop="10px"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shēng qì\n    生气"
+                android:id="@+id/textView4"
+                android:layout_below="@+id/imageButton10"
+                android:layout_centerHorizontal="true"
+                android:background="@null"/>
+
+        </RelativeLayout>
+
+    </GridLayout>
+
+
+</LinearLayout>

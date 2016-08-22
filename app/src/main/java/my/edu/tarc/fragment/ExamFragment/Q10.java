@@ -18,6 +18,8 @@ public class Q10 extends Fragment implements View.OnClickListener{
     RadioButton radiobuttonjump;
     RadioButton radiobuttonbadminton;
     static boolean[] ischeck = {false, false, false, false};
+    private static int answered = 0;
+    private static boolean correctanswer = false;
 
     public Q10(){
 
@@ -54,6 +56,7 @@ public class Q10 extends Fragment implements View.OnClickListener{
             ischeck[1] = false;
             ischeck[2] = false;
             ischeck[3] = false;
+            correctanswer = false;
         }
         else if(view.getId() == R.id.radioButtonJog) {
             radiobuttonswim.setChecked(false);
@@ -63,6 +66,7 @@ public class Q10 extends Fragment implements View.OnClickListener{
             ischeck[1] = true;
             ischeck[2] = false;
             ischeck[3] = false;
+            correctanswer = false;
         }else if(view.getId() == R.id.radioButtonJump){
             radiobuttonswim.setChecked(false);
             radiobuttonjog.setChecked(false);
@@ -71,6 +75,7 @@ public class Q10 extends Fragment implements View.OnClickListener{
             ischeck[1] = false;
             ischeck[2] = true;
             ischeck[3] = false;
+            correctanswer = true;
         }else if(view.getId() == R.id.radioButtonBadminton){
             radiobuttonswim.setChecked(false);
             radiobuttonjog.setChecked(false);
@@ -79,6 +84,30 @@ public class Q10 extends Fragment implements View.OnClickListener{
             ischeck[1] = false;
             ischeck[2] = false;
             ischeck[3] = true;
+            correctanswer = false;
         }
+        answered = 1;
+    }
+
+    public static char getAnswered(){
+        if(answered == 1){
+            if(correctanswer){
+                return 'Y';
+            }
+            else{
+                return 'N';
+            }
+        }else{
+            return 'B';
+        }
+    }
+
+    public static void clearAnswer(){
+        ischeck[0] = false;
+        ischeck[1] = false;
+        ischeck[2] = false;
+        ischeck[3] = false;
+        answered = 0;
+        correctanswer = false;
     }
 }

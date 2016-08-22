@@ -38,7 +38,7 @@
                 android:layout_width="100dp"
                 android:layout_height="120dp"
                 android:id="@+id/imageView4"
-                android:src="@drawable/women"
+                android:src="@drawable/cat"
                 android:background="@color/colorWhite"
                 android:layout_marginTop="10px"
                 android:layout_centerHorizontal="true" />
@@ -46,7 +46,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="xiao mao\n 小猫"
+                android:text="Xiǎo māo\n    小猫"
                 android:id="@+id/textView6"
                 android:layout_below="@+id/imageView4"
                 android:layout_centerHorizontal="true"
@@ -64,7 +64,7 @@
                 android:layout_width="100dp"
                 android:layout_height="120dp"
                 android:id="@+id/imageView5"
-                android:src="@drawable/women"
+                android:src="@drawable/dog"
                 android:background="@color/colorWhite"
                 android:layout_marginTop="10px"
                 android:layout_centerHorizontal="true" />
@@ -72,7 +72,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="xiao gou\n 小狗"
+                android:text="Xiǎo gǒu\n    小狗"
                 android:id="@+id/textView7"
                 android:layout_below="@+id/imageView5"
                 android:layout_centerHorizontal="true"
@@ -90,7 +90,7 @@
                 android:layout_width="100dp"
                 android:layout_height="120dp"
                 android:id="@+id/imageView6"
-                android:src="@drawable/women"
+                android:src="@drawable/tiger"
                 android:background="@color/colorWhite"
                 android:layout_marginTop="10px"
                 android:layout_centerHorizontal="true" />
@@ -98,7 +98,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="lao hu\n 老虎"
+                android:text="Lǎo hǔ\n  老虎"
                 android:id="@+id/textView8"
                 android:layout_below="@+id/imageView6"
                 android:layout_centerHorizontal="true"
@@ -116,7 +116,7 @@
                 android:layout_width="100dp"
                 android:layout_height="120dp"
                 android:id="@+id/imageView7"
-                android:src="@drawable/women"
+                android:src="@drawable/elephant"
                 android:background="@color/colorWhite"
                 android:layout_marginTop="10px"
                 android:layout_centerHorizontal="true" />
@@ -124,7 +124,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="da xiang\n 大象"
+                android:text="Dà xiàng\n    大象"
                 android:id="@+id/textView9"
                 android:layout_below="@+id/imageView7"
                 android:layout_centerHorizontal="true"

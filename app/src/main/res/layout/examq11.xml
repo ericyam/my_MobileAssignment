@@ -7,7 +7,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="  西瓜   是    水果 。\n Xīguā shì shuǐguǒ"
+        android:text="  我        生病了     是    因为  我    吃错      东西 。\n Wǒ shēngbìngle shì yīnwèi wǒ chī cuò dōngxī"
         android:id="@+id/textViewMessage"
         android:layout_weight="0.00"
         android:layout_centerVertical="true" />
@@ -23,7 +23,7 @@
             android:id="@+id/radioButtonPear"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:text=" The pear is a fruit."
+            android:text=" I'm sick because I ate somethings wrong."
 
             android:gravity="left|center"
             android:layout_marginTop="100px"
@@ -35,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:gravity="left|center"
-            android:text=" The apple is a fruit."
+            android:text=" I'm sick because I ate somethings good."
             android:layout_marginTop="40px"
             android:buttonTint="@color/colorBlack"/>
 
@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:gravity="left|center"
-            android:text=" The watermelon is a fruit."
+            android:text=" I'm sick because I ate somethings sweet."
             android:layout_marginTop="40px"
             android:buttonTint="@color/colorBlack"/>
 
@@ -53,7 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:gravity="left|center"
-            android:text=" The peach is a fruit."
+            android:text=" I'm sick because I ate somethings bitter."
             android:layout_marginTop="40px"
             android:buttonTint="@color/colorBlack"/>
 

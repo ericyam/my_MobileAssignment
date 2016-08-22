@@ -21,6 +21,8 @@ public class Q3 extends Fragment{
 
     RadioButton rpear, rapple, rmelon ,rpeach;
     static boolean[] ischeck = {false, false, false, false};
+    private static int answered = 0;
+    private static boolean correctanswer = false;
 
     public Q3(){
 
@@ -47,6 +49,8 @@ public class Q3 extends Fragment{
                 ischeck[1] = false;
                 ischeck[2] = false;
                 ischeck[3] = false;
+                answered = 1;
+                correctanswer = false;
             }
         });
 
@@ -57,6 +61,8 @@ public class Q3 extends Fragment{
                 ischeck[1] = true;
                 ischeck[2] = false;
                 ischeck[3] = false;
+                answered = 1;
+                correctanswer = false;
             }
         });
 
@@ -67,6 +73,8 @@ public class Q3 extends Fragment{
                 ischeck[1] = false;
                 ischeck[2] = true;
                 ischeck[3] = false;
+                answered = 1;
+                correctanswer = true;
             }
         });
 
@@ -77,29 +85,34 @@ public class Q3 extends Fragment{
                 ischeck[1] = false;
                 ischeck[2] = false;
                 ischeck[3] = true;
+                answered = 1;
+                correctanswer = false;
             }
         });
 
         return rooteView;
     }
 
-/*
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        Toast.makeText(getActivity(), "fucker", Toast.LENGTH_LONG).show();
-
-        super.onSaveInstanceState(outState);
-        outState.putBoolean("Option1", rpear.isChecked());
-        outState.putBoolean("Option2", rapple.isChecked());
-        outState.putBoolean("Option3", rmelon.isChecked());
-        outState.putBoolean("Option4", rpeach.isChecked());
+    public static char getAnswered(){
+        if(answered == 1){
+            if(correctanswer){
+                return 'Y';
+            }
+            else{
+                return 'N';
+            }
+        }else{
+            return 'B';
+        }
     }
 
-    @Override
-    public void onViewStateRestored(Bundle savedInstanceState) {
-        Toast.makeText(getActivity(), "here", Toast.LENGTH_LONG).show();
-        super.onViewStateRestored(savedInstanceState);
-
-    }*/
+    public static void clearAnswer(){
+        ischeck[0] = false;
+        ischeck[1] = false;
+        ischeck[2] = false;
+        ischeck[3] = false;
+        answered = 0;
+        correctanswer = false;
+    }
 
 }

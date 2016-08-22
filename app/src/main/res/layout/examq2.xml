@@ -38,7 +38,7 @@
                 android:layout_width="100dp"
                 android:layout_height="120dp"
                 android:id="@+id/imageButton7"
-                android:src="@drawable/women"
+                android:src="@drawable/fman"
                 android:background="@color/colorWhite"
                 android:layout_marginTop="10px"
                 android:layout_centerHorizontal="true" />
@@ -46,7 +46,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="nv ren\n 女人"
+                android:text="Nán rén\n   男人"
                 android:id="@+id/textView1"
                 android:layout_below="@+id/imageButton7"
                 android:layout_centerHorizontal="true"
@@ -65,7 +65,7 @@
                 android:layout_width="100dp"
                 android:layout_height="120dp"
                 android:id="@+id/imageButton8"
-                android:src="@drawable/women"
+                android:src="@drawable/fwomen"
                 android:background="@color/colorWhite"
                 android:layout_marginTop="10px"
                 android:layout_centerHorizontal="true" />
@@ -73,7 +73,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="nv ren\n 女人"
+                android:text="Nǚ rén\n  女人"
                 android:id="@+id/textView2"
                 android:layout_below="@+id/imageButton8"
                 android:layout_centerHorizontal="true"
@@ -92,15 +92,15 @@
                 android:layout_width="100dp"
                 android:layout_height="120dp"
                 android:id="@+id/imageButton9"
-                android:src="@drawable/women"
                 android:background="@color/colorWhite"
                 android:layout_marginTop="10px"
-                android:layout_centerHorizontal="true" />
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/fboy" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="nv ren\n 女人"
+                android:text="Nán hái\n   男孩"
                 android:id="@+id/textView3"
                 android:layout_below="@+id/imageButton9"
                 android:layout_centerHorizontal="true"
@@ -119,7 +119,7 @@
                 android:layout_width="100dp"
                 android:layout_height="120dp"
                 android:id="@+id/imageButton10"
-                android:src="@drawable/women"
+                android:src="@drawable/fgirl"
                 android:background="@color/colorWhite"
                 android:layout_marginTop="10px"
                 android:layout_centerHorizontal="true" />
@@ -127,7 +127,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="nv ren\n 女人"
+                android:text="Nǚ hái\n 女孩"
                 android:id="@+id/textView4"
                 android:layout_below="@+id/imageButton10"
                 android:layout_centerHorizontal="true"

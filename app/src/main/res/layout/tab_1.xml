@@ -2,19 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
 
-
-
-    <ImageView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:id="@+id/stroke"
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/textViewDetail"
-        android:layout_alignStart="@+id/textViewDetail"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="15dp" />
 
     <TableLayout
         android:layout_width="wrap_content"
@@ -80,8 +70,8 @@
         android:lineSpacingMultiplier="1.2"
 
         android:id="@+id/textViewDetail"
-        android:layout_marginTop="15dp"
-        android:layout_below="@+id/stroke"
+        android:layout_marginTop="67dp"
+        android:layout_below="@+id/tableLayout"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -111,41 +101,44 @@
         android:orientation="horizontal"
         android:layout_alignTop="@+id/toolbar_bottom"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:background="@color/colorWhite">
 
         <ImageButton
             android:id="@+id/previous"
-            android:layout_width="230px"
-            android:layout_height="match_parent"
+            android:layout_width="100px"
+            android:layout_height="100px"
             android:clickable="true"
             android:scaleType="fitXY"
-            android:src="@drawable/next"
+            android:src="@drawable/previous"
             android:layout_alignParentLeft="true"
             android:background="@null"
-            />
-
-        <ImageButton
-            android:id="@+id/play"
-            android:layout_width="230px"
-            android:layout_height="match_parent"
-            android:clickable="true"
-            android:scaleType="fitXY"
-            android:src="@drawable/next"
-            android:layout_centerInParent="true"
-            android:background="@null"
-            />
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="50px"
+            android:layout_marginBottom="20px"/>
 
         <ImageButton
             android:id="@+id/next"
-            android:layout_width="230px"
-            android:layout_height="match_parent"
+            android:layout_width="100px"
+            android:layout_height="100px"
             android:clickable="true"
             android:scaleType="fitXY"
             android:src="@drawable/next"
             android:layout_alignParentRight="true"
             android:background="@null"
-            />
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="50px"
+            android:layout_marginBottom="20px"/>
 
     </RelativeLayout>
+
+    <my.edu.tarc.fragment.CustomGifView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/view"
+        android:layout_alignTop="@+id/tableLayout"
+        android:layout_alignRight="@+id/textViewPaging"
+        android:layout_alignEnd="@+id/textViewPaging"
+        android:layout_marginRight="-50px"/>
 
 </RelativeLayout>

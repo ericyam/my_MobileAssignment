@@ -26,6 +26,9 @@ import java.util.concurrent.TimeUnit;
 import my.edu.tarc.fragment.ExamFragment.Q1;
 import my.edu.tarc.fragment.ExamFragment.Q10;
 import my.edu.tarc.fragment.ExamFragment.Q11;
+import my.edu.tarc.fragment.ExamFragment.Q12;
+import my.edu.tarc.fragment.ExamFragment.Q13;
+import my.edu.tarc.fragment.ExamFragment.Q14;
 import my.edu.tarc.fragment.ExamFragment.Q2;
 import my.edu.tarc.fragment.ExamFragment.Q3;
 import my.edu.tarc.fragment.ExamFragment.Q4;
@@ -45,9 +48,11 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
     Fragment fragment;
     FragmentTransaction fragmentTransaction;
     int fragpage = 1;
-    char a1, a2;
+    char a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14;
     static long mins = 1800000;
     int totalcorrect = 0;
+    int totalanswered = 0;
+    boolean[] clicked = {false, false, false, false, false, false, false, false, false, false, false, false, false, false};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +60,7 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_exam);
 
         fragment = new Q1();
+        clicked[0] = true;
         fragmentTransaction = getSupportFragmentManager().beginTransaction().add(R.id.container, fragment);
         fragmentTransaction.commit();
 
@@ -79,41 +85,35 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
         btn14 = (Button)findViewById(R.id.btn14);
 
         buttonnext = (Button)findViewById(R.id.buttonNext);
-        btn1.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+        btn1.setBackgroundColor(getResources().getColor(R.color.colorBlue));
 
 
         buttonnext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                switch(fragpage){
-                    case 1 : fragment = new Q2();break;
-                    case 2 : fragment = new Q3();break;
-                    case 3 : fragment = new Q4();break;
-                    case 4 : fragment = new Q5();break;
-                    case 5 : fragment = new Q6();break;
-                    case 6 : fragment = new Q7();break;
-                    case 7 : fragment = new Q8();break;
-                    case 8 : fragment = new Q9();break;
-                    case 9 : fragment = new Q10();break;
-                    case 10 : fragment = new Q11();break;
+                    switch(fragpage){
+                    case 1 : fragment = new Q2();clicked[1] = true; break;
+                    case 2 : fragment = new Q3();clicked[2] = true; break;
+                    case 3 : fragment = new Q4();clicked[3] = true; break;
+                    case 4 : fragment = new Q5();clicked[4] = true; break;
+                    case 5 : fragment = new Q6();clicked[5] = true; break;
+                    case 6 : fragment = new Q7();clicked[6] = true; break;
+                    case 7 : fragment = new Q8();clicked[7] = true; break;
+                    case 8 : fragment = new Q9();clicked[8] = true; break;
+                    case 9 : fragment = new Q10();clicked[9] = true; break;
+                    case 10 : fragment = new Q11();clicked[10] = true; break;
+                    case 11 : fragment = new Q12();clicked[11] = true; break;
+                    case 12 : fragment = new Q13();clicked[12] = true; break;
+                    case 13 : fragment = new Q14();clicked[13] = true; break;
                 }
-                fragpage = fragpage + 1;
-                setbtnbackground();
+                if(fragpage < 14)
+                    fragpage = fragpage + 1;
+
+                setsmallbtnBackground();
                 fragmentTransaction = getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment);
                 fragmentTransaction.commit();
+                }
 
-                a1 = Q1.getAnswered();
-                if (a1 == 'Y' || a1 == 'N') {
-                    btn1.setBackgroundColor(getResources().getColor(R.color.colorBlack));
-                    if(a1 == 'Y')
-                        totalcorrect =  totalcorrect + 1;
-                }else
-                    btn1.setBackgroundColor(getResources().getColor(R.color.colorOrange));
-
-
-
-            }
         });
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
@@ -126,12 +126,134 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
         btn9.setOnClickListener(this);
         btn10.setOnClickListener(this);
         btn11.setOnClickListener(this);
+        btn12.setOnClickListener(this);
+        btn13.setOnClickListener(this);
+        btn14.setOnClickListener(this);
 
         textViewTime = (TextView)findViewById(R.id.textViewTime);
         textViewTime.setText("00:30:00");
         CounterClass timer= new CounterClass(mins,1000);
         timer.start();
         //timer.cancel();
+
+    }
+
+    public void setsmallbtnBackground(){
+        a1 = Q1.getAnswered();
+        a2 = Q2.getAnswered();
+        a3 = Q3.getAnswered();
+        a4 = Q4.getAnswered();
+        a5 = Q5.getAnswered();
+        a6 = Q6.getAnswered();
+        a7 = Q7.getAnswered();
+        a8 = Q8.getAnswered();
+        a9 = Q9.getAnswered();
+        a10 = Q10.getAnswered();
+        a11 = Q11.getAnswered();
+        a12 = Q12.getAnswered();
+        a13 = Q13.getAnswered();
+        a14 = Q14.getAnswered();
+
+        setbtnbackground();
+        if(clicked[0] && fragpage != 1){
+            if (a1 == 'Y' || a1 == 'N') {
+                btn1.setBackgroundColor(getResources().getColor(R.color.colorGreen));
+            } else {
+                btn1.setBackgroundColor(getResources().getColor(R.color.colorGray));
+            }
+        }
+        if(clicked[1] && fragpage != 2){
+            if (a2 == 'Y' || a2 == 'N') {
+                btn2.setBackgroundColor(getResources().getColor(R.color.colorGreen));
+            } else {
+                btn2.setBackgroundColor(getResources().getColor(R.color.colorGray));
+            }
+
+        }
+        if(clicked[2] && fragpage != 3) {
+            if (a3 == 'Y' || a3 == 'N') {
+                btn3.setBackgroundColor(getResources().getColor(R.color.colorGreen));
+            } else {
+                btn3.setBackgroundColor(getResources().getColor(R.color.colorGray));
+            }
+        }
+        if(clicked[3] && fragpage != 4) {
+            if (a4 == 'Y' || a4 == 'N') {
+                btn4.setBackgroundColor(getResources().getColor(R.color.colorGreen));
+            } else {
+                btn4.setBackgroundColor(getResources().getColor(R.color.colorGray));
+            }
+        }
+        if(clicked[4] && fragpage != 5) {
+            if (a5 == 'Y' || a5 == 'N') {
+                btn5.setBackgroundColor(getResources().getColor(R.color.colorGreen));
+            } else {
+                btn5.setBackgroundColor(getResources().getColor(R.color.colorGray));
+            }
+        }
+        if(clicked[5] && fragpage != 6) {
+            if (a6 == 'Y' || a6 == 'N') {
+                btn6.setBackgroundColor(getResources().getColor(R.color.colorGreen));
+            } else {
+                btn6.setBackgroundColor(getResources().getColor(R.color.colorGray));
+            }
+        }
+        if(clicked[6] && fragpage != 7) {
+            if (a7 == 'Y' || a7 == 'N') {
+                btn7.setBackgroundColor(getResources().getColor(R.color.colorGreen));
+            } else {
+                btn7.setBackgroundColor(getResources().getColor(R.color.colorGray));
+            }
+        }
+        if(clicked[7] && fragpage != 8) {
+            if (a8 == 'Y' || a8 == 'N') {
+                btn8.setBackgroundColor(getResources().getColor(R.color.colorGreen));
+            } else {
+                btn8.setBackgroundColor(getResources().getColor(R.color.colorGray));
+            }
+        }
+        if(clicked[8] && fragpage != 9) {
+            if (a9 == 'Y' || a9 == 'N') {
+                btn9.setBackgroundColor(getResources().getColor(R.color.colorGreen));
+            } else {
+                btn9.setBackgroundColor(getResources().getColor(R.color.colorGray));
+            }
+        }
+        if(clicked[9] && fragpage != 10) {
+            if (a10 == 'Y' || a10 == 'N') {
+                btn10.setBackgroundColor(getResources().getColor(R.color.colorGreen));
+            } else {
+                btn10.setBackgroundColor(getResources().getColor(R.color.colorGray));
+            }
+        }
+        if(clicked[10] && fragpage != 11) {
+            if (a11 == 'Y' || a11 == 'N') {
+                btn11.setBackgroundColor(getResources().getColor(R.color.colorGreen));
+            } else {
+                btn11.setBackgroundColor(getResources().getColor(R.color.colorGray));
+            }
+        }
+        if(clicked[11] && fragpage != 12) {
+            if (a12 == 'Y' || a12 == 'N') {
+                btn12.setBackgroundColor(getResources().getColor(R.color.colorGreen));
+            } else {
+                btn12.setBackgroundColor(getResources().getColor(R.color.colorGray));
+            }
+        }
+        if(clicked[12] && fragpage != 13) {
+            if (a13 == 'Y' || a13 == 'N') {
+                btn13.setBackgroundColor(getResources().getColor(R.color.colorGreen));
+            } else {
+                btn13.setBackgroundColor(getResources().getColor(R.color.colorGray));
+            }
+        }
+        if(clicked[13] && fragpage != 14) {
+            if (a14 == 'Y' || a14 == 'N') {
+                btn14.setBackgroundColor(getResources().getColor(R.color.colorGreen));
+            } else {
+                btn14.setBackgroundColor(getResources().getColor(R.color.colorGray));
+            }
+        }
 
     }
 
@@ -147,17 +269,106 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.action_done){
-            Intent intent = new Intent(this, ResultActivity.class);
-            intent.putExtra("time", textViewTime.getText().toString());
-            intent.putExtra("Totalcorrect", totalcorrect);
-            startActivity(intent);
+            if(a1 == 'Y' || a1 == 'N') {
+                totalanswered += 1;
+                if (a1 == 'Y') {
+                    totalcorrect = totalcorrect + 1;
+                }
+            }
+            if(a2 == 'Y' || a2 == 'N') {
+                totalanswered += 1;
+                if (a2 == 'Y') {
+                    totalcorrect = totalcorrect + 1;
+                }
+            }
+            if(a3 == 'Y' || a3 == 'N') {
+                totalanswered += 1;
+                if (a3 == 'Y') {
+                    totalcorrect = totalcorrect + 1;
+                }
+            }
+            if(a4 == 'Y' || a4 == 'N') {
+                totalanswered += 1;
+                if (a4 == 'Y') {
+                    totalcorrect = totalcorrect + 1;
+                }
+            }
+            if(a5 == 'Y' || a5 == 'N') {
+                totalanswered += 1;
+                if (a5 == 'Y') {
+                    totalcorrect = totalcorrect + 1;
+                }
+            }
+            if(a6 == 'Y' || a6 == 'N') {
+                totalanswered += 1;
+                if (a6 == 'Y') {
+                    totalcorrect = totalcorrect + 1;
+                }
+            }
+            if(a7 == 'Y' || a7 == 'N') {
+                totalanswered += 1;
+                if (a7 == 'Y') {
+                    totalcorrect = totalcorrect + 1;
+                }
+            }
+            if(a8 == 'Y' || a8 == 'N') {
+                totalanswered += 1;
+                if (a8 == 'Y') {
+                    totalcorrect = totalcorrect + 1;
+                }
+            }
+            if(a9 == 'Y' || a9 == 'N') {
+                totalanswered += 1;
+                if (a9 == 'Y') {
+                    totalcorrect = totalcorrect + 1;
+                }
+            }
+            if(a10 == 'Y' || a10 == 'N') {
+                totalanswered += 1;
+                if (a10 == 'Y') {
+                    totalcorrect = totalcorrect + 1;
+                }
+            }
+            if(a11 == 'Y' || a11 == 'N') {
+                totalanswered += 1;
+                if (a11 == 'Y') {
+                    totalcorrect = totalcorrect + 1;
+                }
+            }
+            if(a12 == 'Y' || a12 == 'N') {
+                totalanswered += 1;
+                if (a12 == 'Y') {
+                    totalcorrect = totalcorrect + 1;
+                }
+            }
+            if(a13 == 'Y' || a13 == 'N') {
+                totalanswered += 1;
+                if (a13 == 'Y') {
+                    totalcorrect = totalcorrect + 1;
+                }
+            }
+            if(a14 == 'Y' || a14 == 'N') {
+                totalanswered += 1;
+                if (a14 == 'Y') {
+                    totalcorrect = totalcorrect + 1;
+                }
+            }
+            //Toast.makeText(getApplicationContext(), totalanswered + " ", Toast.LENGTH_LONG).show();
+            if(totalanswered == 14) {
+                Intent intent = new Intent(this, ResultActivity.class);
+                intent.putExtra("time", textViewTime.getText().toString());
+                intent.putExtra("totalcorrect", totalcorrect);
+                startActivity(intent);
+            }else{
+                Toast.makeText(getApplicationContext(), "Please answer all the question", Toast.LENGTH_LONG).show();
+            }
         }
         return true;
     }
 
     public void setbtnbackground(){
         if(fragpage == 1){
-            btn1.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+            btn1.setBackgroundColor(getResources().getColor(R.color.colorBlue));
             btn2.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn3.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn4.setBackground(getResources().getDrawable(R.drawable.border_style));
@@ -173,7 +384,7 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
             btn14.setBackground(getResources().getDrawable(R.drawable.border_style));
         }else if(fragpage == 2){
             btn1.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn2.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+            btn2.setBackgroundColor(getResources().getColor(R.color.colorBlue));
             btn3.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn4.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn5.setBackground(getResources().getDrawable(R.drawable.border_style));
@@ -189,7 +400,7 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
         }else if(fragpage == 3){
             btn1.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn2.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn3.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+            btn3.setBackgroundColor(getResources().getColor(R.color.colorBlue));
             btn4.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn5.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn6.setBackground(getResources().getDrawable(R.drawable.border_style));
@@ -205,7 +416,7 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
             btn1.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn2.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn3.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn4.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+            btn4.setBackgroundColor(getResources().getColor(R.color.colorBlue));
             btn5.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn6.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn7.setBackground(getResources().getDrawable(R.drawable.border_style));
@@ -221,7 +432,7 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
             btn2.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn3.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn4.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn5.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+            btn5.setBackgroundColor(getResources().getColor(R.color.colorBlue));
             btn6.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn7.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn8.setBackground(getResources().getDrawable(R.drawable.border_style));
@@ -237,7 +448,7 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
             btn3.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn4.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn5.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn6.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+            btn6.setBackgroundColor(getResources().getColor(R.color.colorBlue));
             btn7.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn8.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn9.setBackground(getResources().getDrawable(R.drawable.border_style));
@@ -253,7 +464,7 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
             btn4.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn5.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn6.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn7.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+            btn7.setBackgroundColor(getResources().getColor(R.color.colorBlue));
             btn8.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn9.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn10.setBackground(getResources().getDrawable(R.drawable.border_style));
@@ -269,7 +480,7 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
             btn5.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn6.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn7.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn8.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+            btn8.setBackgroundColor(getResources().getColor(R.color.colorBlue));
             btn9.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn10.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn11.setBackground(getResources().getDrawable(R.drawable.border_style));
@@ -285,7 +496,7 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
             btn6.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn7.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn8.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn9.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+            btn9.setBackgroundColor(getResources().getColor(R.color.colorBlue));
             btn10.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn11.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn12.setBackground(getResources().getDrawable(R.drawable.border_style));
@@ -301,7 +512,7 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
             btn7.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn8.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn9.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn10.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+            btn10.setBackgroundColor(getResources().getColor(R.color.colorBlue));
             btn11.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn12.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn13.setBackground(getResources().getDrawable(R.drawable.border_style));
@@ -317,7 +528,7 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
             btn8.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn9.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn10.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn11.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+            btn11.setBackgroundColor(getResources().getColor(R.color.colorBlue));
             btn12.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn13.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn14.setBackground(getResources().getDrawable(R.drawable.border_style));
@@ -333,7 +544,7 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
             btn9.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn10.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn11.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn12.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+            btn12.setBackgroundColor(getResources().getColor(R.color.colorBlue));
             btn13.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn14.setBackground(getResources().getDrawable(R.drawable.border_style));
         }else if(fragpage == 13){
@@ -349,7 +560,7 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
             btn10.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn11.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn12.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn13.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+            btn13.setBackgroundColor(getResources().getColor(R.color.colorBlue));
             btn14.setBackground(getResources().getDrawable(R.drawable.border_style));
         }else if(fragpage == 14){
             btn1.setBackground(getResources().getDrawable(R.drawable.border_style));
@@ -365,26 +576,29 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
             btn11.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn12.setBackground(getResources().getDrawable(R.drawable.border_style));
             btn13.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn14.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+            btn14.setBackgroundColor(getResources().getColor(R.color.colorBlue));
         }
     }
 
     @Override
     public void onClick(View view) {
         switch(view.getId()){
-            case R.id.btn1 : fragment = new Q1(); fragpage = 1;break;
-            case R.id.btn2 : fragment = new Q2(); fragpage = 2;break;
-            case R.id.btn3 : fragment = new Q3(); fragpage = 3;break;
-            case R.id.btn4 : fragment = new Q4(); fragpage = 4;break;
-            case R.id.btn5 : fragment = new Q5(); fragpage = 5;break;
-            case R.id.btn6 : fragment = new Q6(); fragpage = 6;break;
-            case R.id.btn7 : fragment = new Q7(); fragpage = 7;break;
-            case R.id.btn8 : fragment = new Q8(); fragpage = 8;break;
-            case R.id.btn9 : fragment = new Q9(); fragpage = 9;break;
-            case R.id.btn10 : fragment = new Q10(); fragpage = 10;break;
-            case R.id.btn11 : fragment = new Q11(); fragpage = 11;break;
+            case R.id.btn1 : fragment = new Q1(); fragpage = 1;clicked[0] = true;break;
+            case R.id.btn2 : fragment = new Q2(); fragpage = 2;clicked[1] = true;break;
+            case R.id.btn3 : fragment = new Q3(); fragpage = 3;clicked[2] = true;break;
+            case R.id.btn4 : fragment = new Q4(); fragpage = 4;clicked[3] = true;break;
+            case R.id.btn5 : fragment = new Q5(); fragpage = 5;clicked[4] = true;break;
+            case R.id.btn6 : fragment = new Q6(); fragpage = 6;clicked[5] = true;break;
+            case R.id.btn7 : fragment = new Q7(); fragpage = 7;clicked[6] = true;break;
+            case R.id.btn8 : fragment = new Q8(); fragpage = 8;clicked[7] = true;break;
+            case R.id.btn9 : fragment = new Q9(); fragpage = 9;clicked[8] = true;break;
+            case R.id.btn10 : fragment = new Q10(); fragpage = 10;clicked[9] = true;break;
+            case R.id.btn11 : fragment = new Q11(); fragpage = 11;clicked[10] = true;break;
+            case R.id.btn12 : fragment = new Q12(); fragpage = 12;clicked[11] = true;break;
+            case R.id.btn13 : fragment = new Q13(); fragpage = 13;clicked[12] = true;break;
+            case R.id.btn14 : fragment = new Q14(); fragpage = 14;clicked[13] = true;break;
         }
-        setbtnbackground();
+        setsmallbtnBackground();
         fragmentTransaction = getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment);
         fragmentTransaction.commit();
     }

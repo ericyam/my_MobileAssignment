@@ -16,6 +16,8 @@ public class Q8 extends Fragment{
 
     RadioButton rpear, rapple, rmelon ,rpeach;
     static boolean[] ischeck = {false, false, false, false};
+    private static int answered = 0;
+    private static boolean correctanswer = false;
 
     public Q8(){
 
@@ -42,6 +44,9 @@ public class Q8 extends Fragment{
                 ischeck[1] = false;
                 ischeck[2] = false;
                 ischeck[3] = false;
+                answered = 1;
+                correctanswer = false;
+
             }
         });
 
@@ -52,6 +57,8 @@ public class Q8 extends Fragment{
                 ischeck[1] = true;
                 ischeck[2] = false;
                 ischeck[3] = false;
+                answered = 1;
+                correctanswer = false;
             }
         });
 
@@ -62,6 +69,8 @@ public class Q8 extends Fragment{
                 ischeck[1] = false;
                 ischeck[2] = true;
                 ischeck[3] = false;
+                answered = 1;
+                correctanswer = false;
             }
         });
 
@@ -72,10 +81,34 @@ public class Q8 extends Fragment{
                 ischeck[1] = false;
                 ischeck[2] = false;
                 ischeck[3] = true;
+                answered = 1;
+                correctanswer = true;
             }
         });
 
 
         return rooteView;
+    }
+
+    public static char getAnswered(){
+        if(answered == 1){
+            if(correctanswer){
+                return 'Y';
+            }
+            else{
+                return 'N';
+            }
+        }else{
+            return 'B';
+        }
+    }
+
+    public static void clearAnswer(){
+        ischeck[0] = false;
+        ischeck[1] = false;
+        ischeck[2] = false;
+        ischeck[3] = false;
+        answered = 0;
+        correctanswer = false;
     }
 }

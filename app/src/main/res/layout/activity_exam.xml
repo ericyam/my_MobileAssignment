@@ -213,7 +213,9 @@
         android:layout_gravity="bottom"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="15dp"/>
+        android:layout_marginBottom="15dp"
+        android:background="@color/colorBlue"
+        android:textColor="@color/colorWhite"/>
 
     <FrameLayout
         android:layout_width="match_parent"

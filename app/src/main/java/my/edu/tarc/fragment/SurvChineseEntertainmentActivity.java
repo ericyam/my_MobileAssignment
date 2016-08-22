@@ -1,6 +1,6 @@
 package my.edu.tarc.fragment;
 
-/*import android.content.Intent;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.ColorDrawable;
@@ -215,4 +215,4 @@ public class SurvChineseEntertainmentActivity extends AppCompatActivity implemen
 
 
 
-}*/
+}

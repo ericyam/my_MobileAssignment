@@ -21,26 +21,26 @@ public class CustomAdapter extends BaseAdapter{
 
 
 
-    public CustomAdapter(HomeActivity homeActivity, String[] prgmNameList, int[] prgmImages, String[] subList) {
-        // TODO Auto-generated constructor stub
-        result=prgmNameList;
-        context=homeActivity;
-        imageId=prgmImages;
-        result2=subList;
-        inflater = ( LayoutInflater )context.
-                getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-    }
-/*
-    public CustomAdapter(SurvChineseActivity survChineseActivity, String[] prgmNameList, int[] prgmImages, String[] subList) {
-        // TODO Auto-generated constructor stub
-        result=prgmNameList;
-        context=survChineseActivity;
-        imageId=prgmImages;
-        result2=subList;
-        inflater = ( LayoutInflater )context.
-                getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-    }
-*/
+        public CustomAdapter(HomeActivity homeActivity, String[] prgmNameList, int[] prgmImages, String[] subList) {
+            // TODO Auto-generated constructor stub
+            result=prgmNameList;
+            context=homeActivity;
+            imageId=prgmImages;
+            result2=subList;
+            inflater = ( LayoutInflater )context.
+                    getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        }
+
+        public CustomAdapter(SurvChineseActivity survChineseActivity, String[] prgmNameList, int[] prgmImages, String[] subList) {
+            // TODO Auto-generated constructor stub
+            result=prgmNameList;
+            context=survChineseActivity;
+            imageId=prgmImages;
+            result2=subList;
+            inflater = ( LayoutInflater )context.
+                    getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        }
+
     @Override
     public int getCount() {
         // TODO Auto-generated method stub

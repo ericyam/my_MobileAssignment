@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.11" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select &apos;tiger&apos;"
+            android:id="@+id/textView5"
+            android:layout_weight="0.12"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rowCount="2"
+        android:columnCount="2"
+        android:layout_gravity="center_horizontal">
+
+        <RelativeLayout
+            android:id="@+id/contain"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorGray"
+            android:layout_marginRight="50px"
+            android:layout_marginTop="30px" >
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="120dp"
+                android:id="@+id/imageView4"
+                android:src="@drawable/women"
+                android:background="@color/colorWhite"
+                android:layout_marginTop="10px"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="xiao mao\n 小猫"
+                android:id="@+id/textView6"
+                android:layout_below="@+id/imageView4"
+                android:layout_centerHorizontal="true"
+                android:background="@null" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/contain1"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorGray"
+            android:layout_marginTop="30px" >
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="120dp"
+                android:id="@+id/imageView5"
+                android:src="@drawable/women"
+                android:background="@color/colorWhite"
+                android:layout_marginTop="10px"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="xiao gou\n 小狗"
+                android:id="@+id/textView7"
+                android:layout_below="@+id/imageView5"
+                android:layout_centerHorizontal="true"
+                android:background="@null" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/contain2"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorGray"
+            android:layout_marginTop="30px" >
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="120dp"
+                android:id="@+id/imageView6"
+                android:src="@drawable/women"
+                android:background="@color/colorWhite"
+                android:layout_marginTop="10px"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="lao hu\n 老虎"
+                android:id="@+id/textView8"
+                android:layout_below="@+id/imageView6"
+                android:layout_centerHorizontal="true"
+                android:background="@null" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/contain3"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorGray"
+            android:layout_marginTop="30px" >
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="120dp"
+                android:id="@+id/imageView7"
+                android:src="@drawable/women"
+                android:background="@color/colorWhite"
+                android:layout_marginTop="10px"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="da xiang\n 大象"
+                android:id="@+id/textView9"
+                android:layout_below="@+id/imageView7"
+                android:layout_centerHorizontal="true"
+                android:background="@null" />
+        </RelativeLayout>
+    </GridLayout>
+</LinearLayout>

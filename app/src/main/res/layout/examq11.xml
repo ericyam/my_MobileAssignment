@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="  西瓜   是    水果 。\n Xīguā shì shuǐguǒ"
+        android:id="@+id/textViewMessage"
+        android:layout_weight="0.00"
+        android:layout_centerVertical="true" />
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical"
+        android:layout_marginLeft="50px"
+        android:layout_marginRight="50px">
+
+        <RadioButton
+            android:id="@+id/radioButtonPear"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text=" The pear is a fruit."
+
+            android:gravity="left|center"
+            android:layout_marginTop="100px"
+            android:buttonTint="@color/colorBlack"/>
+
+
+        <RadioButton
+            android:id="@+id/radioButtonApple"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:gravity="left|center"
+            android:text=" The apple is a fruit."
+            android:layout_marginTop="40px"
+            android:buttonTint="@color/colorBlack"/>
+
+        <RadioButton
+            android:id="@+id/radioButtonMelon"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:gravity="left|center"
+            android:text=" The watermelon is a fruit."
+            android:layout_marginTop="40px"
+            android:buttonTint="@color/colorBlack"/>
+
+        <RadioButton
+            android:id="@+id/radioButtonPeach"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:gravity="left|center"
+            android:text=" The peach is a fruit."
+            android:layout_marginTop="40px"
+            android:buttonTint="@color/colorBlack"/>
+
+    </RadioGroup>
+
+</LinearLayout>

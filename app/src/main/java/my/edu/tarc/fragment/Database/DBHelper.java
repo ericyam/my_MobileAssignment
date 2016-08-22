@@ -12,8 +12,11 @@ public class DBHelper extends SQLiteOpenHelper{
     private static final String DATABASE = "my_db";
     private static final	String SQL_CREATE_ENTRIES =
             "CREATE TABLE	" + UserColumn.User.TABLE_NAME	+ "("	+
+                    UserColumn.User.COLUMN_ID	+ " TEXT,"	+
+                    UserColumn.User.COLUMN_IMAGE	+ " IMAGE,"+
                     UserColumn.User.COLUMN_ZHUCI	+ " TEXT,"	+
-                    UserColumn.User.COLUMN_DETAIL	+ " TEXT)";
+                    UserColumn.User.COLUMN_DETAIL	+ " TEXT," +
+                    UserColumn.User.COLUMN_PINBI  + " TEXT)"	;
 
     public DBHelper(Context context) {
         super(context, DATABASE, null, 1);
@@ -26,10 +29,11 @@ public class DBHelper extends SQLiteOpenHelper{
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
     }
 
     public void delete(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("delete from " + UserColumn.User.TABLE_NAME);
+        sqLiteDatabase.execSQL("drop table IF EXISTS " + UserColumn.User.TABLE_NAME);
+        onCreate(sqLiteDatabase);
     }
+
 }

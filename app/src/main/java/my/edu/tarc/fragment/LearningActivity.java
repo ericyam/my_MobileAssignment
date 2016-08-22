@@ -82,9 +82,6 @@ public class LearningActivity extends AppCompatActivity {
         };
 
         private LayoutInflater inflater=null;
-
-
-
         public ImageAdapter(Context c){
             mContext= c;
             inflater = ( LayoutInflater)mContext.

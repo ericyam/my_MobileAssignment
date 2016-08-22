@@ -1,4 +1,4 @@
-package my.edu.tarc.fragment;
+/*package my.edu.tarc.fragment;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -216,4 +216,4 @@ public class SurvChineseEmergencyActivity extends AppCompatActivity implements T
 
 
 
-}
+}*/

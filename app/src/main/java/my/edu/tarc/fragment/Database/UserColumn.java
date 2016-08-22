@@ -10,7 +10,9 @@ public class UserColumn {
     public	static	abstract class User implements BaseColumns {
         public	static	final	String	TABLE_NAME 	="BIHUA";
         public	static	final	String	COLUMN_ID	="id";
+        public	static	final	String	COLUMN_IMAGE	="image";
         public	static	final	String	COLUMN_ZHUCI	="zhuci";
         public	static	final	String	COLUMN_DETAIL	="detail";
+        public	static	final	String	COLUMN_PINBI	="pinbi";
     }
 }

@@ -9,8 +9,7 @@
     <ImageView
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:id="@+id/imageView2"
-        android:src="@drawable/nan"
+        android:id="@+id/stroke"
         android:layout_alignParentTop="true"
         android:layout_alignLeft="@+id/textViewDetail"
         android:layout_alignStart="@+id/textViewDetail"
@@ -36,14 +35,13 @@
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/imageButton"
+                android:id="@+id/imageButtonSound"
                 android:layout_marginTop="-5dp"
                 android:src="@android:drawable/ic_btn_speak_now" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="拼音 :  Nán\n笔画 :  共七画"
                 android:id="@+id/textViewPinBi" />
             </LinearLayout>
 
@@ -83,7 +81,7 @@
 
         android:id="@+id/textViewDetail"
         android:layout_marginTop="15dp"
-        android:layout_below="@+id/imageView2"
+        android:layout_below="@+id/stroke"
         android:layout_centerHorizontal="true" />
 
     <TextView

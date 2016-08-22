@@ -1,4 +1,4 @@
-package my.edu.tarc.fragment;
+/*package my.edu.tarc.fragment;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -31,4 +31,4 @@ public class RecyclerItemClickListener implements RecyclerView.OnItemTouchListen
     public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
     }
     @Override public void onTouchEvent(RecyclerView view, MotionEvent motionEvent) { }
-}
+}*/

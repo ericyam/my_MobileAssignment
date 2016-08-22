@@ -1,4 +1,4 @@
-package my.edu.tarc.fragment;
+/*package my.edu.tarc.fragment;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -104,3 +104,4 @@ public class CustomAdapterRcyc extends RecyclerView.Adapter<CustomAdapterRcyc.Vi
         return mPersonList.size();
     }
 }
+*/

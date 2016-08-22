@@ -41,11 +41,13 @@ import my.edu.tarc.fragment.ExamFragment.Q9;
 public class ExamActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, buttonnext;
-    static TextView textViewTime;
+    TextView textViewTime;
     Fragment fragment;
     FragmentTransaction fragmentTransaction;
     int fragpage = 1;
     char a1, a2;
+    static long mins = 1800000;
+    int totalcorrect = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,10 +86,6 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
 
-
-
-
-
                 switch(fragpage){
                     case 1 : fragment = new Q2();break;
                     case 2 : fragment = new Q3();break;
@@ -108,6 +106,8 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
                 a1 = Q1.getAnswered();
                 if (a1 == 'Y' || a1 == 'N') {
                     btn1.setBackgroundColor(getResources().getColor(R.color.colorBlack));
+                    if(a1 == 'Y')
+                        totalcorrect =  totalcorrect + 1;
                 }else
                     btn1.setBackgroundColor(getResources().getColor(R.color.colorOrange));
 
@@ -129,7 +129,7 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
 
         textViewTime = (TextView)findViewById(R.id.textViewTime);
         textViewTime.setText("00:30:00");
-        CounterClass timer= new CounterClass(1800000,1000);
+        CounterClass timer= new CounterClass(mins,1000);
         timer.start();
         //timer.cancel();
 
@@ -149,6 +149,7 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
         if(item.getItemId() == R.id.action_done){
             Intent intent = new Intent(this, ResultActivity.class);
             intent.putExtra("time", textViewTime.getText().toString());
+            intent.putExtra("Totalcorrect", totalcorrect);
             startActivity(intent);
         }
         return true;
@@ -391,7 +392,7 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
 
     @TargetApi(Build.VERSION_CODES.GINGERBREAD)
     @SuppressLint("NewApi")
-    public static class CounterClass extends CountDownTimer {
+    public class CounterClass extends CountDownTimer {
         public CounterClass(long millisInFuture, long countDownInterval) {
             super(millisInFuture, countDownInterval);
         }
@@ -403,6 +404,7 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
         @TargetApi(Build.VERSION_CODES.GINGERBREAD)
         @Override public void onTick(long millisUntilFinished) {
             long millis = millisUntilFinished;
+            mins = mins - 1000;
             String hms = String.format("%02d : %02d : %02d", TimeUnit.MILLISECONDS.toHours(millis), TimeUnit.MILLISECONDS.toMinutes(millis) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millis)), TimeUnit.MILLISECONDS.toSeconds(millis) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
             //System.out.println(hms);
             textViewTime.setText(hms);

@@ -38,6 +38,7 @@ public class ResultActivity extends AppCompatActivity {
 
     private static String [] title={"Time Taken","Performance","Correct Count","History"};
     private static String [] resultexam={"","","",">   "};
+    int percentage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +46,8 @@ public class ResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_result);
         Bundle bundle = getIntent().getExtras();
         String timetaken = bundle.getString("time");
+        int totalcorrect = bundle.getInt("totalcorrect");
         String[] time = timetaken.split(" : ");
-        int timeint = Integer.parseInt(time[0] + time[1] + time[2]);
 
         int m = 29  - Integer.parseInt(time[1]);
         int s = 59  - Integer.parseInt(time[2]);
@@ -54,6 +55,9 @@ public class ResultActivity extends AppCompatActivity {
         String newtime = String.format("%02dm%02ds   ",m,s);
 
         resultexam[0] = newtime;
+        resultexam[1] = "good";
+        resultexam[2] = String.valueOf(totalcorrect) + "/14";
+
 
         //donutProgress = (DonutProgress) findViewById(R.id.donut_progress);
         progressBar = (ProgressBar) findViewById(R.id.progressBar2);

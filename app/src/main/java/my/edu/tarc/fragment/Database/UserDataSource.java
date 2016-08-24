@@ -17,7 +17,7 @@ public class UserDataSource {
     private DBHelper dbHelper;
     private String[] allColumn = {
             UserColumn.User.COLUMN_ID,
-            UserColumn.User.COLUMN_IMAGE,
+            //UserColumn.User.COLUMN_IMAGE,
             UserColumn.User.COLUMN_ZHUCI,
             UserColumn.User.COLUMN_DETAIL,
             UserColumn.User.COLUMN_PINBI
@@ -38,7 +38,7 @@ public class UserDataSource {
     public	void insertUser(BihuaData bihuadata){
         ContentValues values = new	ContentValues();
         values.put(UserColumn.User.COLUMN_ID,	bihuadata.getId());
-        values.put(UserColumn.User.COLUMN_IMAGE,	bihuadata.getImage());
+        //values.put(UserColumn.User.COLUMN_IMAGE,	bihuadata.getImage());
         values.put(UserColumn.User.COLUMN_ZHUCI,	bihuadata.getZhuci());
         values.put(UserColumn.User.COLUMN_DETAIL,	bihuadata.getDetail());
         values.put(UserColumn.User.COLUMN_PINBI,	bihuadata.getPinbi());
@@ -60,10 +60,10 @@ public class UserDataSource {
         while(!cursor.isAfterLast()){
             BihuaData bihuadata = new BihuaData();
             bihuadata.setId(cursor.getString(0));
-            bihuadata.setImage(cursor.getInt(1));
-            bihuadata.setZhuci(cursor.getString(2));
-            bihuadata.setDetail(cursor.getString(3));
-            bihuadata.setPinbi(cursor.getString(4));
+            //bihuadata.setImage(cursor.getInt(1));
+            bihuadata.setZhuci(cursor.getString(1));
+            bihuadata.setDetail(cursor.getString(2));
+            bihuadata.setPinbi(cursor.getString(3));
             records.add(bihuadata);
             cursor.moveToNext();
         }

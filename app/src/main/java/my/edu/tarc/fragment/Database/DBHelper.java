@@ -13,7 +13,7 @@ public class DBHelper extends SQLiteOpenHelper{
     private static final	String SQL_CREATE_ENTRIES =
             "CREATE TABLE	" + UserColumn.User.TABLE_NAME	+ "("	+
                     UserColumn.User.COLUMN_ID	+ " TEXT,"	+
-                    UserColumn.User.COLUMN_IMAGE	+ " IMAGE,"+
+                    //UserColumn.User.COLUMN_IMAGE	+ " IMAGE,"+
                     UserColumn.User.COLUMN_ZHUCI	+ " TEXT,"	+
                     UserColumn.User.COLUMN_DETAIL	+ " TEXT," +
                     UserColumn.User.COLUMN_PINBI  + " TEXT)"	;

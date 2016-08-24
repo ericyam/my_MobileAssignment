@@ -23,7 +23,7 @@ public class CustomGifView extends View {
     private long mMovieStart;
 
     private int position =0;
-    private int image[] = {R.drawable.latestnan}  ;
+    private int image[] = {R.drawable.latestnan, R.drawable.latestnv, R.drawable.latestxiao, R.drawable.latestji, R.drawable.latesttian, R.drawable.latesttu, R.drawable.latestche, R.drawable.latestma, R.drawable.latestgou, R.drawable.latestyang}  ;
 
     public CustomGifView(Context context) {
         super(context);

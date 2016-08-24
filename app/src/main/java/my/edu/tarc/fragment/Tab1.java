@@ -29,8 +29,7 @@ import my.edu.tarc.fragment.Database.UserDataSource;
 public class Tab1 extends Fragment implements View.OnClickListener, TextToSpeech.OnInitListener{
     ImageButton next;
     ImageButton previous;
-    ImageView stroke;
-    GifView gifView;
+    CustomGifView stroke;
     TextView textviewzhuci;
     TextView textviewdetail;
     TextView textviewpaging;
@@ -39,7 +38,7 @@ public class Tab1 extends Fragment implements View.OnClickListener, TextToSpeech
     ImageButton sound;
     TextToSpeech tts;
     final int CHECK_CODE = 1;
-
+    List<BihuaData> values = null;
     int position=0;
 
     @Override
@@ -55,17 +54,16 @@ public class Tab1 extends Fragment implements View.OnClickListener, TextToSpeech
         textviewdetail = (TextView)rootView.findViewById(R.id.textViewDetail);
         textviewpaging = (TextView)rootView.findViewById(R.id.textViewPaging);
         textviewpinbi = (TextView)rootView.findViewById(R.id.textViewPinBi);
-        //stroke = (ImageView)rootView.findViewById(R.id.stroke);
+        stroke = (CustomGifView)rootView.findViewById(R.id.stroke);
 
         userDataSource = new UserDataSource(getContext());
         userDataSource.open();
 
-        final List<BihuaData> values = userDataSource.getAllUsers();
+        values = userDataSource.getAllUsers();
         textviewzhuci.setText(values.get(position).getZhuci());
         textviewdetail.setText(values.get(position).getDetail());
-        textviewpaging.setText( (position+1) +  "/20");
+        textviewpaging.setText( (position+1) +  "/10");
         textviewpinbi.setText(values.get(position).getPinbi());
-        //stroke.setImageResource(values.get(position).getImage());
 
         sound.setOnClickListener(this);
 
@@ -74,11 +72,12 @@ public class Tab1 extends Fragment implements View.OnClickListener, TextToSpeech
             public void onClick(View view) {
                 if(position < values.size() - 1)
                     position++;
-                textviewpaging.setText( (position+1) +  "/20");
+                textviewpaging.setText( (position+1) +  "/10");
                 //stroke.setImageResource(values.get(position).getImage());
                 textviewzhuci.setText(values.get(position).getZhuci());
                 textviewdetail.setText(values.get(position).getDetail());
                 textviewpinbi.setText(values.get(position).getPinbi());
+                stroke.setPosition(getActivity(), position);
             }
         });
 
@@ -87,11 +86,12 @@ public class Tab1 extends Fragment implements View.OnClickListener, TextToSpeech
             public void onClick(View view) {
                 if(position > 0)
                     position--;
-                textviewpaging.setText( (position+1) +  "/20");
+                textviewpaging.setText( (position+1) +  "/10");
                 //stroke.setImageResource(values.get(position).getImage());
                 textviewzhuci.setText(values.get(position).getZhuci());
                 textviewdetail.setText(values.get(position).getDetail());
                 textviewpinbi.setText(values.get(position).getPinbi());
+                stroke.setPosition(getActivity(), position);
             }
         });
         return rootView;
@@ -111,11 +111,11 @@ public class Tab1 extends Fragment implements View.OnClickListener, TextToSpeech
     @Override
     public void onClick(View view) {
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            tts.speak("男", TextToSpeech.QUEUE_FLUSH, null, null);
+            tts.speak(values.get(position).getId(), TextToSpeech.QUEUE_FLUSH, null, null);
         }else {
             HashMap<String, String> hash = new HashMap<String,String>();
             hash.put(TextToSpeech.Engine.KEY_PARAM_STREAM, String.valueOf(AudioManager.STREAM_NOTIFICATION));
-            tts.speak("男", TextToSpeech.QUEUE_FLUSH, hash);
+            tts.speak(values.get(position).getId(), TextToSpeech.QUEUE_FLUSH, hash);
         }
     }
 

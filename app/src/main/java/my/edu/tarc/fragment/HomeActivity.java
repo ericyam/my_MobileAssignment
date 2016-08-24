@@ -107,7 +107,7 @@ public class HomeActivity extends AppCompatActivity {
         BihuaData bihuaData = new BihuaData();
         for(int i=0; i<zhuci.length; i++) {
             bihuaData.setId(id[i]);
-            bihuaData.setImage(images[i]);
+            //bihuaData.setImage(images[i]);
             bihuaData.setZhuci(zhuci[i]);
             bihuaData.setDetail(detail[i]);
             bihuaData.setPinbi(pinbi[i]);

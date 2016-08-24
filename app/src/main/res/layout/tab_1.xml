@@ -135,7 +135,7 @@
     <my.edu.tarc.fragment.CustomGifView
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:id="@+id/view"
+        android:id="@+id/stroke"
         android:layout_alignTop="@+id/tableLayout"
         android:layout_alignRight="@+id/textViewPaging"
         android:layout_alignEnd="@+id/textViewPaging"

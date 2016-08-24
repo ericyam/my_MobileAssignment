@@ -1,14 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:orientation="horizontal"
+        android:layout_marginTop="45dp"
+        android:layout_marginRight="40dp"
+        android:id="@+id/tableLayout">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" >
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageButtonSound"
+                    android:layout_marginTop="-5dp"
+                    android:src="@android:drawable/ic_btn_speak_now" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewPinBi" />
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginLeft="56dp"
+                    android:text="组词 : "/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_marginLeft="4dp"
+                    android:id="@+id/textViewZhuCi" />
+            </LinearLayout>
+
+        </TableRow>
+
+    </TableLayout>
+
+    <TextView
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:lineSpacingMultiplier="1.2"
+
+        android:id="@+id/textViewDetail"
+        android:layout_marginTop="67dp"
+        android:layout_below="@+id/tableLayout"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tab 3 says Hello!"
-        android:id="@+id/textView"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
+        android:id="@+id/textViewPaging"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="7dp"
+        />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_bottom"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:background="@color/colorBlack"
+        android:layout_alignParentBottom="true"
+        android:minHeight="?attr/actionBarSize"
+        >
+
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/toolbarMenuLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_alignTop="@+id/toolbar_bottom"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorWhite">
+
+        <ImageButton
+            android:id="@+id/previous"
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:clickable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/previous"
+            android:layout_alignParentLeft="true"
+            android:background="@null"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="50px"
+            android:layout_marginBottom="20px"/>
+
+        <ImageButton
+            android:id="@+id/next"
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:clickable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/next"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="50px"
+            android:layout_marginBottom="20px"/>
+
+    </RelativeLayout>
+
+    <my.edu.tarc.fragment.CustomGifView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/stroke"
+        android:layout_alignTop="@+id/tableLayout"
+        android:layout_alignRight="@+id/textViewPaging"
+        android:layout_alignEnd="@+id/textViewPaging"
+        android:layout_marginRight="-50px"/>
 
 </RelativeLayout>

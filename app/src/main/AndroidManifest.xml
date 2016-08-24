@@ -20,13 +20,14 @@
         </activity>
         <activity
             android:name=".BiHuaActivity"
-            android:label="笔画教学" />
+            android:label="@string/stroketitle"
+            android:parentActivityName=".LearningActivity"/>
         <activity
             android:name=".LearningActivity"
-            android:label="Learning Materials" />
+            android:label="@string/learningtitle" />
         <activity
             android:name=".AboutActivity"
-            android:label="About Us" />
+            android:label="@string/abouttitle" />
         <activity
             android:name=".ChengYuActivity"
             android:label="成语" />
@@ -57,10 +58,12 @@
             android:label="Shopping " />
         <activity
             android:name=".ExamActivity"
-            android:label="模拟测试" />
+            android:label="@string/testtitle"
+            />
         <activity
             android:name=".ResultActivity"
-            android:label="成绩" />
+            android:label="@string/result"
+            android:parentActivityName=".HomeActivity"/>
     </application>
 
 </manifest>

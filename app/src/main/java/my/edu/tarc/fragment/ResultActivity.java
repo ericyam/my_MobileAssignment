@@ -57,14 +57,17 @@ public class ResultActivity extends AppCompatActivity {
     Button buttonclose;
     Button buttonretake;
 
-    private static String [] title={"Time Taken","Performance","Correct Count","History"};
-    private static String [] resultexam={"","","",">   "};
+    private static String [] title;
+    private static String [] resultexam={"","",""};
     int percentage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
+        title = getResources().getStringArray(R.array.info);
+
+
         Bundle bundle = getIntent().getExtras();
         String timetaken = bundle.getString("time");
         int totalcorrect = bundle.getInt("totalcorrect");
@@ -106,6 +109,7 @@ public class ResultActivity extends AppCompatActivity {
                 ExamActivity.mins = 1800000;
                 clearAll();
                 finish();
+                HomeActivity.clicked = false;
                 Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                 startActivity(intent);
             }
@@ -117,6 +121,7 @@ public class ResultActivity extends AppCompatActivity {
                 ExamActivity.mins = 1800000;
                 clearAll();
                 finish();
+                HomeActivity.clicked = true;
                 Intent intent = new Intent(getApplicationContext(), ExamActivity.class);
                 startActivity(intent);
             }
@@ -196,6 +201,8 @@ public class ResultActivity extends AppCompatActivity {
         Q12.clearAnswer();
         Q13.clearAnswer();
         Q14.clearAnswer();
+        ExamActivity.totalanswered = 0;
+        ExamActivity.totalcorrect = 0;
     }
 
 }

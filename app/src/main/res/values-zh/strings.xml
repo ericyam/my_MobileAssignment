@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">小学霸</string>
+    <string-array name="hometitle_name">
+        <item>学习</item>
+        <item>基本华语</item>
+        <item>模拟测试</item>
+        <item>关于</item>
+    </string-array>
+
+    <string-array name="homesubtitle_name">
+        <item>学习华语材料</item>
+        <item>掌握所有华语</item>
+        <item>考考你的技能</item>
+        <item>关于开发者资料</item>
+    </string-array>
+    <string name="learningtitle">学习材料</string>
+    <string name="stroketitle">笔画教学</string>
+    <string name="testtitle">模拟测试</string>
+    <string name="done">完成</string>
+    <string name="abouttitle">关于</string>
+    <string name="yes">确定</string>
+    <string name="no">取消</string>
+    <string name="confirmation">确定要拿考试？ 有时间限制</string>
+    <string name="result">成绩</string>
+
+    <string-array name="info">
+        <item>时间消耗</item>
+        <item>表现</item>
+        <item>答对</item>
+    </string-array>
+
+    <string name="score">分数</string>
+    <string name="resultinfo">成绩资料</string>
+
+</resources>

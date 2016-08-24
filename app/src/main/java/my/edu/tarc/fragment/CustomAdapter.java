@@ -30,7 +30,7 @@ public class CustomAdapter extends BaseAdapter{
         inflater = ( LayoutInflater )context.
                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
-/*
+
     public CustomAdapter(SurvChineseActivity survChineseActivity, String[] prgmNameList, int[] prgmImages, String[] subList) {
         // TODO Auto-generated constructor stub
         result=prgmNameList;
@@ -40,7 +40,7 @@ public class CustomAdapter extends BaseAdapter{
         inflater = ( LayoutInflater )context.
                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
-*/
+
     @Override
     public int getCount() {
         // TODO Auto-generated method stub

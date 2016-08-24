@@ -71,14 +71,14 @@ public class LearningActivity extends AppCompatActivity {
                 R.drawable.hanyu,
         };
         private String [] title={
-                "阿斯顿",
-                "c++",
-                "JAVA",
-                "Jsp",
-                "Jsp",
-                "Jsp",
-                "Jsp",
-                "Jsp",
+                "笔顺",
+                "     成语\n(即将推出)",
+                "   三字经\n(即将推出)",
+                " 每日一句\n(即将推出)",
+                " 看图识字\n(即将推出)",
+                " 童歌拼音\n(即将推出)",
+                "   弟子规\n(即将推出)",
+                " 汉语拼音\n(即将推出)",
         };
 
         private LayoutInflater inflater=null;

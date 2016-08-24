@@ -1,5 +1,5 @@
 package my.edu.tarc.fragment;
-/*
+
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
@@ -215,4 +215,4 @@ public class SurvChineseShoppingActivity extends AppCompatActivity implements Te
 
 
 
-}*/
+}

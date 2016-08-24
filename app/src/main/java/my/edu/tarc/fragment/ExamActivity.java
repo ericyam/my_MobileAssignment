@@ -50,8 +50,8 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
     int fragpage = 1;
     char a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14;
     static long mins = 1800000;
-    int totalcorrect = 0;
-    int totalanswered = 0;
+    static int totalcorrect = 0;
+    static int totalanswered = 0;
     boolean[] clicked = {false, false, false, false, false, false, false, false, false, false, false, false, false, false};
 
     @Override
@@ -92,21 +92,22 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
                     switch(fragpage){
-                    case 1 : fragment = new Q2();clicked[1] = true; break;
-                    case 2 : fragment = new Q3();clicked[2] = true; break;
-                    case 3 : fragment = new Q4();clicked[3] = true; break;
-                    case 4 : fragment = new Q5();clicked[4] = true; break;
-                    case 5 : fragment = new Q6();clicked[5] = true; break;
-                    case 6 : fragment = new Q7();clicked[6] = true; break;
-                    case 7 : fragment = new Q8();clicked[7] = true; break;
-                    case 8 : fragment = new Q9();clicked[8] = true; break;
-                    case 9 : fragment = new Q10();clicked[9] = true; break;
-                    case 10 : fragment = new Q11();clicked[10] = true; break;
-                    case 11 : fragment = new Q12();clicked[11] = true; break;
-                    case 12 : fragment = new Q13();clicked[12] = true; break;
-                    case 13 : fragment = new Q14();clicked[13] = true; break;
+                    case 1 : fragment = new Q2();clicked[1] = true;buttonnext.setText("Next"); break;
+                    case 2 : fragment = new Q3();clicked[2] = true;buttonnext.setText("Next"); break;
+                    case 3 : fragment = new Q4();clicked[3] = true;buttonnext.setText("Next"); break;
+                    case 4 : fragment = new Q5();clicked[4] = true;buttonnext.setText("Next"); break;
+                    case 5 : fragment = new Q6();clicked[5] = true;buttonnext.setText("Next"); break;
+                    case 6 : fragment = new Q7();clicked[6] = true;buttonnext.setText("Next"); break;
+                    case 7 : fragment = new Q8();clicked[7] = true;buttonnext.setText("Next"); break;
+                    case 8 : fragment = new Q9();clicked[8] = true;buttonnext.setText("Next"); break;
+                    case 9 : fragment = new Q10();clicked[9] = true;buttonnext.setText("Next"); break;
+                    case 10 : fragment = new Q11();clicked[10] = true;buttonnext.setText("Next"); break;
+                    case 11 : fragment = new Q12();clicked[11] = true;buttonnext.setText("Next"); break;
+                    case 12 : fragment = new Q13();clicked[12] = true;buttonnext.setText("Next"); break;
+                    case 13 : fragment = new Q14();clicked[13] = true;buttonnext.setText("Done"); break;
+                    case 14 : showResult();break;
                 }
-                if(fragpage < 14)
+                if(fragpage < 15)
                     fragpage = fragpage + 1;
 
                 setsmallbtnBackground();
@@ -139,21 +140,7 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void setsmallbtnBackground(){
-        a1 = Q1.getAnswered();
-        a2 = Q2.getAnswered();
-        a3 = Q3.getAnswered();
-        a4 = Q4.getAnswered();
-        a5 = Q5.getAnswered();
-        a6 = Q6.getAnswered();
-        a7 = Q7.getAnswered();
-        a8 = Q8.getAnswered();
-        a9 = Q9.getAnswered();
-        a10 = Q10.getAnswered();
-        a11 = Q11.getAnswered();
-        a12 = Q12.getAnswered();
-        a13 = Q13.getAnswered();
-        a14 = Q14.getAnswered();
-
+        getAnswer();
         setbtnbackground();
         if(clicked[0] && fragpage != 1){
             if (a1 == 'Y' || a1 == 'N') {
@@ -257,6 +244,23 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    public void getAnswer(){
+        a1 = Q1.getAnswered();
+        a2 = Q2.getAnswered();
+        a3 = Q3.getAnswered();
+        a4 = Q4.getAnswered();
+        a5 = Q5.getAnswered();
+        a6 = Q6.getAnswered();
+        a7 = Q7.getAnswered();
+        a8 = Q8.getAnswered();
+        a9 = Q9.getAnswered();
+        a10 = Q10.getAnswered();
+        a11 = Q11.getAnswered();
+        a12 = Q12.getAnswered();
+        a13 = Q13.getAnswered();
+        a14 = Q14.getAnswered();
+    }
+
 
 
     @Override
@@ -266,104 +270,115 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
         return true;
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.action_done){
-            if(a1 == 'Y' || a1 == 'N') {
-                totalanswered += 1;
-                if (a1 == 'Y') {
-                    totalcorrect = totalcorrect + 1;
-                }
-            }
-            if(a2 == 'Y' || a2 == 'N') {
-                totalanswered += 1;
-                if (a2 == 'Y') {
-                    totalcorrect = totalcorrect + 1;
-                }
-            }
-            if(a3 == 'Y' || a3 == 'N') {
-                totalanswered += 1;
-                if (a3 == 'Y') {
-                    totalcorrect = totalcorrect + 1;
-                }
-            }
-            if(a4 == 'Y' || a4 == 'N') {
-                totalanswered += 1;
-                if (a4 == 'Y') {
-                    totalcorrect = totalcorrect + 1;
-                }
-            }
-            if(a5 == 'Y' || a5 == 'N') {
-                totalanswered += 1;
-                if (a5 == 'Y') {
-                    totalcorrect = totalcorrect + 1;
-                }
-            }
-            if(a6 == 'Y' || a6 == 'N') {
-                totalanswered += 1;
-                if (a6 == 'Y') {
-                    totalcorrect = totalcorrect + 1;
-                }
-            }
-            if(a7 == 'Y' || a7 == 'N') {
-                totalanswered += 1;
-                if (a7 == 'Y') {
-                    totalcorrect = totalcorrect + 1;
-                }
-            }
-            if(a8 == 'Y' || a8 == 'N') {
-                totalanswered += 1;
-                if (a8 == 'Y') {
-                    totalcorrect = totalcorrect + 1;
-                }
-            }
-            if(a9 == 'Y' || a9 == 'N') {
-                totalanswered += 1;
-                if (a9 == 'Y') {
-                    totalcorrect = totalcorrect + 1;
-                }
-            }
-            if(a10 == 'Y' || a10 == 'N') {
-                totalanswered += 1;
-                if (a10 == 'Y') {
-                    totalcorrect = totalcorrect + 1;
-                }
-            }
-            if(a11 == 'Y' || a11 == 'N') {
-                totalanswered += 1;
-                if (a11 == 'Y') {
-                    totalcorrect = totalcorrect + 1;
-                }
-            }
-            if(a12 == 'Y' || a12 == 'N') {
-                totalanswered += 1;
-                if (a12 == 'Y') {
-                    totalcorrect = totalcorrect + 1;
-                }
-            }
-            if(a13 == 'Y' || a13 == 'N') {
-                totalanswered += 1;
-                if (a13 == 'Y') {
-                    totalcorrect = totalcorrect + 1;
-                }
-            }
-            if(a14 == 'Y' || a14 == 'N') {
-                totalanswered += 1;
-                if (a14 == 'Y') {
-                    totalcorrect = totalcorrect + 1;
-                }
-            }
-            //Toast.makeText(getApplicationContext(), totalanswered + " ", Toast.LENGTH_LONG).show();
-            if(totalanswered == 14) {
-                Intent intent = new Intent(this, ResultActivity.class);
-                intent.putExtra("time", textViewTime.getText().toString());
-                intent.putExtra("totalcorrect", totalcorrect);
-                startActivity(intent);
-            }else{
-                Toast.makeText(getApplicationContext(), "Please answer all the question", Toast.LENGTH_LONG).show();
-            }
+            a14 = Q14.getAnswered();
+            showResult();
+        }else if(item.getItemId() == android.R.id.home) {
+            onBackPressed();
         }
         return true;
+    }
+
+    public void showResult(){
+        getAnswer();
+        if(a1 == 'Y' || a1 == 'N') {
+            totalanswered += 1;
+            if (a1 == 'Y') {
+                totalcorrect = totalcorrect + 1;
+            }
+        }
+        if(a2 == 'Y' || a2 == 'N') {
+            totalanswered += 1;
+            if (a2 == 'Y') {
+                totalcorrect = totalcorrect + 1;
+            }
+        }
+        if(a3 == 'Y' || a3 == 'N') {
+            totalanswered += 1;
+            if (a3 == 'Y') {
+                totalcorrect = totalcorrect + 1;
+            }
+        }
+        if(a4 == 'Y' || a4 == 'N') {
+            totalanswered += 1;
+            if (a4 == 'Y') {
+                totalcorrect = totalcorrect + 1;
+            }
+        }
+        if(a5 == 'Y' || a5 == 'N') {
+            totalanswered += 1;
+            if (a5 == 'Y') {
+                totalcorrect = totalcorrect + 1;
+            }
+        }
+        if(a6 == 'Y' || a6 == 'N') {
+            totalanswered += 1;
+            if (a6 == 'Y') {
+                totalcorrect = totalcorrect + 1;
+            }
+        }
+        if(a7 == 'Y' || a7 == 'N') {
+            totalanswered += 1;
+            if (a7 == 'Y') {
+                totalcorrect = totalcorrect + 1;
+            }
+        }
+        if(a8 == 'Y' || a8 == 'N') {
+            totalanswered += 1;
+            if (a8 == 'Y') {
+                totalcorrect = totalcorrect + 1;
+            }
+        }
+        if(a9 == 'Y' || a9 == 'N') {
+            totalanswered += 1;
+            if (a9 == 'Y') {
+                totalcorrect = totalcorrect + 1;
+            }
+        }
+        if(a10 == 'Y' || a10 == 'N') {
+            totalanswered += 1;
+            if (a10 == 'Y') {
+                totalcorrect = totalcorrect + 1;
+            }
+        }
+        if(a11 == 'Y' || a11 == 'N') {
+            totalanswered += 1;
+            if (a11 == 'Y') {
+                totalcorrect = totalcorrect + 1;
+            }
+        }
+        if(a12 == 'Y' || a12 == 'N') {
+            totalanswered += 1;
+            if (a12 == 'Y') {
+                totalcorrect = totalcorrect + 1;
+            }
+        }
+        if(a13 == 'Y' || a13 == 'N') {
+            totalanswered += 1;
+            if (a13 == 'Y') {
+                totalcorrect = totalcorrect + 1;
+            }
+        }
+        if(a14 == 'Y' || a14 == 'N') {
+            totalanswered += 1;
+            if (a14 == 'Y') {
+                totalcorrect = totalcorrect + 1;
+            }
+        }
+        if(totalanswered == 14) {
+            finish();
+            Intent intent = new Intent(this, ResultActivity.class);
+            intent.putExtra("time", textViewTime.getText().toString());
+            intent.putExtra("totalcorrect", totalcorrect);
+            startActivity(intent);
+        }else{
+            Toast.makeText(getApplicationContext(), "Please answer all the question", Toast.LENGTH_LONG).show();
+            totalanswered = 0;
+            totalcorrect = 0;
+        }
     }
 
     public void setbtnbackground(){
@@ -583,20 +598,20 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch(view.getId()){
-            case R.id.btn1 : fragment = new Q1(); fragpage = 1;clicked[0] = true;break;
-            case R.id.btn2 : fragment = new Q2(); fragpage = 2;clicked[1] = true;break;
-            case R.id.btn3 : fragment = new Q3(); fragpage = 3;clicked[2] = true;break;
-            case R.id.btn4 : fragment = new Q4(); fragpage = 4;clicked[3] = true;break;
-            case R.id.btn5 : fragment = new Q5(); fragpage = 5;clicked[4] = true;break;
-            case R.id.btn6 : fragment = new Q6(); fragpage = 6;clicked[5] = true;break;
-            case R.id.btn7 : fragment = new Q7(); fragpage = 7;clicked[6] = true;break;
-            case R.id.btn8 : fragment = new Q8(); fragpage = 8;clicked[7] = true;break;
-            case R.id.btn9 : fragment = new Q9(); fragpage = 9;clicked[8] = true;break;
-            case R.id.btn10 : fragment = new Q10(); fragpage = 10;clicked[9] = true;break;
-            case R.id.btn11 : fragment = new Q11(); fragpage = 11;clicked[10] = true;break;
-            case R.id.btn12 : fragment = new Q12(); fragpage = 12;clicked[11] = true;break;
-            case R.id.btn13 : fragment = new Q13(); fragpage = 13;clicked[12] = true;break;
-            case R.id.btn14 : fragment = new Q14(); fragpage = 14;clicked[13] = true;break;
+            case R.id.btn1 : fragment = new Q1(); fragpage = 1;clicked[0] = true;buttonnext.setText("Next");break;
+            case R.id.btn2 : fragment = new Q2(); fragpage = 2;clicked[1] = true;buttonnext.setText("Next");break;
+            case R.id.btn3 : fragment = new Q3(); fragpage = 3;clicked[2] = true;buttonnext.setText("Next");break;
+            case R.id.btn4 : fragment = new Q4(); fragpage = 4;clicked[3] = true;buttonnext.setText("Next");break;
+            case R.id.btn5 : fragment = new Q5(); fragpage = 5;clicked[4] = true;buttonnext.setText("Next");break;
+            case R.id.btn6 : fragment = new Q6(); fragpage = 6;clicked[5] = true;buttonnext.setText("Next");break;
+            case R.id.btn7 : fragment = new Q7(); fragpage = 7;clicked[6] = true;buttonnext.setText("Next");break;
+            case R.id.btn8 : fragment = new Q8(); fragpage = 8;clicked[7] = true;buttonnext.setText("Next");break;
+            case R.id.btn9 : fragment = new Q9(); fragpage = 9;clicked[8] = true;buttonnext.setText("Next");break;
+            case R.id.btn10 : fragment = new Q10(); fragpage = 10;clicked[9] = true;buttonnext.setText("Next");break;
+            case R.id.btn11 : fragment = new Q11(); fragpage = 11;clicked[10] = true;buttonnext.setText("Next");break;
+            case R.id.btn12 : fragment = new Q12(); fragpage = 12;clicked[11] = true;buttonnext.setText("Next");break;
+            case R.id.btn13 : fragment = new Q13(); fragpage = 13;clicked[12] = true;buttonnext.setText("Next");break;
+            case R.id.btn14 : fragment = new Q14(); fragpage = 14;clicked[13] = true;buttonnext.setText("Done");break;
         }
         setsmallbtnBackground();
         fragmentTransaction = getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment);
@@ -624,6 +639,7 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
             textViewTime.setText(hms);
         }
     }
+
 
 
 }

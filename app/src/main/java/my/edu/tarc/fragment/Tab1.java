@@ -70,28 +70,30 @@ public class Tab1 extends Fragment implements View.OnClickListener, TextToSpeech
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(position < values.size() - 1)
-                    position++;
-                textviewpaging.setText( (position+1) +  "/10");
-                //stroke.setImageResource(values.get(position).getImage());
-                textviewzhuci.setText(values.get(position).getZhuci());
-                textviewdetail.setText(values.get(position).getDetail());
-                textviewpinbi.setText(values.get(position).getPinbi());
-                stroke.setPosition(getActivity(), position);
+                if(position < 9) {
+                    position = position + 1;
+                    textviewpaging.setText((position+1) + "/10");
+                    //stroke.setImageResource(values.get(position).getImage());
+                    textviewzhuci.setText(values.get(position).getZhuci());
+                    textviewdetail.setText(values.get(position).getDetail());
+                    textviewpinbi.setText(values.get(position).getPinbi());
+                    stroke.setPosition(getActivity(), position);
+                }
             }
         });
 
         previous.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(position > 0)
-                    position--;
-                textviewpaging.setText( (position+1) +  "/10");
-                //stroke.setImageResource(values.get(position).getImage());
-                textviewzhuci.setText(values.get(position).getZhuci());
-                textviewdetail.setText(values.get(position).getDetail());
-                textviewpinbi.setText(values.get(position).getPinbi());
-                stroke.setPosition(getActivity(), position);
+                if(position > 0) {
+                    position = position - 1;
+                    textviewpaging.setText((position+1) + "/10");
+                    //stroke.setImageResource(values.get(position).getImage());
+                    textviewzhuci.setText(values.get(position).getZhuci());
+                    textviewdetail.setText(values.get(position).getDetail());
+                    textviewpinbi.setText(values.get(position).getPinbi());
+                    stroke.setPosition(getActivity(), position);
+                }
             }
         });
         return rootView;

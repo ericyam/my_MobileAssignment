@@ -6,6 +6,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
+
 public class BiHuaActivity extends AppCompatActivity {
 
     ViewPager pager;
@@ -34,6 +36,21 @@ public class BiHuaActivity extends AppCompatActivity {
         tabs.setViewPager(pager);
 
     }
+
+    /*
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                // API 5+ solution
+                onBackPressed();
+                //overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }*/
 
 
 

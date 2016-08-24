@@ -1,4 +1,35 @@
 <resources>
     <string name="app_name">小学霸</string>
+    <string-array name="hometitle_name">
+        <item>LEARNING</item>
+        <item>SURVIVAL CHINESE</item>
+        <item>MOCK TEST</item>
+        <item>ABOUT APP</item>
+    </string-array>
+
+    <string-array name="homesubtitle_name">
+        <item>Learn chinese material</item>
+        <item>All in hand</item>
+        <item>Test your skill</item>
+        <item>App developer information</item>
+    </string-array>
+    <string name="learningtitle">Learning Materials</string>
+    <string name="stroketitle">Stroke Learning</string>
+    <string name="testtitle">Mock Test</string>
+    <string name="done">Done</string>
+    <string name="abouttitle">About Us</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="confirmation">Are you sure to take? Time is limited</string>
+    <string name="result">Result</string>
+
+    <string-array name="info">
+        <item>Time Taken</item>
+        <item>Performance</item>
+        <item>Correct Count</item>
+    </string-array>
+    <string name="score">Score</string>
+    <string name="resultinfo">Result Information</string>
+
 
 </resources>

@@ -31,7 +31,6 @@ public class Q7 extends Fragment implements View.OnClickListener, TextToSpeech.O
     private static boolean correctanswer = false;
     static int[] result = {0,0,0,0,0,0};
 
-
     public Q7(){
 
     }
@@ -73,6 +72,7 @@ public class Q7 extends Fragment implements View.OnClickListener, TextToSpeech.O
             @Override
             public void onClick(View view) {
                 if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    tts.setPitch(1.1f);
                     tts.speak("桌", TextToSpeech.QUEUE_FLUSH, null, null);
                 }else {
                     HashMap<String, String> hash = new HashMap<String,String>();

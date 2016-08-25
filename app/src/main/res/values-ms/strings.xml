@@ -4,7 +4,7 @@
         <item>Pembelajaran</item>
         <item>Asas Cina</item>
         <item>Ujian Simulasi</item>
-        <item>Pada</item>
+        <item>Tentang</item>
     </string-array>
 
     <string-array name="homesubtitle_name">
@@ -17,7 +17,7 @@
     <string name="stroketitle">Strokes Pengajaran</string>
     <string name="testtitle">Ujian Simulasi</string>
     <string name="done">Lengkap</string>
-    <string name="abouttitle">Pada</string>
+    <string name="abouttitle">Tentang</string>
     <string name="yes">Tentu</string>
     <string name="no">Batal</string>
     <string name="confirmation">Tentu Ambil Exam？ Had Masa</string>

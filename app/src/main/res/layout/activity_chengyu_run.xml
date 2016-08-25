@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/backgroundcy"
+    tools:context="my.edu.tarc.fragment.ChengyuRunActivity">
+
+    <ImageButton
+        android:layout_width="80dp"
+        android:layout_height="200dp"
+        android:id="@+id/imageButtoncy1"
+        android:background="@drawable/wordcy1"
+        android:layout_marginTop="@dimen/my_topmargin"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+
+    <ImageButton
+        android:layout_width="80dp"
+        android:layout_height="200dp"
+        android:id="@+id/imageButtoncy2"
+        android:background="@drawable/wordcy2"
+        android:layout_alignTop="@+id/imageButtoncy1"
+        android:layout_toRightOf="@+id/imageButtoncy1"
+        android:layout_toEndOf="@+id/imageButtoncy1"
+        android:layout_marginLeft="@dimen/my_leftmargin" />
+
+    <ImageButton
+        android:layout_width="80dp"
+        android:layout_height="200dp"
+        android:id="@+id/imageButtoncy3"
+        android:background="@drawable/wordcy3"
+        android:layout_alignTop="@+id/imageButtoncy4"
+        android:layout_toRightOf="@+id/imageButtoncy2"
+        android:layout_toEndOf="@+id/imageButtoncy2"
+        android:layout_marginLeft="@dimen/my_leftmargin" />
+
+
+    <ImageButton
+        android:layout_width="80dp"
+        android:layout_height="200dp"
+        android:id="@+id/imageButtoncy4"
+        android:background="@drawable/wordcy4"
+        android:layout_alignTop="@+id/imageButtoncy2"
+        android:layout_toRightOf="@+id/imageButtoncy3"
+        android:layout_toEndOf="@+id/imageButtoncy3"
+        android:layout_marginLeft="@dimen/my_leftmargin" />
+
+
+</RelativeLayout>

@@ -31,9 +31,6 @@
             android:name=".ChengyuRunActivity"
             android:label="成语" />
         <activity
-            android:name=".Pop"
-            android:theme="@style/AppTheme.CustomTheme" />
-        <activity
             android:name=".SurvChineseActivity"
             android:label="Survival Chinese" />
         <activity

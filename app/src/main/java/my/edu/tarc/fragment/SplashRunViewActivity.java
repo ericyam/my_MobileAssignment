@@ -14,7 +14,7 @@ public class SplashRunViewActivity extends AppCompatActivity {
     ImageView imageMict;
     AnimationDrawable animat;
         /** Duration of wait **/
-        private final int SPLASH_DISPLAY_LENGTH = 2000;
+        private final int SPLASH_DISPLAY_LENGTH = 1000;
 
         /** Called when the activity is first created. */
         @Override

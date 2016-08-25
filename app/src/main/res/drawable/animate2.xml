@@ -8,6 +8,7 @@
     <item android:drawable="@drawable/mc4" android:duration="200" />
     <item android:drawable="@drawable/mc5" android:duration="200" />
     <item android:drawable="@drawable/mc3a" android:duration="200" />
-    <item android:drawable="@drawable/mc1a" android:duration="200" />
     <item android:drawable="@drawable/mc2a" android:duration="200" />
+    <item android:drawable="@drawable/mc1a" android:duration="200" />
+
 </animation-list>

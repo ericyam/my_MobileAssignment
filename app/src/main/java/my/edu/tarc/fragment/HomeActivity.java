@@ -67,6 +67,7 @@ public class HomeActivity extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface arg0, int arg1) {
                                 clicked = true;
+
                                 intent = new Intent(HomeActivity.this, ExamActivity.class);
                                 startActivity(intent);
 
@@ -82,6 +83,7 @@ public class HomeActivity extends AppCompatActivity {
                         AlertDialog alertDialog = alertDialogBuilder.create();
                         alertDialog.show();
                     }else{
+
                         intent = new Intent(HomeActivity.this, ExamActivity.class);
                         startActivity(intent);
                     }
@@ -251,7 +253,7 @@ public class HomeActivity extends AppCompatActivity {
             return;
         }
         this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Tap again to exit the application", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.doublepress, Toast.LENGTH_SHORT).show();
     }
 
 

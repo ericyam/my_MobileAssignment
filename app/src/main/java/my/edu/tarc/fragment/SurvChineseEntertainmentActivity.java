@@ -15,8 +15,10 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -74,6 +76,8 @@ public class SurvChineseEntertainmentActivity extends AppCompatActivity implemen
 
     TextToSpeech tts;
     final int CHECK_CODE = 1;
+    private int positionText=-1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,15 +91,58 @@ public class SurvChineseEntertainmentActivity extends AppCompatActivity implemen
         textViewPinyin = (TextView)findViewById(R.id.textViewPinyin);
         textViewCn = (TextView)findViewById(R.id.textViewCn);
 
+
+
         imageMic = (ImageView)findViewById(R.id.imageMic);
         imageMic.setBackgroundResource(R.drawable.animate2);
 
-        //  imageMic.setOnClickListener(this);
+        animatetionPc = (AnimationDrawable) imageMic.getBackground();
 
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
         mRecyclerView.setHasFixedSize(true);
         // use a linear layout manager
+
+
+        imageMic.setOnClickListener(new AdapterView.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(positionText==-1)
+                    Toast.makeText(getApplicationContext(),R.string.rowTap,Toast.LENGTH_SHORT).show();
+                else
+                {
+                    if(Chinese[positionText].length()<=3) {
+                        imageMic.setBackgroundResource(R.drawable.animate);
+                        animatetionPc = (AnimationDrawable) imageMic.getBackground();
+                    }else{
+                        imageMic.setBackgroundResource(R.drawable.animate2);
+                        animatetionPc = (AnimationDrawable) imageMic.getBackground();
+                    }
+
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        //  tts.setPitch(1.1f); // saw from internet
+                        tts.setSpeechRate(0.5f); // f denotes float, it actually type casts 0.5 to float
+                        tts.speak(Chinese[positionText], TextToSpeech.QUEUE_FLUSH, null, null);
+                        animatetionPc.run();
+
+                    } else {
+                        HashMap<String, String> hash = new HashMap<String, String>();
+                        hash.put(TextToSpeech.Engine.KEY_PARAM_STREAM, String.valueOf(AudioManager.STREAM_NOTIFICATION));
+                        //  tts.setPitch(1.1f); // saw from internet
+                        tts.setSpeechRate(0.5f); // f denotes float, it actually type casts 0.5 to float
+                        tts.speak(Chinese[positionText], TextToSpeech.QUEUE_FLUSH, hash);
+                    }
+                }
+
+            }
+        });
+
+
+
+
+
         mLayoutManager = new LinearLayoutManager(getApplicationContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.addOnItemTouchListener(
@@ -114,7 +161,7 @@ public class SurvChineseEntertainmentActivity extends AppCompatActivity implemen
                                 tts.setSpeechRate(0.5f); // f denotes float, it actually type casts 0.5 to float
                                 tts.speak(Chinese[position], TextToSpeech.QUEUE_FLUSH, null, null);
                                 animatetionPc.run();
-
+                                positionText = position;
                             } else {
                                 HashMap<String, String> hash = new HashMap<String, String>();
                                 hash.put(TextToSpeech.Engine.KEY_PARAM_STREAM, String.valueOf(AudioManager.STREAM_NOTIFICATION));
@@ -146,14 +193,11 @@ public class SurvChineseEntertainmentActivity extends AppCompatActivity implemen
         }
     }
 
-
-
-
     private void setupPersonList() {
         mPersonList = new ArrayList<Person>();
         mPersonList.clear();
 
-        for (int i = 0; i < 11; i++) {
+        for (int i = 0; i < 10; i++) {
             Person person = new Person(" " + English[i], Chinese[i]);
             mPersonList.add(person);
         }
@@ -212,7 +256,4 @@ public class SurvChineseEntertainmentActivity extends AppCompatActivity implemen
         }
     }
     ////
-
-
-
 }

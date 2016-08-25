@@ -635,7 +635,7 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
         @TargetApi(Build.VERSION_CODES.GINGERBREAD)
         @Override public void onTick(long millisUntilFinished) {
             long millis = millisUntilFinished;
-            mins = mins - 1000;
+            mins = mins - 100;
             String hms = String.format(" %02d : %02d : %02d", TimeUnit.MILLISECONDS.toHours(millis), TimeUnit.MILLISECONDS.toMinutes(millis) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millis)), TimeUnit.MILLISECONDS.toSeconds(millis) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
             //System.out.println(hms);
             textViewTime.setText(hms);

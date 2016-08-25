@@ -4,10 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -20,7 +23,7 @@ public class AboutActivity extends AppCompatActivity {
     ArrayList prgmName;
     public static int [] prgmImages1={R.drawable.developer1,R.drawable.developer2,R.drawable.letter,R.drawable.iconap};
     public static String [] prgmNameList1={"Developer","Designer","Email Address","App Version"};
-    public static String [] subList1={"Daniel","John","PuiCai@edu.sch.com.my","1.5.0"};
+    public static String [] subList1={"Daniel","John","xiaoxueba@.edu.com.my","1.5.0"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +37,17 @@ public class AboutActivity extends AppCompatActivity {
         lv=(ListView) findViewById(R.id.listView2);
         lv.setAdapter(new CustomAdapter1(this, prgmNameList1,prgmImages1,subList1));
 
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                if(i == 2){
+                    intent = new Intent(Intent.ACTION_SENDTO);
+                    intent.setData(Uri.parse("mailto:"+"xiaoxueba@.edu.com.my"));
+                    startActivity(intent);
+
+                }
+            }
+        });
 
     }
 

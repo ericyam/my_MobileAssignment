@@ -29,7 +29,7 @@
             android:name=".AboutActivity"
             android:label="@string/abouttitle" />
         <activity
-            android:name=".ChengYuActivity"
+            android:name=".ChengyuRunActivity"
             android:label="成语" />
         <activity
             android:name=".Pop"

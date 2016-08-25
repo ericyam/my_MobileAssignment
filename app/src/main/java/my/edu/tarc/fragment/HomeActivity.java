@@ -4,11 +4,16 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 import my.edu.tarc.fragment.Database.BihuaData;
@@ -233,15 +238,24 @@ public class HomeActivity extends AppCompatActivity {
         BihuaData bihuaData = new BihuaData();
         for(int i=0; i<zhuci.length; i++) {
             bihuaData.setId(id[i]);
+            //bihuaData.setImage(images[i]);
             bihuaData.setZhuci(zhuci[i]);
             bihuaData.setDetail(detail[i]);
             bihuaData.setPinbi(pinbi[i]);
-            bihuaData.setPath(imagepath[i]);
             userDataSource.insertUser(bihuaData);
         }
 
     }
+    private boolean doubleBackToExitPressedOnce = false;
+
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Tap again to exit the application", Toast.LENGTH_SHORT).show();
+    }
 
 
 }
-

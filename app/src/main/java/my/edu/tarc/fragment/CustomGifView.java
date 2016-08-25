@@ -18,12 +18,12 @@ public class CustomGifView extends View {
 
     private InputStream gifInputStream;
     private Movie gifMovie;
-    private int movieWidth, movieHeight;
     private long movieDuration;
     private long mMovieStart;
-
+    private int movieWidth, movieHeight,w,h;
     private int position =0;
     private int image[] = {R.drawable.latestnan, R.drawable.latestnv, R.drawable.latestxiao, R.drawable.latestji, R.drawable.latesttian, R.drawable.latesttu, R.drawable.latestche, R.drawable.latestma, R.drawable.latestgou, R.drawable.latestyang}  ;
+    private CustomGifView imgViewPinyin;
 
     public CustomGifView(Context context) {
         super(context);
@@ -42,12 +42,13 @@ public class CustomGifView extends View {
     }
 
     private void init(Context context){
+      //  imgViewPinyin = (CustomGifView)findViewById(R.id.view2);
         setFocusable(true);
         gifInputStream = context.getResources().openRawResource(+ image[position]);
         System.out.print(position);
         gifMovie = Movie.decodeStream(gifInputStream);
-        movieWidth = gifMovie.width();
-        movieHeight = gifMovie.height();
+        movieWidth = w;
+        movieHeight = h;
         movieDuration = gifMovie.duration();
     }
 
@@ -88,7 +89,7 @@ public class CustomGifView extends View {
             int relTime = (int)((now - mMovieStart) % dur);
 
             gifMovie.setTime(relTime);
-
+         //   canvas.scale(imgViewPinyin.getLayoutParams().width/550f, imgViewPinyin.getLayoutParams().height/550f);
             canvas.scale(0.66f, 0.66f); //set size
             gifMovie.draw(canvas, 0, 0);
             invalidate();

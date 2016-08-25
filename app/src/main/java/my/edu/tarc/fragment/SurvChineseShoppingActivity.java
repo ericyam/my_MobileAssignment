@@ -88,7 +88,7 @@ public class SurvChineseShoppingActivity extends AppCompatActivity implements Te
         textViewCn = (TextView)findViewById(R.id.textViewCn);
 
         imageMic = (ImageView)findViewById(R.id.imageMic);
-        imageMic.setBackgroundResource(R.drawable.animate);
+        imageMic.setBackgroundResource(R.drawable.animate2);
         //  imageMic.setOnClickListener(this);
         animatetionPc = (AnimationDrawable) imageMic.getBackground();
 

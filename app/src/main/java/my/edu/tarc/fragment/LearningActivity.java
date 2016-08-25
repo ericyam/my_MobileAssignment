@@ -38,6 +38,9 @@ public class LearningActivity extends AppCompatActivity {
                 if(position == 0){
                     intent = new Intent(LearningActivity.this, BiHuaActivity.class);
                     startActivity(intent);
+                } if(position == 1){
+                    intent = new Intent(LearningActivity.this, ChengyuRunActivity.class);
+                    startActivity(intent);
                 }
             }
         });

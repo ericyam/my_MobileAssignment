@@ -132,7 +132,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Retake"
+            android:text="@string/retake"
             android:id="@+id/buttonRetake"
             android:background="@drawable/border_top"
             android:layout_alignParentRight="true"
@@ -144,7 +144,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Close"
+            android:text="@string/close"
             android:id="@+id/buttonClose"
             android:background="@drawable/border_top"
             android:layout_alignParentTop="false"

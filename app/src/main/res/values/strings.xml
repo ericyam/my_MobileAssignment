@@ -33,4 +33,31 @@
 <string name="rowTap">Please tap one sentence</string>
     <string name="doublepress">Tap again to exit the application</string>
 
+    <string-array name="survivallist">
+        <item>Basic</item>
+        <item>Flirting</item>
+        <item>Direction</item>
+        <item>Food</item>
+        <item>Health</item>
+        <item>Shopping</item>
+        <item>Emergency</item>
+        <item>Entertainment</item>
+    </string-array>
+
+    <string name="basic">Basic</string>
+    <string name="flirt">Flirting</string>
+    <string name="direction">Direction</string>
+    <string name="food">Food</string>
+    <string name="health">Health</string>
+    <string name="shopping">Shopping</string>
+    <string name="emergency">Emergency</string>
+    <string name="entainment">Entertainment</string>
+    <string name="survival">Survival Chinese</string>
+    <string name="proverb">Proverb</string>
+    <string name="retake">Retake</string>
+    <string name="close">Close</string>
+    <string name="next">Next</string>
+    <string name="answer">Please answer all the questions</string>
+
+
 </resources>

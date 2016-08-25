@@ -209,7 +209,7 @@
     <Button
         android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:text="Next"
+        android:text="@string/next"
         android:id="@+id/buttonNext"
         android:layout_gravity="bottom"
         android:layout_alignParentBottom="true"

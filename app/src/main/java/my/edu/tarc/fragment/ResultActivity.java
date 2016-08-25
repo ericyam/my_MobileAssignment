@@ -110,6 +110,7 @@ public class ResultActivity extends AppCompatActivity {
                 clearAll();
                 finish();
                 HomeActivity.clicked = false;
+                ExamActivity.otherbutton = true;
                 Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                 startActivity(intent);
             }
@@ -122,6 +123,7 @@ public class ResultActivity extends AppCompatActivity {
                 clearAll();
                 finish();
                 HomeActivity.clicked = true;
+                ExamActivity.otherbutton = true;
                 Intent intent = new Intent(getApplicationContext(), ExamActivity.class);
                 startActivity(intent);
             }
@@ -205,4 +207,12 @@ public class ResultActivity extends AppCompatActivity {
         ExamActivity.totalcorrect = 0;
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        ExamActivity.mins = 1800000;
+        clearAll();
+        finish();
+        HomeActivity.clicked = false;
+    }
 }

@@ -2,6 +2,8 @@ package my.edu.tarc.fragment;
 
 import android.content.Intent;
 import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
@@ -15,6 +17,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import java.util.HashMap;
 import java.util.List;
@@ -29,7 +32,6 @@ import my.edu.tarc.fragment.Database.UserDataSource;
 public class Tab1 extends Fragment implements View.OnClickListener, TextToSpeech.OnInitListener{
     ImageButton next;
     ImageButton previous;
-    CustomGifView stroke;
     TextView textviewzhuci;
     TextView textviewdetail;
     TextView textviewpaging;
@@ -40,13 +42,13 @@ public class Tab1 extends Fragment implements View.OnClickListener, TextToSpeech
     final int CHECK_CODE = 1;
     List<BihuaData> values = null;
     int position=0;
+    VideoView vv2;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View rootView = inflater.inflate(R.layout.tab_1, container, false);
         checkTTS();
 
-        //gifView = (GifView) rootView.findViewById(R.id.gifview);
         sound = (ImageButton)rootView.findViewById(R.id.imageButtonSound);
         next = (ImageButton)rootView.findViewById(R.id.next);
         previous = (ImageButton)rootView.findViewById(R.id.previous);
@@ -54,12 +56,20 @@ public class Tab1 extends Fragment implements View.OnClickListener, TextToSpeech
         textviewdetail = (TextView)rootView.findViewById(R.id.textViewDetail);
         textviewpaging = (TextView)rootView.findViewById(R.id.textViewPaging);
         textviewpinbi = (TextView)rootView.findViewById(R.id.textViewPinBi);
-        stroke = (CustomGifView)rootView.findViewById(R.id.stroke);
+
+        vv2 = (VideoView)rootView.findViewById(R.id.videoViewImage);
+        vv2.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mediaPlayer) {
+                mediaPlayer.setLooping(true);
+            }
+        });
 
         userDataSource = new UserDataSource(getContext());
         userDataSource.open();
 
         values = userDataSource.getAllUsers();
+        playvideo(values.get(position).getPath());
         textviewzhuci.setText(values.get(position).getZhuci());
         textviewdetail.setText(values.get(position).getDetail());
         textviewpaging.setText( (position+1) +  "/10");
@@ -73,11 +83,10 @@ public class Tab1 extends Fragment implements View.OnClickListener, TextToSpeech
                 if(position < 9) {
                     position = position + 1;
                     textviewpaging.setText((position+1) + "/10");
-                    //stroke.setImageResource(values.get(position).getImage());
                     textviewzhuci.setText(values.get(position).getZhuci());
                     textviewdetail.setText(values.get(position).getDetail());
                     textviewpinbi.setText(values.get(position).getPinbi());
-                    stroke.setPosition(getActivity(), position);
+                    playvideo(values.get(position).getPath());
                 }
             }
         });
@@ -88,16 +97,23 @@ public class Tab1 extends Fragment implements View.OnClickListener, TextToSpeech
                 if(position > 0) {
                     position = position - 1;
                     textviewpaging.setText((position+1) + "/10");
-                    //stroke.setImageResource(values.get(position).getImage());
                     textviewzhuci.setText(values.get(position).getZhuci());
                     textviewdetail.setText(values.get(position).getDetail());
                     textviewpinbi.setText(values.get(position).getPinbi());
-                    stroke.setPosition(getActivity(), position);
+                    playvideo(values.get(position).getPath());
                 }
             }
         });
         return rootView;
     }
+
+    public void playvideo(String uripath2){
+        Uri uri2 = Uri.parse(uripath2);
+        vv2.setVideoURI(uri2);
+        vv2.requestFocus();
+        vv2.start();
+    }
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {

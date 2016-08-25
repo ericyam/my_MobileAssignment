@@ -65,6 +65,8 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
         fragmentTransaction.commit();
 
 
+
+
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#333333")));
@@ -634,7 +636,7 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
         @Override public void onTick(long millisUntilFinished) {
             long millis = millisUntilFinished;
             mins = mins - 1000;
-            String hms = String.format("%02d : %02d : %02d", TimeUnit.MILLISECONDS.toHours(millis), TimeUnit.MILLISECONDS.toMinutes(millis) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millis)), TimeUnit.MILLISECONDS.toSeconds(millis) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
+            String hms = String.format(" %02d : %02d : %02d", TimeUnit.MILLISECONDS.toHours(millis), TimeUnit.MILLISECONDS.toMinutes(millis) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millis)), TimeUnit.MILLISECONDS.toSeconds(millis) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
             //System.out.println(hms);
             textViewTime.setText(hms);
         }

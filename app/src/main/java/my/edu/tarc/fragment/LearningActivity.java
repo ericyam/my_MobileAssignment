@@ -51,9 +51,7 @@ public class LearningActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                // API 5+ solution
                 onBackPressed();
-                //overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
                 return true;
 
             default:
@@ -75,13 +73,13 @@ public class LearningActivity extends AppCompatActivity {
         };
         private String [] title={
                 "笔顺",
-                "     成语\n(即将推出)",
-                "   三字经\n(即将推出)",
-                " 每日一句\n(即将推出)",
-                " 看图识字\n(即将推出)",
-                " 童歌拼音\n(即将推出)",
-                "   弟子规\n(即将推出)",
-                " 汉语拼音\n(即将推出)",
+                "成语",
+                "三字经\n(即将推出)",
+                "每日一句\n(即将推出)",
+                "看图识字\n(即将推出)",
+                "童歌拼音\n(即将推出)",
+                "弟子规\n(即将推出)",
+                "汉语拼音\n(即将推出)",
         };
 
         private LayoutInflater inflater=null;
@@ -112,17 +110,12 @@ public class LearningActivity extends AppCompatActivity {
         }
         @Override
         public View getView(int i, View view, ViewGroup viewGroup) {
-            /*ImageView imageView = new ImageView(mContext);
-            imageView.setLayoutParams(new GridView.LayoutParams(280,280));
-            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            imageView.setPadding(8,8,8,8);
-            imageView.setImageResource(images[i]);*/
 
             Holder holder=new Holder();
             View rowView;
 
             rowView = inflater.inflate(R.layout.learningfunction, null);
-            rowView.setLayoutParams(new GridView.LayoutParams(300,375));
+            //rowView.setLayoutParams(new GridView.LayoutParams(300,375));
 
             //set Text and Listener is here <---------------------
             holder.tv=(TextView) rowView.findViewById(R.id.item_text);

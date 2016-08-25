@@ -7,10 +7,10 @@ import android.media.Image;
  */
 public class BihuaData {
     private String id;
-    //private int image;
     private String zhuci;
     private String detail;
     private String pinbi;
+    private String path;
 
     public String getId() {
         return id;
@@ -20,13 +20,13 @@ public class BihuaData {
         this.id = id;
     }
 
-    /*public int getImage() {
-        return image;
+    public String getPath() {
+        return path;
     }
 
-    public void setImage(int image) {
-        this.image = image;
-    }*/
+    public void setPath(String path) {
+        this.path = path;
+    }
 
     public String getPinbi() {
         return pinbi;

@@ -64,14 +64,14 @@ public class CustomAdapter2 extends BaseAdapter{
         LayoutParams params = rowView.getLayoutParams();
 
         // Set the height of the Item View
-        params.height = 111;
+        params.height = 120;
         rowView.setLayoutParams(params);
 
 
         holder.tv=(TextView) rowView.findViewById(R.id.textViewTitle);
         holder.tv2=(TextView) rowView.findViewById(R.id.textViewResult);
-        holder.tv.setTextSize(TypedValue.COMPLEX_UNIT_DIP,12);
-        holder.tv2.setTextSize(TypedValue.COMPLEX_UNIT_DIP,12);
+        holder.tv.setTextSize(TypedValue.COMPLEX_UNIT_DIP,14);
+        holder.tv2.setTextSize(TypedValue.COMPLEX_UNIT_DIP,14);
 
 
         holder.tv.setText(result[position]);

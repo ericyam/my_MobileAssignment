@@ -11,8 +11,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:orientation="horizontal"
-        android:layout_marginTop="45dp"
-        android:layout_marginRight="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="60dp"
         android:id="@+id/tableLayout">
 
         <TableRow
@@ -26,8 +26,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/imageButtonSound"
-                    android:layout_marginTop="-5dp"
-                    android:src="@android:drawable/ic_btn_speak_now" />
+                    android:src="@android:drawable/ic_btn_speak_now"
+                    android:background="@drawable/micsicon"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -48,7 +48,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="7dp"
-                    android:layout_marginLeft="56dp"
+                    android:layout_marginLeft="32dp"
                     android:text="组词 : "/>
 
                 <TextView
@@ -70,7 +70,7 @@
         android:lineSpacingMultiplier="1.2"
 
         android:id="@+id/textViewDetail"
-        android:layout_marginTop="67dp"
+        android:layout_marginTop="58dp"
         android:layout_below="@+id/tableLayout"
         android:layout_centerHorizontal="true" />
 
@@ -99,46 +99,47 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:layout_alignTop="@+id/toolbar_bottom"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="@color/colorWhite">
+        android:background="@color/colorWhite"
+        android:layout_alignTop="@+id/toolbar_bottom">
 
         <ImageButton
             android:id="@+id/previous"
-            android:layout_width="100px"
-            android:layout_height="100px"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
             android:clickable="true"
             android:scaleType="fitXY"
             android:src="@drawable/previous"
             android:layout_alignParentLeft="true"
             android:background="@null"
             android:layout_alignParentBottom="true"
-            android:layout_marginLeft="50px"
-            android:layout_marginBottom="20px"/>
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="3dp"/>
 
         <ImageButton
             android:id="@+id/next"
-            android:layout_width="100px"
-            android:layout_height="100px"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
             android:clickable="true"
             android:scaleType="fitXY"
             android:src="@drawable/next"
             android:layout_alignParentRight="true"
             android:background="@null"
             android:layout_alignParentBottom="true"
-            android:layout_marginRight="50px"
-            android:layout_marginBottom="20px"/>
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="3dp"/>
 
     </RelativeLayout>
 
-    <my.edu.tarc.fragment.CustomGifView
+    <VideoView
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:id="@+id/stroke"
+        android:id="@+id/videoViewImage"
         android:layout_alignTop="@+id/tableLayout"
-        android:layout_alignRight="@+id/textViewPaging"
-        android:layout_alignEnd="@+id/textViewPaging"
-        android:layout_marginRight="-50px"/>
+        android:layout_alignLeft="@+id/textViewDetail"
+        android:layout_alignStart="@+id/textViewDetail" />
+
+
 
 </RelativeLayout>

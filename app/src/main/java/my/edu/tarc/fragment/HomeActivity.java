@@ -4,16 +4,13 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
 import java.util.ArrayList;
 
 import my.edu.tarc.fragment.Database.BihuaData;
@@ -188,8 +185,8 @@ public class HomeActivity extends AppCompatActivity {
                 "滑 (smooth; slippery)\n〈形〉\n(1) (形声。从水,骨声。本义:滑溜,光滑)\n\n(2) 又如:滑擦(滑擦擦。形容很光滑);滑出律(形容光滑);滑踏(滑溜;不便行走);滑刺溜(形容非常光滑)\n\n(3) 流利;婉转 [fluent]。如:滑辣(形容水响的声音);滑熟(熟练;惯熟);滑怏(形容关系融洽或没隔阂);滑串流口(谓人言词流利便捷)\n\n(4) 浮华不实 [showy]",
                 "跑 (run)\n〈动〉\n(1) 又如:逃跑(逃走);别让特务跑了;跑走(逃走;走掉)\n\n(2) 逃走;躲避 [escape]\n\n(3) 又如:长跑(长距离跑步);跑解马(表演马术);跑冰(滑冰;溜冰);跑竹马(民间娱乐活动之一种);跑搭(奔走,奔忙);跑路(奔走);跑踏(奔走;奔忙)\n\n(4) 急走 [run] 跑,趵也。——《广雅·释言》",
                 "跳 (jump;leap;spring)\n〈动〉\n(1) (形声。从足,兆声。本义:跃)\n\n(2) 同本义 [jump;leap;spring]\n\n(3) 又如:跳蹋(由生气或着急而顿足);跳索(杂技中的一种绳技);跳鳞(跳出水面的鱼);跳踯(上下跳跃)\n\n(4) 越过障碍 [skip over]",
-                "玩 (play, enjoy)\n〈动〉\n(1) (形声。从玉,元声。本义:以手玩弄[玉])\n\n(2) 玩赏;欣赏 [enjoy;appreciate]\n\n(3) 又如:玩咏(玩赏吟咏);玩幽(玩赏幽景);玩好(玩赏与爱好);玩月(赏月)\n\n(4) 从事或投入[某种游戏或其他文娱活动] [engage in some kinds of sports or recreational activities]。如:玩戏(非专业演员演戏,玩票;耍闹,开玩笑);玩棒球;玩雪;玩适(娱乐);玩之不足(观赏不尽);玩影(弄影)",
-                "放 (swim)\n〈动〉\n(1) 人或动物在水里浮行或潜泳\n\n(2) 流动,不固定 [wander about]\n\n(3) 又如:游衍(游游衍衍。游荡;游乐;干干停停,拖延时间);游花插趣(游荡作乐);游回磨转(团团转);游行(到处漫游)\n\n",
+                "玩 (play, enjoy)\n〈动〉\n(1) (形声。从玉,元声。本义:以手玩弄[玉])\n\n(2) 玩赏;欣赏 [enjoy;appreciate]\n\n(3) 又如:玩咏(玩赏吟咏);玩幽(玩赏幽景);玩好(玩赏与爱好);玩月(赏月)\n\n(4) 从事或投入[某种游戏或其他文娱活动] 。如:玩戏(非专业演员演戏,玩票;耍闹,开玩笑)",
+                "游 (swim)\n〈动〉\n(1) 人或动物在水里浮行或潜泳\n\n(2) 流动,不固定 [wander about]\n\n(3) 又如:游衍(游游衍衍。游荡;游乐;干干停停,拖延时间);游花插趣(游荡作乐);游回磨转(团团转);游行(到处漫游)\n\n",
                 "俊 (elite)\n〈名〉\n(1) (形声。从人,雋( jùn)声。本义:才智超群的人)\n\n(2) 同本义 [elite]\n\n(3) 又如:俊选(俊士和选士);俊良(贤能优良之士);俊物(杰出人物);俊群(才能卓越一类人)\n\n(4) 光彩 [lustre]",
                 "克 (can;be able to)\n〈动〉\n(象形。甲骨文字形,下面象肩形。整个字形,象人肩物之形。本义:胜任)\n\n(2) 同本义 [be competent]\n\n(3) 又如:克当(担当,承受);克堪(胜利);克家(能承担家事);克祚(能继承祖辈的福禄);克家子(克家儿。能继承祖业的子弟);克明(能察是非)\n\n(4) 攻下;战胜;打败 [defeat;overcome;capture]",
                 "孔 (hole;opening;aperture)\n〈副〉\n(1) (象形。金文字形,象小儿食乳之形。婴儿吃奶容易过量,因以表示过甚之意。本义:甚,很)\n\n(2) 又如:钥匙孔;鼻孔;孔口(洞口);孔窍(洞孔)\n\n(3) 又如:孔亟(甚急);孔多(很多);孔明(很完备;很洁净;很鲜明);孔疚(很痛苦);孔虔(非常虔诚);孔圣(很圣明)",
@@ -214,34 +211,34 @@ public class HomeActivity extends AppCompatActivity {
                 "android.resource://my.edu.tarc.fragment/"+R.raw.latestma,
                 "android.resource://my.edu.tarc.fragment/"+R.raw.latestgou,
                 "android.resource://my.edu.tarc.fragment/"+R.raw.latestyang,
-                "android.resource://my.edu.tarc.fragment/"+R.raw.latestnan,
-                "android.resource://my.edu.tarc.fragment/"+R.raw.latestnv,
-                "android.resource://my.edu.tarc.fragment/"+R.raw.latestxiao,
-                "android.resource://my.edu.tarc.fragment/"+R.raw.latestji,
-                "android.resource://my.edu.tarc.fragment/"+R.raw.latesttian,
-                "android.resource://my.edu.tarc.fragment/"+R.raw.latesttu,
-                "android.resource://my.edu.tarc.fragment/"+R.raw.latestche,
-                "android.resource://my.edu.tarc.fragment/"+R.raw.latestma,
-                "android.resource://my.edu.tarc.fragment/"+R.raw.latestgou,
-                "android.resource://my.edu.tarc.fragment/"+R.raw.latestyang,
-                "android.resource://my.edu.tarc.fragment/"+R.raw.latestnan,
-                "android.resource://my.edu.tarc.fragment/"+R.raw.latestnv,
-                "android.resource://my.edu.tarc.fragment/"+R.raw.latestxiao,
-                "android.resource://my.edu.tarc.fragment/"+R.raw.latestji,
-                "android.resource://my.edu.tarc.fragment/"+R.raw.latesttian,
-                "android.resource://my.edu.tarc.fragment/"+R.raw.latesttu,
-                "android.resource://my.edu.tarc.fragment/"+R.raw.latestche,
-                "android.resource://my.edu.tarc.fragment/"+R.raw.latestma,
-                "android.resource://my.edu.tarc.fragment/"+R.raw.latestgou,
-                "android.resource://my.edu.tarc.fragment/"+R.raw.latestyang};
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestda,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestdu,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestfang,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestfei,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latesthe,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latesthua,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestpao,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latesttiao,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestwan,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestyou,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestjun,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestke,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestkong,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestku,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestlv,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestsha,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latesttu1,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestxiu,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestxuan,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestzai};
 
         BihuaData bihuaData = new BihuaData();
         for(int i=0; i<zhuci.length; i++) {
             bihuaData.setId(id[i]);
-            //bihuaData.setImage(images[i]);
             bihuaData.setZhuci(zhuci[i]);
             bihuaData.setDetail(detail[i]);
             bihuaData.setPinbi(pinbi[i]);
+            bihuaData.setPath(imagepath[i]);
             userDataSource.insertUser(bihuaData);
         }
 

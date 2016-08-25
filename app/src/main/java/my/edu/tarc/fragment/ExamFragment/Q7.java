@@ -39,6 +39,7 @@ public class Q7 extends Fragment implements View.OnClickListener, TextToSpeech.O
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rooteView = inflater.inflate(R.layout.examq7, container, false);
+        checkTTS();
         imgresult = (ImageView)rooteView.findViewById(R.id.imageView2);
         imgbtn = (ImageView)rooteView.findViewById(R.id.imageButton4);  //che
         imgbtn1 = (ImageView)rooteView.findViewById(R.id.imageButton5); //chi
@@ -72,11 +73,11 @@ public class Q7 extends Fragment implements View.OnClickListener, TextToSpeech.O
             @Override
             public void onClick(View view) {
                 if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    tts.speak("男", TextToSpeech.QUEUE_FLUSH, null, null);
+                    tts.speak("桌", TextToSpeech.QUEUE_FLUSH, null, null);
                 }else {
                     HashMap<String, String> hash = new HashMap<String,String>();
                     hash.put(TextToSpeech.Engine.KEY_PARAM_STREAM, String.valueOf(AudioManager.STREAM_NOTIFICATION));
-                    tts.speak("男", TextToSpeech.QUEUE_FLUSH, hash);
+                    tts.speak("桌", TextToSpeech.QUEUE_FLUSH, hash);
                 }
             }
         });

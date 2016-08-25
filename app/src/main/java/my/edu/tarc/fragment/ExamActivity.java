@@ -52,7 +52,10 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
     static long mins = 1800000;
     static int totalcorrect = 0;
     static int totalanswered = 0;
-    boolean[] clicked = {false, false, false, false, false, false, false, false, false, false, false, false, false, false};
+    static boolean[] clicked = {false, false, false, false, false, false, false, false, false, false, false, false, false, false};
+
+    CounterClass timer = new CounterClass(mins, 1000);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +90,7 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
         btn14 = (Button)findViewById(R.id.btn14);
 
         buttonnext = (Button)findViewById(R.id.buttonNext);
+        setsmallbtnBackground();
         btn1.setBackgroundColor(getResources().getColor(R.color.colorBlue));
 
 
@@ -94,19 +98,19 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
                     switch(fragpage){
-                    case 1 : fragment = new Q2();clicked[1] = true;buttonnext.setText("Next"); break;
-                    case 2 : fragment = new Q3();clicked[2] = true;buttonnext.setText("Next"); break;
-                    case 3 : fragment = new Q4();clicked[3] = true;buttonnext.setText("Next"); break;
-                    case 4 : fragment = new Q5();clicked[4] = true;buttonnext.setText("Next"); break;
-                    case 5 : fragment = new Q6();clicked[5] = true;buttonnext.setText("Next"); break;
-                    case 6 : fragment = new Q7();clicked[6] = true;buttonnext.setText("Next"); break;
-                    case 7 : fragment = new Q8();clicked[7] = true;buttonnext.setText("Next"); break;
-                    case 8 : fragment = new Q9();clicked[8] = true;buttonnext.setText("Next"); break;
-                    case 9 : fragment = new Q10();clicked[9] = true;buttonnext.setText("Next"); break;
-                    case 10 : fragment = new Q11();clicked[10] = true;buttonnext.setText("Next"); break;
-                    case 11 : fragment = new Q12();clicked[11] = true;buttonnext.setText("Next"); break;
-                    case 12 : fragment = new Q13();clicked[12] = true;buttonnext.setText("Next"); break;
-                    case 13 : fragment = new Q14();clicked[13] = true;buttonnext.setText("Done"); break;
+                    case 1 : fragment = new Q2();clicked[1] = true;buttonnext.setText(getResources().getString(R.string.next)); break;
+                    case 2 : fragment = new Q3();clicked[2] = true;buttonnext.setText(getResources().getString(R.string.next)); break;
+                    case 3 : fragment = new Q4();clicked[3] = true;buttonnext.setText(getResources().getString(R.string.next)); break;
+                    case 4 : fragment = new Q5();clicked[4] = true;buttonnext.setText(getResources().getString(R.string.next)); break;
+                    case 5 : fragment = new Q6();clicked[5] = true;buttonnext.setText(getResources().getString(R.string.next)); break;
+                    case 6 : fragment = new Q7();clicked[6] = true;buttonnext.setText(getResources().getString(R.string.next)); break;
+                    case 7 : fragment = new Q8();clicked[7] = true;buttonnext.setText(getResources().getString(R.string.next)); break;
+                    case 8 : fragment = new Q9();clicked[8] = true;buttonnext.setText(getResources().getString(R.string.next)); break;
+                    case 9 : fragment = new Q10();clicked[9] = true;buttonnext.setText(getResources().getString(R.string.next)); break;
+                    case 10 : fragment = new Q11();clicked[10] = true;buttonnext.setText(getResources().getString(R.string.next)); break;
+                    case 11 : fragment = new Q12();clicked[11] = true;buttonnext.setText(getResources().getString(R.string.next)); break;
+                    case 12 : fragment = new Q13();clicked[12] = true;buttonnext.setText(getResources().getString(R.string.next)); break;
+                    case 13 : fragment = new Q14();clicked[13] = true;buttonnext.setText(getResources().getString(R.string.done)); break;
                     case 14 : showResult();break;
                 }
                 if(fragpage < 15)
@@ -134,10 +138,9 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
         btn14.setOnClickListener(this);
 
         textViewTime = (TextView)findViewById(R.id.textViewTime);
-        textViewTime.setText("00:30:00");
-        CounterClass timer= new CounterClass(mins,1000);
+        textViewTime.setText("");
+
         timer.start();
-        //timer.cancel();
 
     }
 
@@ -371,13 +374,13 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
         if(totalanswered == 14) {
-            finish();
             Intent intent = new Intent(this, ResultActivity.class);
             intent.putExtra("time", textViewTime.getText().toString());
             intent.putExtra("totalcorrect", totalcorrect);
             startActivity(intent);
+            finish();
         }else{
-            Toast.makeText(getApplicationContext(), "Please answer all the question", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), getResources().getString(R.string.answer), Toast.LENGTH_LONG).show();
             totalanswered = 0;
             totalcorrect = 0;
         }
@@ -386,213 +389,213 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
     public void setbtnbackground(){
         if(fragpage == 1){
             btn1.setBackgroundColor(getResources().getColor(R.color.colorBlue));
-            btn2.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn3.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn4.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn5.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn6.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn7.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn8.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn9.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn10.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn11.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn12.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn13.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn14.setBackground(getResources().getDrawable(R.drawable.border_style));
+            btn2.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn3.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn4.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn5.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn6.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn7.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn8.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn9.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn10.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn11.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn12.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn13.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn14.setBackground(getResources().getDrawable(R.color.colorGray));
         }else if(fragpage == 2){
-            btn1.setBackground(getResources().getDrawable(R.drawable.border_style));
+            btn1.setBackground(getResources().getDrawable(R.color.colorGray));
             btn2.setBackgroundColor(getResources().getColor(R.color.colorBlue));
-            btn3.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn4.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn5.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn6.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn7.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn8.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn9.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn10.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn11.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn12.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn13.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn14.setBackground(getResources().getDrawable(R.drawable.border_style));
+            btn3.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn4.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn5.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn6.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn7.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn8.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn9.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn10.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn11.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn12.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn13.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn14.setBackground(getResources().getDrawable(R.color.colorGray));
         }else if(fragpage == 3){
-            btn1.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn2.setBackground(getResources().getDrawable(R.drawable.border_style));
+            btn1.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn2.setBackground(getResources().getDrawable(R.color.colorGray));
             btn3.setBackgroundColor(getResources().getColor(R.color.colorBlue));
-            btn4.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn5.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn6.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn7.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn8.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn9.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn10.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn11.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn12.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn13.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn14.setBackground(getResources().getDrawable(R.drawable.border_style));
+            btn4.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn5.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn6.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn7.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn8.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn9.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn10.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn11.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn12.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn13.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn14.setBackground(getResources().getDrawable(R.color.colorGray));
         }else if(fragpage == 4){
-            btn1.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn2.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn3.setBackground(getResources().getDrawable(R.drawable.border_style));
+            btn1.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn2.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn3.setBackground(getResources().getDrawable(R.color.colorGray));
             btn4.setBackgroundColor(getResources().getColor(R.color.colorBlue));
-            btn5.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn6.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn7.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn8.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn9.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn10.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn11.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn12.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn13.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn14.setBackground(getResources().getDrawable(R.drawable.border_style));
+            btn5.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn6.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn7.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn8.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn9.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn10.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn11.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn12.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn13.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn14.setBackground(getResources().getDrawable(R.color.colorGray));
         }else if(fragpage == 5){
-            btn1.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn2.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn3.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn4.setBackground(getResources().getDrawable(R.drawable.border_style));
+            btn1.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn2.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn3.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn4.setBackground(getResources().getDrawable(R.color.colorGray));
             btn5.setBackgroundColor(getResources().getColor(R.color.colorBlue));
-            btn6.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn7.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn8.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn9.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn10.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn11.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn12.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn13.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn14.setBackground(getResources().getDrawable(R.drawable.border_style));
+            btn6.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn7.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn8.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn9.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn10.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn11.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn12.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn13.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn14.setBackground(getResources().getDrawable(R.color.colorGray));
         }else if(fragpage == 6){
-            btn1.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn2.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn3.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn4.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn5.setBackground(getResources().getDrawable(R.drawable.border_style));
+            btn1.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn2.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn3.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn4.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn5.setBackground(getResources().getDrawable(R.color.colorGray));
             btn6.setBackgroundColor(getResources().getColor(R.color.colorBlue));
-            btn7.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn8.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn9.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn10.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn11.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn12.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn13.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn14.setBackground(getResources().getDrawable(R.drawable.border_style));
+            btn7.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn8.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn9.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn10.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn11.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn12.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn13.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn14.setBackground(getResources().getDrawable(R.color.colorGray));
         }else if(fragpage == 7){
-            btn1.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn2.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn3.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn4.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn5.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn6.setBackground(getResources().getDrawable(R.drawable.border_style));
+            btn1.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn2.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn3.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn4.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn5.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn6.setBackground(getResources().getDrawable(R.color.colorGray));
             btn7.setBackgroundColor(getResources().getColor(R.color.colorBlue));
-            btn8.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn9.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn10.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn11.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn12.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn13.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn14.setBackground(getResources().getDrawable(R.drawable.border_style));
+            btn8.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn9.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn10.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn11.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn12.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn13.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn14.setBackground(getResources().getDrawable(R.color.colorGray));
         }else if(fragpage == 8){
-            btn1.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn2.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn3.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn4.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn5.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn6.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn7.setBackground(getResources().getDrawable(R.drawable.border_style));
+            btn1.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn2.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn3.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn4.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn5.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn6.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn7.setBackground(getResources().getDrawable(R.color.colorGray));
             btn8.setBackgroundColor(getResources().getColor(R.color.colorBlue));
-            btn9.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn10.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn11.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn12.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn13.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn14.setBackground(getResources().getDrawable(R.drawable.border_style));
+            btn9.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn10.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn11.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn12.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn13.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn14.setBackground(getResources().getDrawable(R.color.colorGray));
         }else if(fragpage == 9){
-            btn1.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn2.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn3.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn4.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn5.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn6.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn7.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn8.setBackground(getResources().getDrawable(R.drawable.border_style));
+            btn1.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn2.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn3.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn4.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn5.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn6.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn7.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn8.setBackground(getResources().getDrawable(R.color.colorGray));
             btn9.setBackgroundColor(getResources().getColor(R.color.colorBlue));
-            btn10.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn11.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn12.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn13.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn14.setBackground(getResources().getDrawable(R.drawable.border_style));
+            btn10.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn11.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn12.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn13.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn14.setBackground(getResources().getDrawable(R.color.colorGray));
         }else if(fragpage == 10){
-            btn1.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn2.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn3.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn4.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn5.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn6.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn7.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn8.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn9.setBackground(getResources().getDrawable(R.drawable.border_style));
+            btn1.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn2.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn3.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn4.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn5.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn6.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn7.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn8.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn9.setBackground(getResources().getDrawable(R.color.colorGray));
             btn10.setBackgroundColor(getResources().getColor(R.color.colorBlue));
-            btn11.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn12.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn13.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn14.setBackground(getResources().getDrawable(R.drawable.border_style));
+            btn11.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn12.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn13.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn14.setBackground(getResources().getDrawable(R.color.colorGray));
         }else if(fragpage == 11){
-            btn1.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn2.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn3.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn4.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn5.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn6.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn7.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn8.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn9.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn10.setBackground(getResources().getDrawable(R.drawable.border_style));
+            btn1.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn2.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn3.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn4.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn5.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn6.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn7.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn8.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn9.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn10.setBackground(getResources().getDrawable(R.color.colorGray));
             btn11.setBackgroundColor(getResources().getColor(R.color.colorBlue));
-            btn12.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn13.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn14.setBackground(getResources().getDrawable(R.drawable.border_style));
+            btn12.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn13.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn14.setBackground(getResources().getDrawable(R.color.colorGray));
         }else if(fragpage == 12){
-            btn1.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn2.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn3.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn4.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn5.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn6.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn7.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn8.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn9.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn10.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn11.setBackground(getResources().getDrawable(R.drawable.border_style));
+            btn1.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn2.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn3.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn4.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn5.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn6.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn7.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn8.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn9.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn10.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn11.setBackground(getResources().getDrawable(R.color.colorGray));
             btn12.setBackgroundColor(getResources().getColor(R.color.colorBlue));
-            btn13.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn14.setBackground(getResources().getDrawable(R.drawable.border_style));
+            btn13.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn14.setBackground(getResources().getDrawable(R.color.colorGray));
         }else if(fragpage == 13){
-            btn1.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn2.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn3.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn4.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn5.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn6.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn7.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn8.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn9.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn10.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn11.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn12.setBackground(getResources().getDrawable(R.drawable.border_style));
+            btn1.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn2.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn3.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn4.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn5.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn6.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn7.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn8.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn9.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn10.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn11.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn12.setBackground(getResources().getDrawable(R.color.colorGray));
             btn13.setBackgroundColor(getResources().getColor(R.color.colorBlue));
-            btn14.setBackground(getResources().getDrawable(R.drawable.border_style));
+            btn14.setBackground(getResources().getDrawable(R.color.colorGray));
         }else if(fragpage == 14){
-            btn1.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn2.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn3.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn4.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn5.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn6.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn7.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn8.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn9.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn10.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn11.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn12.setBackground(getResources().getDrawable(R.drawable.border_style));
-            btn13.setBackground(getResources().getDrawable(R.drawable.border_style));
+            btn1.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn2.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn3.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn4.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn5.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn6.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn7.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn8.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn9.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn10.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn11.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn12.setBackground(getResources().getDrawable(R.color.colorGray));
+            btn13.setBackground(getResources().getDrawable(R.color.colorGray));
             btn14.setBackgroundColor(getResources().getColor(R.color.colorBlue));
         }
     }
@@ -600,20 +603,20 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch(view.getId()){
-            case R.id.btn1 : fragment = new Q1(); fragpage = 1;clicked[0] = true;buttonnext.setText("Next");break;
-            case R.id.btn2 : fragment = new Q2(); fragpage = 2;clicked[1] = true;buttonnext.setText("Next");break;
-            case R.id.btn3 : fragment = new Q3(); fragpage = 3;clicked[2] = true;buttonnext.setText("Next");break;
-            case R.id.btn4 : fragment = new Q4(); fragpage = 4;clicked[3] = true;buttonnext.setText("Next");break;
-            case R.id.btn5 : fragment = new Q5(); fragpage = 5;clicked[4] = true;buttonnext.setText("Next");break;
-            case R.id.btn6 : fragment = new Q6(); fragpage = 6;clicked[5] = true;buttonnext.setText("Next");break;
-            case R.id.btn7 : fragment = new Q7(); fragpage = 7;clicked[6] = true;buttonnext.setText("Next");break;
-            case R.id.btn8 : fragment = new Q8(); fragpage = 8;clicked[7] = true;buttonnext.setText("Next");break;
-            case R.id.btn9 : fragment = new Q9(); fragpage = 9;clicked[8] = true;buttonnext.setText("Next");break;
-            case R.id.btn10 : fragment = new Q10(); fragpage = 10;clicked[9] = true;buttonnext.setText("Next");break;
-            case R.id.btn11 : fragment = new Q11(); fragpage = 11;clicked[10] = true;buttonnext.setText("Next");break;
-            case R.id.btn12 : fragment = new Q12(); fragpage = 12;clicked[11] = true;buttonnext.setText("Next");break;
-            case R.id.btn13 : fragment = new Q13(); fragpage = 13;clicked[12] = true;buttonnext.setText("Next");break;
-            case R.id.btn14 : fragment = new Q14(); fragpage = 14;clicked[13] = true;buttonnext.setText("Done");break;
+            case R.id.btn1 : fragment = new Q1(); fragpage = 1;clicked[0] = true;buttonnext.setText(getResources().getString(R.string.next));break;
+            case R.id.btn2 : fragment = new Q2(); fragpage = 2;clicked[1] = true;buttonnext.setText(getResources().getString(R.string.next));break;
+            case R.id.btn3 : fragment = new Q3(); fragpage = 3;clicked[2] = true;buttonnext.setText(getResources().getString(R.string.next));break;
+            case R.id.btn4 : fragment = new Q4(); fragpage = 4;clicked[3] = true;buttonnext.setText(getResources().getString(R.string.next));break;
+            case R.id.btn5 : fragment = new Q5(); fragpage = 5;clicked[4] = true;buttonnext.setText(getResources().getString(R.string.next));break;
+            case R.id.btn6 : fragment = new Q6(); fragpage = 6;clicked[5] = true;buttonnext.setText(getResources().getString(R.string.next));break;
+            case R.id.btn7 : fragment = new Q7(); fragpage = 7;clicked[6] = true;buttonnext.setText(getResources().getString(R.string.next));break;
+            case R.id.btn8 : fragment = new Q8(); fragpage = 8;clicked[7] = true;buttonnext.setText(getResources().getString(R.string.next));break;
+            case R.id.btn9 : fragment = new Q9(); fragpage = 9;clicked[8] = true;buttonnext.setText(getResources().getString(R.string.next));break;
+            case R.id.btn10 : fragment = new Q10(); fragpage = 10;clicked[9] = true;buttonnext.setText(getResources().getString(R.string.next));break;
+            case R.id.btn11 : fragment = new Q11(); fragpage = 11;clicked[10] = true;buttonnext.setText(getResources().getString(R.string.next));break;
+            case R.id.btn12 : fragment = new Q12(); fragpage = 12;clicked[11] = true;buttonnext.setText(getResources().getString(R.string.next));break;
+            case R.id.btn13 : fragment = new Q13(); fragpage = 13;clicked[12] = true;buttonnext.setText(getResources().getString(R.string.next));break;
+            case R.id.btn14 : fragment = new Q14(); fragpage = 14;clicked[13] = true;buttonnext.setText(getResources().getString(R.string.done));break;
         }
         setsmallbtnBackground();
         fragmentTransaction = getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment);
@@ -629,19 +632,83 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         @Override public void onFinish() {
-            textViewTime.setText("Completed.");
+            getAnswer();
+            if (a1 == 'Y') {
+                    totalcorrect = totalcorrect + 1;
+            }
+
+            if (a2 == 'Y') {
+                    totalcorrect = totalcorrect + 1;
+            }
+
+            if (a3 == 'Y') {
+                    totalcorrect = totalcorrect + 1;
+            }
+
+            if (a4 == 'Y') {
+                    totalcorrect = totalcorrect + 1;
+            }
+
+            if (a5 == 'Y') {
+                    totalcorrect = totalcorrect + 1;
+            }
+
+            if (a6 == 'Y') {
+                    totalcorrect = totalcorrect + 1;
+            }
+
+            if (a7 == 'Y') {
+                    totalcorrect = totalcorrect + 1;
+            }
+
+            if (a8 == 'Y') {
+                    totalcorrect = totalcorrect + 1;
+            }
+            if (a9 == 'Y') {
+                    totalcorrect = totalcorrect + 1;
+            }
+
+            if (a10 == 'Y') {
+                    totalcorrect = totalcorrect + 1;
+            }
+
+            if (a11 == 'Y') {
+                    totalcorrect = totalcorrect + 1;
+            }
+            if (a12 == 'Y') {
+                    totalcorrect = totalcorrect + 1;
+            }
+
+            if (a13 == 'Y') {
+                    totalcorrect = totalcorrect + 1;
+            }
+
+            if (a14 == 'Y') {
+                    totalcorrect = totalcorrect + 1;
+            }
+
+            Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
+            intent.putExtra("time", textViewTime.getText().toString());
+            intent.putExtra("totalcorrect", totalcorrect);
+            startActivity(intent);
+            finish();
+
         }
         @SuppressLint("NewApi")
         @TargetApi(Build.VERSION_CODES.GINGERBREAD)
         @Override public void onTick(long millisUntilFinished) {
             long millis = millisUntilFinished;
             mins = mins - 1000;
-            String hms = String.format(" %02d : %02d : %02d", TimeUnit.MILLISECONDS.toHours(millis), TimeUnit.MILLISECONDS.toMinutes(millis) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millis)), TimeUnit.MILLISECONDS.toSeconds(millis) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
-            //System.out.println(hms);
+            String hms = String.format("%02d : %02d : %02d", TimeUnit.MILLISECONDS.toHours(millis), TimeUnit.MILLISECONDS.toMinutes(millis) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millis)), TimeUnit.MILLISECONDS.toSeconds(millis) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
+            System.out.println(hms);
             textViewTime.setText(hms);
         }
+
     }
 
-
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        timer.cancel();
+    }
 }

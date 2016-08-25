@@ -205,4 +205,12 @@ public class ResultActivity extends AppCompatActivity {
         ExamActivity.totalcorrect = 0;
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        ExamActivity.mins = 1800000;
+        clearAll();
+        finish();
+        HomeActivity.clicked = false;
+    }
 }

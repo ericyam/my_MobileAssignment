@@ -22,13 +22,14 @@ public class SurvChineseActivity extends AppCompatActivity {
 
     ArrayList prgmName;
     public static int [] prgmImages2={R.drawable.pushpin,R.drawable.love,R.drawable.meet,R.drawable.food,R.drawable.health,R.drawable.shopping,R.drawable.emergency,R.drawable.fun};
-    public static String [] prgmNameList2={"Basic","Flirting","Direction","Food","Health","Shopping","Emergency","Entertainment"};
+    public static String [] prgmNameList2;
     public static String [] subList2={"","","","","","","",""};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_surv_chinese);
+        prgmNameList2 = getResources().getStringArray(R.array.survivallist);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);

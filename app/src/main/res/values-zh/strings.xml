@@ -32,4 +32,30 @@
     <string name="score">分数</string>
     <string name="resultinfo">成绩资料</string>
 
+    <string-array name="survivallist">
+        <item>基本</item>
+        <item>调情</item>
+        <item>方向</item>
+        <item>餐饮</item>
+        <item>健康</item>
+        <item>购物</item>
+        <item>紧急事件</item>
+        <item>娱乐</item>
+    </string-array>
+
+    <string name="basic">基本</string>
+    <string name="flirt">调情</string>
+    <string name="direction">方向</string>
+    <string name="food">餐饮</string>
+    <string name="health">健康</string>
+    <string name="shopping">购物</string>
+    <string name="emergency">紧急事件</string>
+    <string name="entainment">娱乐</string>
+    <string name="proverb">成语</string>
+    <string name="survival">基本华语</string>
+    <string name="retake">重考</string>
+    <string name="close">关闭</string>
+    <string name="next">下一题</string>
+    <string name="answer">请回答所有问题</string>
+
 </resources>

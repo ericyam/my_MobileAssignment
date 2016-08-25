@@ -9,10 +9,10 @@
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
         android:orientation="horizontal"
         android:layout_marginTop="40dp"
-        android:layout_marginRight="60dp"
+        android:layout_marginLeft="230dp"
         android:id="@+id/tableLayout">
 
         <TableRow
@@ -22,17 +22,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent" >
 
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/imageButtonSound"
-                    android:background="@null"
-                    android:src="@drawable/micsicon"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textViewPinBi" />
             </LinearLayout>
 
         </TableRow>
@@ -44,19 +33,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent" >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="7dp"
-                    android:layout_marginLeft="32dp"
-                    android:text="组词 : "/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    android:layout_marginLeft="4dp"
-                    android:id="@+id/textViewZhuCi" />
             </LinearLayout>
 
         </TableRow>
@@ -70,8 +47,8 @@
         android:lineSpacingMultiplier="1.2"
 
         android:id="@+id/textViewDetail"
-        android:layout_marginTop="58dp"
-        android:layout_below="@+id/tableLayout"
+        android:layout_marginTop="11dp"
+        android:layout_below="@+id/videoViewImage"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -138,8 +115,45 @@
         android:id="@+id/videoViewImage"
         android:layout_alignTop="@+id/tableLayout"
         android:layout_alignLeft="@+id/textViewDetail"
-        android:layout_alignStart="@+id/textViewDetail" />
+        android:layout_alignStart="@+id/textViewDetail"
+        />
 
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButtonSound"
+        android:background="@null"
+        android:src="@drawable/micsicon"
+        android:paddingRight="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_alignTop="@+id/tableLayout"
+        android:layout_toRightOf="@+id/videoViewImage"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="组词 : "
+        android:id="@+id/textView"
+        android:layout_below="@+id/imageButtonSound"
+        android:layout_toRightOf="@+id/imageButtonSound"
+        android:layout_toEndOf="@+id/imageButtonSound" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/textViewZhuCi"
+        android:layout_alignTop="@+id/textView"
+        android:layout_toRightOf="@+id/textView"
+        android:layout_toEndOf="@+id/textView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewPinBi"
+        android:layout_alignTop="@+id/imageButtonSound"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView" />
 
 
 </RelativeLayout>

@@ -30,32 +30,29 @@
             android:label="@string/abouttitle" />
         <activity
             android:name=".ChengyuRunActivity"
-            android:label="成语" />
-        <activity
-            android:name=".Pop"
-            android:theme="@style/AppTheme.CustomTheme" />
+            android:label="@string/proverb" />
         <activity
             android:name=".SurvChineseActivity"
-            android:label="Survival Chinese" />
+            android:label="@string/survival" />
         <activity
             android:name=".SurvChineseBasicActivity"
-            android:label="Basic " />
+            android:label="@string/basic" />
 
         <activity android:name=".SurvChineseFlirtActivity"
-            android:label="Flirting " />
+            android:label="@string/flirt" />
 
         <activity android:name=".SurvChineseDirectionActivity"
-            android:label="Direction " />
+            android:label="@string/direction" />
         <activity android:name=".SurvChineseFoodActivity"
-            android:label="Food " />
+            android:label="@string/food" />
         <activity android:name=".SurvChineseHealthActivity"
-            android:label="Health " />
+            android:label="@string/health" />
         <activity android:name=".SurvChineseEntertainmentActivity"
-            android:label="Entertainment " />
+            android:label="@string/entainment" />
         <activity android:name=".SurvChineseEmergencyActivity"
-            android:label="Emergency " />
+            android:label="@string/emergency" />
         <activity android:name=".SurvChineseShoppingActivity"
-            android:label="Shopping " />
+            android:label="@string/shopping" />
         <activity
             android:name=".ExamActivity"
             android:label="@string/testtitle"
@@ -63,7 +60,7 @@
         <activity
             android:name=".ResultActivity"
             android:label="@string/result"
-            android:parentActivityName=".HomeActivity"/>
+            />
     </application>
 
 </manifest>

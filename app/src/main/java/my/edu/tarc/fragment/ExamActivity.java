@@ -55,6 +55,7 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
     static boolean[] clicked = {false, false, false, false, false, false, false, false, false, false, false, false, false, false};
 
     CounterClass timer = new CounterClass(mins, 1000);
+    static boolean otherbutton = false;
 
 
     @Override
@@ -141,6 +142,7 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
         textViewTime.setText("");
 
         timer.start();
+
 
     }
 
@@ -281,6 +283,7 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
         if(item.getItemId() == R.id.action_done){
             a14 = Q14.getAnswered();
             showResult();
+
         }else if(item.getItemId() == android.R.id.home) {
             onBackPressed();
         }
@@ -374,6 +377,7 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
         if(totalanswered == 14) {
+            timer.cancel();
             Intent intent = new Intent(this, ResultActivity.class);
             intent.putExtra("time", textViewTime.getText().toString());
             intent.putExtra("totalcorrect", totalcorrect);
@@ -711,4 +715,5 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
         super.onBackPressed();
         timer.cancel();
     }
+
 }

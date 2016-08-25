@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">小学霸</string>
+    <string-array name="hometitle_name">
+        <item>Pembelajaran</item>
+        <item>Asas Cina</item>
+        <item>Ujian Simulasi</item>
+        <item>Pada</item>
+    </string-array>
+
+    <string-array name="homesubtitle_name">
+        <item>Bahan Pembelajaran Cina</item>
+        <item>Master Semua Cina</item>
+        <item>Menguji Kemahiran Anda</item>
+        <item>Tentang Maklumat Pemaju</item>
+    </string-array>
+    <string name="learningtitle">Bahan Pembelajaran</string>
+    <string name="stroketitle">Strokes Pengajaran</string>
+    <string name="testtitle">Ujian Simulasi</string>
+    <string name="done">Lengkap</string>
+    <string name="abouttitle">Pada</string>
+    <string name="yes">Tentu</string>
+    <string name="no">Batal</string>
+    <string name="confirmation">Tentu Ambil Exam？ Had Masa</string>
+    <string name="result">Pencapaian</string>
+
+    <string-array name="info">
+        <item>Memakan Masa</item>
+        <item>Show</item>
+        <item>Jawapan</item>
+    </string-array>
+
+    <string name="score">Markah</string>
+    <string name="resultinfo">Maklumat Keputusan</string>
+    <string name="rowTap">Sila pilih satu</string>
+    <string name="doublepress">Ketik untuk keluar dari aplikasi lagi</string>
+
+    <string-array name="survivallist">
+        <item>Asas</item>
+        <item>Kenalan</item>
+        <item>Arah</item>
+        <item>Makanan</item>
+        <item>Sihat</item>
+        <item>Membeli-belah</item>
+        <item>Kecemasan</item>
+        <item>Hiburan</item>
+    </string-array>
+
+    <string name="basic">Asas</string>
+    <string name="flirt">Kenalan</string>
+    <string name="direction">Arah</string>
+    <string name="food">Makanan</string>
+    <string name="health">Sihat</string>
+    <string name="shopping">Membeli-belah</string>
+    <string name="emergency">Kecemasan</string>
+    <string name="entainment">Hiburan</string>
+    <string name="proverb">Idiom</string>
+    <string name="survival">Asas Cina</string>
+    <string name="retake">Resit</string>
+    <string name="close">Tutup</string>
+    <string name="next">Seterus</string>
+    <string name="answer">Sila jawab semua soalan</string>
+
+</resources>

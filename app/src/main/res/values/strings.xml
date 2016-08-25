@@ -30,7 +30,7 @@
     </string-array>
     <string name="score">Score</string>
     <string name="resultinfo">Result Information</string>
-<string name="rowTap">Please tap one sentence</string>
+    <string name="rowTap">Please tap one sentence</string>
     <string name="doublepress">Tap again to exit the application</string>
 
     <string-array name="survivallist">

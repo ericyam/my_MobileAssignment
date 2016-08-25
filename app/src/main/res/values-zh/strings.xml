@@ -31,6 +31,8 @@
 
     <string name="score">分数</string>
     <string name="resultinfo">成绩资料</string>
+    <string name="rowTap">请选一句</string>
+    <string name="doublepress">再次轻按退出应用程序</string>
 
     <string-array name="survivallist">
         <item>基本</item>

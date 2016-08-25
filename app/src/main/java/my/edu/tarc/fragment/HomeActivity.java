@@ -54,6 +54,7 @@ public class HomeActivity extends AppCompatActivity {
                 }
                 else if(position == 1){
                     intent = new Intent(HomeActivity.this, SurvChineseActivity.class);
+                    startActivity(intent);
                 }
                 else if(position == 2){
                     if(clicked == false) {
@@ -63,17 +64,19 @@ public class HomeActivity extends AppCompatActivity {
                         alertDialogBuilder.setPositiveButton(getResources().getString(R.string.yes), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface arg0, int arg1) {
+                                clicked = true;
                                 intent = new Intent(HomeActivity.this, ExamActivity.class);
                                 startActivity(intent);
+
                             }
                         });
 
                         alertDialogBuilder.setNegativeButton(getResources().getString(R.string.no), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
+                                clicked = false;
                             }
                         });
-                        clicked = true;
                         AlertDialog alertDialog = alertDialogBuilder.create();
                         alertDialog.show();
                     }else{
@@ -97,7 +100,6 @@ public class HomeActivity extends AppCompatActivity {
         userDataSource.delete();
 
         String[] id = {"男","女","笑","鸡","天","土","车","马","狗","羊", "打", "读", "放", "飞", "喝", "滑", "跑", "跳", "玩", "游", "俊", "克", "孔", "裤", "绿", "傻", "图", "袖", "选", "载"};
-        //int[] images = {R.drawable.nan, R.drawable.nan, R.drawable.nan, R.drawable.nan, R.drawable.nan, R.drawable.nan, R.drawable.nan, R.drawable.nan, R.drawable.nan, R.drawable.nan};
         String[] pinbi = {
                 "拼音 :  Nán\n笔画 :  共七画",
                 "拼音 :  nǚ\n笔画 :  共三画",
@@ -163,10 +165,10 @@ public class HomeActivity extends AppCompatActivity {
                 "载客\n装载"
         };
         String[] detail ={
-                "男 (he; male; son )\n〈名〉\n(1) (会意。从田,从力。表示用力(一说指耒)在田间耕作。本义:男人,与“女”相对)\n\n(2) 同本义 [man]\n\n(3) 又如:男事(古指成年男子应尽的职责);男夫(成年男子);男圻(犹男服);男教(对男子的教化);男德(有德行的男子);男权(男子在家庭、社会中的支配性特权)\n\n(4) 引申为儿子 [boy;son]",
-                "女 (she; woman; daughter )\n〈名〉\n(1) (象形。甲骨文字形,象一个敛手跪着的人形。本义:女性, 女人,与“男”相对)\n\n(2) 同本义 [woman]\n\n(3) 又如:女陪堂(女帮闲);女先儿(女先生);女红(泛指妇女干的纺织、缝纫、刺绣等);女冠(女道士);女兄(姐姐);女伯(称父亲的姐姐);女嬖(受君主宠爱的女人);女隶(女官。被没入宫中为奴的女子);女中丈夫(女子中有男子气概的人)\n\n(4) 引申指女儿 [daughter]",
+                "男 (he; male; son )\n〈名〉\n(1) (会意。从田,从力。表示用力(一说指耒)在田间耕作。本义:男人,与“女”相对)\n\n(2) 同本义 [man]\n\n(3) 又如:男事(古指成年男子应尽的职责);男夫(成年男子);男圻(犹男服);男教(对男子的教化)\n\n(4) 引申为儿子 [boy;son]",
+                "女 (she; woman; daughter )\n〈名〉\n(1) (象形。甲骨文字形,象一个敛手跪着的人形。本义:女性, 女人,与“男”相对)\n\n(2) 同本义 [woman]\n\n(3) 又如:女陪堂(女帮闲);女先儿(女先生);女隶(女官。被没入宫中为奴的女子)\n\n(4) 引申指女儿 [daughter]",
                 "笑 (smile; laugh; giggle )\n〈名〉\n(1) (会意。从竹,从夭。杨承庆曰,“竹得风其体夭屈,如人之笑”。字或从竹,从夭。本义:因喜悦开颜或出声)\n\n(2) 同本义 [smile]\n\n(3) 又如:笑唏唏(笑嘻嘻);笑咍咍(大声地笑);笑浪(无拘束地大笑);笑面夜叉(外貌和气、心地狠毒的人)\n\n(4) 引申指嘲笑 [ridicule]",
-                "鸡 (chook; chicken )\n〈名〉\n(1) (形声。从鸟,奚声。本义:家禽名。雄鸡可以报晓) 鸟纲雉科家禽,品种很多,喙短锐,有冠与肉髯,翅膀短,尤指普通家鸡\n\n(2) 同本义 [chicken]\n\n(3) 又如:鸡男(雄鸡);鸡坊(养鸡场);鸡肤(鸡皮。比喻皮肤粗糙而多皱纹);鸡鹜(鸡和鸭)\n\n(4) 引申指普通家鸡 [Gallus gallus]",
+                "鸡 (chook; chicken )\n〈名〉\n(1) (形声。从鸟,奚声。本义:家禽名。雄鸡可以报晓) 鸟纲雉科家禽,品种很多,喙短锐,有冠与肉髯,翅膀短,尤指普通家鸡\n\n(2) 同本义 [chicken]\n\n(3) 又如:鸡男(雄鸡);鸡坊(养鸡场);鸡肤(鸡皮。比喻皮肤粗糙而多皱纹);鸡鹜(鸡和鸭)",
                 "天 (day; sky)\n〈名〉\n(1) (会意。甲骨文字形。下面是个正面的人形(大),上面指出是人头,小篆变成一横。本义:人的头顶)\n\n(2) 同本义 [top]\n\n(3) 又如:天灵(人或其他动物的头顶骨);天灵盖(头顶骨)\n\n(4) 引申指天空 [sky]",
                 "土 (land; soil)\n〈名〉\n(1) (象形。甲骨文字形,上象土块,下象地面。金文中空廓变填实,小篆又变为线条。本义:泥土,土壤)\n\n(2) 同本义 [soil]\n\n(3) 又如:土粉(粉刷墙壁用的白垩土);土力(土壤肥沃的程度);土化(施肥使土壤肥沃)\n\n(4) 引申指土地 [land;ground]",
                 "车 (cart; car)\n〈名〉\n(1) (象形。甲骨文有多种写法。象车形。本义:车子,陆地上有轮子的运输工具)\n\n(2) 同本义 [vehicle]\n\n(3) 又如:开车;安步当车;杯水车薪;闭门造车;螳臂当车;车两 (古谓车一乘为一两);车盖(古代车上的伞形车篷。\n\n(4) 特指战车,兵车 [chariot]",
@@ -195,13 +197,46 @@ public class HomeActivity extends AppCompatActivity {
                 "载 (ride)\n〈动〉\n(1) (形声。本义:乘坐)\n\n(2) 同本义 [ride]\n\n(3) 又如:搭载;载舟(乘船);载车(乘车)\n\n(4) 又如:载地(承载大地);载福(承受福祉);载舟覆舟(以民心向背喻水,帝王为舟,水可载舟覆舟,以此来警戒帝王须随时注意民心向背)",
 
         };
+
+        String[] imagepath = {
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestnan,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestnv,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestxiao,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestji,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latesttian,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latesttu,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestche,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestma,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestgou,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestyang,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestnan,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestnv,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestxiao,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestji,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latesttian,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latesttu,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestche,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestma,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestgou,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestyang,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestnan,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestnv,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestxiao,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestji,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latesttian,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latesttu,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestche,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestma,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestgou,
+                "android.resource://my.edu.tarc.fragment/"+R.raw.latestyang};
+
         BihuaData bihuaData = new BihuaData();
         for(int i=0; i<zhuci.length; i++) {
             bihuaData.setId(id[i]);
-            //bihuaData.setImage(images[i]);
             bihuaData.setZhuci(zhuci[i]);
             bihuaData.setDetail(detail[i]);
             bihuaData.setPinbi(pinbi[i]);
+            bihuaData.setPath(imagepath[i]);
             userDataSource.insertUser(bihuaData);
         }
 
@@ -209,3 +244,4 @@ public class HomeActivity extends AppCompatActivity {
 
 
 }
+

@@ -1,16 +1,15 @@
 package my.edu.tarc.fragment;
 
-        import android.app.Activity;
-        import android.content.Context;
-        import android.content.Intent;
-        import android.view.LayoutInflater;
-        import android.view.View;
-        import android.view.View.OnClickListener;
-        import android.view.ViewGroup;
-        import android.widget.BaseAdapter;
-        import android.widget.ImageView;
-        import android.widget.TextView;
-        import android.widget.Toast;
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
 public class CustomAdapter extends BaseAdapter{
     String [] result, result2;
     Context context;

@@ -55,4 +55,5 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:24.0.+'
     compile 'com.android.support:percent:22.2.0'
 
+
 }

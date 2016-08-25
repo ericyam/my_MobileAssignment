@@ -77,7 +77,7 @@ public class Tab1 extends Fragment implements View.OnClickListener, TextToSpeech
                 textviewzhuci.setText(values.get(position).getZhuci());
                 textviewdetail.setText(values.get(position).getDetail());
                 textviewpinbi.setText(values.get(position).getPinbi());
-                stroke.setPosition(getActivity(), position);
+             //   stroke.setPosition(getActivity(), position);
             }
         });
 
@@ -91,7 +91,7 @@ public class Tab1 extends Fragment implements View.OnClickListener, TextToSpeech
                 textviewzhuci.setText(values.get(position).getZhuci());
                 textviewdetail.setText(values.get(position).getDetail());
                 textviewpinbi.setText(values.get(position).getPinbi());
-                stroke.setPosition(getActivity(), position);
+           //     stroke.setPosition(getActivity(), position);
             }
         });
         return rootView;

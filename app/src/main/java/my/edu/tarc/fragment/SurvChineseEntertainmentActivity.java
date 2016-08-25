@@ -88,7 +88,7 @@ public class SurvChineseEntertainmentActivity extends AppCompatActivity implemen
         textViewCn = (TextView)findViewById(R.id.textViewCn);
 
         imageMic = (ImageView)findViewById(R.id.imageMic);
-        imageMic.setBackgroundResource(R.drawable.animate);
+        imageMic.setBackgroundResource(R.drawable.animate2);
 
         //  imageMic.setOnClickListener(this);
 

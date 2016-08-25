@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
@@ -114,6 +115,16 @@ public class HomeActivity extends AppCompatActivity {
             userDataSource.insertUser(bihuaData);
         }
 
+    }
+    private boolean doubleBackToExitPressedOnce = false;
+
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Tap again to exit the application", Toast.LENGTH_SHORT).show();
     }
 
 

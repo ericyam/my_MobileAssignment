@@ -8,10 +8,12 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomeActivity">
+        <activity android:name=".HomeActivity"
+            android:screenOrientation="portrait">
         </activity>
 
-        <activity android:name=".SplashRunViewActivity">
+        <activity android:name=".SplashRunViewActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,46 +23,59 @@
         <activity
             android:name=".BiHuaActivity"
             android:label="@string/stroketitle"
-            android:parentActivityName=".LearningActivity"/>
+            android:parentActivityName=".LearningActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".LearningActivity"
-            android:label="@string/learningtitle" />
+            android:label="@string/learningtitle"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".AboutActivity"
-            android:label="@string/abouttitle" />
+            android:label="@string/abouttitle"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ChengyuRunActivity"
-            android:label="@string/proverb" />
+            android:label="@string/proverb"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".SurvChineseActivity"
-            android:label="@string/survival" />
+            android:label="@string/survival"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".SurvChineseBasicActivity"
-            android:label="@string/basic" />
+            android:label="@string/basic"
+            android:screenOrientation="portrait"/>
 
         <activity android:name=".SurvChineseFlirtActivity"
-            android:label="@string/flirt" />
+            android:label="@string/flirt"
+            android:screenOrientation="portrait"/>
 
         <activity android:name=".SurvChineseDirectionActivity"
-            android:label="@string/direction" />
+            android:label="@string/direction"
+            android:screenOrientation="portrait"/>
         <activity android:name=".SurvChineseFoodActivity"
-            android:label="@string/food" />
+            android:label="@string/food"
+            android:screenOrientation="portrait"/>
         <activity android:name=".SurvChineseHealthActivity"
-            android:label="@string/health" />
+            android:label="@string/health"
+            android:screenOrientation="portrait"/>
         <activity android:name=".SurvChineseEntertainmentActivity"
-            android:label="@string/entainment" />
+            android:label="@string/entainment"
+            android:screenOrientation="portrait"/>
         <activity android:name=".SurvChineseEmergencyActivity"
-            android:label="@string/emergency" />
+            android:label="@string/emergency"
+            android:screenOrientation="portrait"/>
         <activity android:name=".SurvChineseShoppingActivity"
-            android:label="@string/shopping" />
+            android:label="@string/shopping"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ExamActivity"
             android:label="@string/testtitle"
-            />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ResultActivity"
             android:label="@string/result"
-            />
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

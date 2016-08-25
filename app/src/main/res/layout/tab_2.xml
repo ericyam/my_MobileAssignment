@@ -26,8 +26,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/imageButtonSound"
-                    android:src="@android:drawable/ic_btn_speak_now"
-                    android:background="@drawable/micsicon"/>
+                    android:background="@null"
+                    android:src="@drawable/micsicon"/>
 
                 <TextView
                     android:layout_width="wrap_content"

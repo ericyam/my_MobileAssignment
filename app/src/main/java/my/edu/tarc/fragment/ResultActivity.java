@@ -110,7 +110,6 @@ public class ResultActivity extends AppCompatActivity {
                 clearAll();
                 finish();
                 HomeActivity.clicked = false;
-                ExamActivity.otherbutton = true;
                 Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                 startActivity(intent);
             }
@@ -123,7 +122,6 @@ public class ResultActivity extends AppCompatActivity {
                 clearAll();
                 finish();
                 HomeActivity.clicked = true;
-                ExamActivity.otherbutton = true;
                 Intent intent = new Intent(getApplicationContext(), ExamActivity.class);
                 startActivity(intent);
             }

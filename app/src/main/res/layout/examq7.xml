@@ -12,15 +12,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imageButton6"
-            android:src="@android:drawable/ic_btn_speak_now"
+            android:src="@drawable/micsicon"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:background="@null"
+            android:layout_marginLeft="10dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="[Zhuō] table, desk"
+            android:text="  [Zhuō] table, desk"
             android:id="@+id/textViewTest"
             android:layout_weight="0.12"
             android:layout_centerVertical="true"

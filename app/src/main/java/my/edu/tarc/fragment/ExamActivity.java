@@ -55,7 +55,6 @@ public class ExamActivity extends AppCompatActivity implements View.OnClickListe
     static boolean[] clicked = {false, false, false, false, false, false, false, false, false, false, false, false, false, false};
 
     CounterClass timer = new CounterClass(mins, 1000);
-    static boolean otherbutton = false;
 
 
     @Override

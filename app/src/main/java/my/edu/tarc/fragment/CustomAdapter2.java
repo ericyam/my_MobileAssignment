@@ -11,9 +11,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-/**
- * Created by Eric Yam on 8/21/2016.
- */
+
 public class CustomAdapter2 extends BaseAdapter{
     String [] result, result2;
     Context context;

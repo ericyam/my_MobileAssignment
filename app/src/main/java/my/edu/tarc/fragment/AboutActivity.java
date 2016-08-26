@@ -22,8 +22,8 @@ public class AboutActivity extends AppCompatActivity {
 
     ArrayList prgmName;
     public static int [] prgmImages1={R.drawable.developer1,R.drawable.developer2,R.drawable.letter,R.drawable.iconap};
-    public static String [] prgmNameList1={"Developer","Designer","Email Address","App Version"};
-    public static String [] subList1={"Yam Mun Hong","Ooi Ren Jie","xiaoxueba@.edu.com.my","1.5.0"};
+    public static String [] prgmNameList1={"Developer","Developer","Email Address","App Version"};
+    public static String [] subList1={"Ooi Ren Jie","Yam Mun Hong","xiaoxueba@.edu.com.my","1.5.0"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

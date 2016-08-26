@@ -11,9 +11,7 @@ import android.view.View;
 import java.io.InputStream;
 
 
-/**
- * Created by MSI on 2016-08-22.
- */
+
 public class CustomGifView extends View {
 
     private InputStream gifInputStream;

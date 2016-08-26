@@ -40,8 +40,6 @@ import my.edu.tarc.fragment.ExamFragment.Q7;
 import my.edu.tarc.fragment.ExamFragment.Q8;
 import my.edu.tarc.fragment.ExamFragment.Q9;
 
-//import com.github.lzyzsd.circleprogress.DonutProgress;
-
 
 public class ResultActivity extends AppCompatActivity {
 

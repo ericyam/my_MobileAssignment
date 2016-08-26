@@ -18,9 +18,7 @@ import java.util.Locale;
 
 import my.edu.tarc.fragment.R;
 
-/**
- * Created by Eric Yam on 8/21/2016.
- */
+
 public class Q7 extends Fragment implements View.OnClickListener, TextToSpeech.OnInitListener{
 
     ImageButton sound;
